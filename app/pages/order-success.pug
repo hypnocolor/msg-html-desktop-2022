@@ -1,0 +1,86 @@
+extends ../layout/main-layout.pug
+
+block additionalScripts
+
+block pageTitle
+	title MSGMarket – Successful order
+
+block mainContent
+
+	+header
+
+	.main-content
+		.main-content__inner
+			.order-success
+				.order-success__content
+					img.order-success__image(src="./assets/img/car-success.png", alt="")
+					h3.order-success__title Заказ успешно оформлен
+					h5.order-success__subtitle с вами свяжется менеджер
+					.order-success-block
+						h4.order-success-block__title
+							.icon(aria-hidden="true")
+								svg(width="19" height="14")
+									use(xlink:href="#icon-factory")
+							span Склад МСГ
+						.order-success-block__data-row
+							.order-success-block__data-col
+								p Товары (134)
+							.order-success-block__data-col
+								p #[strong 139 000 ₽]
+						.order-success-block__data-row
+							.order-success-block__data-col
+								p Доставка
+							.order-success-block__data-col
+								p Бесплатно
+					.order-success-block
+						h4.order-success-block__title
+							.icon(aria-hidden="true")
+								svg(width="20" height="20")
+									use(xlink:href="#icon-delivery-badge")
+							span Удалённый склад
+						.order-success-block__data-row
+							.order-success-block__data-col
+								p Товары (4)
+							.order-success-block__data-col
+								p #[strong 1000 ₽]
+						.order-success-block__data-row
+							.order-success-block__data-col
+								p Доставка
+							.order-success-block__data-col
+								p #[strong 130 ₽]
+					.order-success-block.order-success-block_borders
+						h4.order-success-block__title
+							.icon(aria-hidden="true")
+								svg(width="22" height="10")
+									use(xlink:href="#icon-order-car")
+							span Удалённый склад
+						.order-success-block__data-row
+							.order-success-block__data-col
+								p ул. Красных Зорь, 73, Иваново, Ивановская обл., 153011 #[br]Манипулятор 6 метров (до 5 т)
+						.order-success-block__data-row
+							.order-success-block__data-col
+								p Доставка
+							.order-success-block__data-col
+								p #[strong 130 ₽]
+					.order-success-block
+						.order-success-block__data-row
+							.order-success-block__data-col
+								p Стоимость товаров
+							.order-success-block__data-col
+								p #[strong 139 000 ₽]
+						.order-success-block__data-row
+							.order-success-block__data-col
+								p Доставка
+							.order-success-block__data-col
+								p #[strong 1000 ₽]
+						.order-success-block__data-row
+							.order-success-block__data-col
+								p #[b Итог:]
+							.order-success-block__data-col
+								p #[b 140 000 ₽]
+
+				.order-aside-info.order-aside-info_order-success
+					p Квитанцию об оплате и историю заказов вы найдёте в личном кабинете, так же квитанция у вас на почте. Если не нашли, проверте папку “Спам”.
+
+
+	+footer

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=1280">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+		<link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#09631d">
+		<link rel="shortcut icon" href="./assets/img/favicon/favicon.ico">
+		<meta name="msapplication-config" content="./assets/img/favicon/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="stylesheet" href="./assets/css/main.css?v=15a423168be0">
+		<title>MSGMarket – New catalog</title>
+	</head>
+
+	<body>
+		<div class="tippy-template" id="msgtip-01">
+			<div class="msgtip msgtip_info">
+				<p>Выберите количество товаров</p>
+			</div>
+		</div>
+		<div class="tippy-template" id="msgtip-02">
+			<div class="msgtip msgtip_error">
+				<p>Текст ошибки в несколько слов. А возможно, и предложений.</p>
+			</div>
+		</div>
+		<div class="msg-popup" id="thanks-popup">
+			<div class="msg-popup__content msg-popup__content_center">
+				<div class="msg-popup__icon"><svg width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle opacity=".3" cx="30" cy="30" r="30" fill="#4EDD87" />
+						<circle cx="30.005" cy="30" fill="#4EDD87" r="20.454" />
+						<path d="M37.5 22.5L26.812 39.375 20.625 30" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+					</svg></div>
+				<h4 class="msg-popup__title">Заказ успешно добавлен в&nbsp;корзину</h4>
+				<div class="msg-popup__text">
+					<p class="grey-text">Это сообщение автоматически закроется через несколько секунд</p>
+				</div>
+			</div>
+		</div>
+		<div class="login-popup" id="login-popup">
+			<form class="login-popup__content" action="./" method="post">
+				<div class="login-popup__logo"><svg width="150" height="18">
+						<use xlink:href="#icon-msg-market-grey-logo"></use>
+					</svg></div>
+				<h4 class="login-popup__title">Войти на сайт</h4>
+				<div class="login-popup__fields">
+					<fieldset data-login-type="phone">
+						<div class="login-popup__fieldset">
+							<div class="login-popup__fieldset-main">
+								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Телефон" data-login-phone-input></div>
+								<div class="login-popup__check-code-area" data-login-code-area="phone">
+									<div class="login-popup__code-area">
+										<div class="login-popup__check-code">
+											<div class="login-popup__code"><input class="common-input common-input_login-code common-input_error" type="text" required placeholder="Код из СМС" data-login-code-input></div>
+											<div class="login-popup__refresh-code"><button class="login-popup__refresh-code-button" type="button">
+													<div class="icon"><svg width="16" height="16">
+															<use xlink:href="#icon-arrow-refresh"></use>
+														</svg></div><span>Получить код ещё раз <br>(осталось <strong>27 секунд</strong>)</span>
+												</button></div>
+											<div class="login-popup__check-code-error">
+												<p>Неверный код :( Попробуйте еще раз</p>
+											</div>
+										</div>
+										<div class="login-popup__fieldset-agreement"><input id="loginterms" type="checkbox" name="loginterms" checked required><label for="loginterms">Даю согласие на обработку <a href="#">персональных данных</a> и принимаю <a href="#">пользовательское соглашение</a></label></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset data-login-type="email" disabled>
+						<div class="login-popup__fieldset">
+							<div class="login-popup__fieldset-main">
+								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Эл. почта" data-login-email-input></div>
+								<div class="login-popup__check-code-area" data-login-code-area="email">
+									<div class="login-popup__code-area">
+										<div class="login-popup__check-code">
+											<div class="login-popup__code"><input class="common-input common-input_login-code" type="text" required placeholder="Код из письма" data-login-code-input></div>
+											<div class="login-popup__refresh-code"><button class="login-popup__refresh-code-button" type="button">
+													<div class="icon"><svg width="16" height="16">
+															<use xlink:href="#icon-arrow-refresh"></use>
+														</svg></div><span>Получить код ещё раз <br>(осталось <strong>27 секунд</strong>)</span>
+												</button></div>
+										</div>
+										<div class="login-popup__fieldset-agreement"><input id="logintermsemail" type="checkbox" name="logintermsemail" checked required><label for="logintermsemail">Даю согласие на обработку <a href="#">персональных данных</a> и принимаю <a href="#">пользовательское соглашение</a></label></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="login-popup__buttons"><button class="login-popup__button login-popup__button_main" type="submit" data-login-button disabled>Продолжить</button><button class="login-popup__button login-popup__button_typeselect" type="button" data-login-type-button="email">Войти по почте</button></div>
+			</form>
+		</div>
+		<div class="login-popup" id="register-popup">
+			<form class="login-popup__content login-popup__content_one-click" action="./" method="post" data-register-form>
+				<div class="login-popup__logo"><svg width="150" height="18">
+						<use xlink:href="#icon-msg-market-grey-logo"></use>
+					</svg></div>
+				<h4 class="login-popup__title">Регистрация</h4>
+				<div class="login-popup__text">
+					<p>Для регистрации необходимо указать адрес электронной почты.</p>
+					<p>Регистрация поможет следить за заказом (и сократит время оформления последующих покупок).</p>
+				</div>
+				<div class="login-popup__fields">
+					<fieldset>
+						<div class="login-popup__fieldset">
+							<div class="login-popup__fieldset-main">
+								<div class="login-popup__input"><input class="common-input" type="email" required placeholder="Эл. почта" data-register-email-input></div>
+								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="ФИО" data-register-name-input></div>
+								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Телефон" data-register-phone-input data-mask-phone></div>
+								<div class="login-popup__fieldset-agreement"><input id="loginnewsletter" type="checkbox" name="loginnewsletter"><label for="loginnewsletter">Да, я хочу получать информацию о новых товарах, скидках и распродажах]</label></div>
+								<div class="login-popup__fieldset-agreement"><input id="loginterms" type="checkbox" name="loginterms" checked required><label for="loginterms">Даю согласие на обработку <a href="#">персональных данных</a> и принимаю <a href="#">пользовательское соглашение</a></label></div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="login-popup__buttons"><button class="login-popup__button login-popup__button_main" type="submit" data-register-button disabled>Зарегистрироваться</button><button class="login-popup__button login-popup__button_typeselect" type="button" data-close-popup>Закрыть</button></div>
+			</form>
+		</div>
+		<div class="login-popup" id="register-success">
+			<div class="login-popup__content login-popup__content_one-click">
+				<div class="login-popup__logo"><svg width="150" height="18">
+						<use xlink:href="#icon-msg-market-grey-logo"></use>
+					</svg></div>
+				<h4 class="login-popup__title">Регистрация прошла успешно</h4>
+				<div class="login-popup__text">
+					<p>Загляните в свой почтовый ящик <span class="blue">helloanagrm@lab.ru</span>.</p>
+					<p>На него отправлены инструкции по активации вашей учетной записи.</p>
+				</div>
+				<div class="login-popup__buttons"><button class="login-popup__button login-popup__button_main" type="button" data-close-popup>Закрыть</button></div>
+			</div>
+		</div>
+		<div class="login-popup" id="one-click-popup">
+			<form class="login-popup__content login-popup__content_one-click" action="./" method="post" data-one-click-form>
+				<div class="login-popup__logo"><svg width="150" height="18">
+						<use xlink:href="#icon-msg-market-grey-logo"></use>
+					</svg></div>
+				<h4 class="login-popup__title">Купить в 1 клик</h4>
+				<div class="login-popup__fields">
+					<fieldset>
+						<div class="login-popup__fieldset">
+							<div class="login-popup__fieldset-main">
+								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Ваше имя" data-one-click-name></div>
+								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Телефон" data-one-click-phone data-mask-phone></div>
+								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Товар" value="Арматура А500С" disabled></div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="login-popup__buttons"><button class="login-popup__button login-popup__button_main" type="submit" data-one-click-buy disabled>Отправить</button><button class="login-popup__button login-popup__button_typeselect" type="button" data-close-popup>Закрыть</button></div>
+			</form>
+		</div>
+		<div class="new-header">
+			<div class="new-header__inner">
+				<div class="new-header-top">
+					<div class="new-header-top__part">
+						<div class="new-header-top__logo"><a href="#"><svg width="180" height="20">
+									<use xlink:href="#icon-msg-market-logo--white"></use>
+								</svg></a></div>
+						<nav class="new-header-menu">
+							<ul class="new-header-menu__list">
+								<li class="new-header-menu__item"><a href="#">О компании </a></li>
+								<li class="new-header-menu__item"><a href="#">Спецтехника</a></li>
+								<li class="new-header-menu__item"><a href="#">Поставщикам</a></li>
+								<li class="new-header-menu__item"><a href="#">Покупателям</a></li>
+								<li class="new-header-menu__item"><a href="#">Контакты</a></li>
+								<li class="new-header-menu__item"><a href="#">Блог </a></li>
+								<li class="new-header-menu__item"><a href="#">Калькуляторы</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="new-header-top__part">
+						<div class="new-header-top__phone"><a href="+74932930330">8 4932 930-330</a></div>
+						<div class="new-header-top__user"><a href="#"><svg width="24" height="24">
+									<use xlink:href="#icon-user"></use>
+								</svg></a></div>
+					</div>
+				</div>
+				<div class="new-header-bottom">
+					<div class="new-header-bottom__part new-header-bottom__part--main">
+						<div class="new-header-bottom__catalog-button"><button class="msg-button"><svg width="24" height="24">
+									<use xlink:href="#icon-catalog-button-dark"></use>
+								</svg><span>Каталог</span></button></div>
+						<div class="new-header-bottom__search-form">
+							<form class="search-form" action="./" method="post"><input class="search-form__input" type="text" name="s" placeholder="Сетка-рабица ПВХ зел. 1,5м*10м"><button class="search-form__submit msg-button" type="submit"> <span>Найти</span></button></form>
+						</div>
+					</div>
+					<div class="new-header-bottom__part new-header-bottom__part--cart">
+						<div class="new-header-cart"><a class="new-header-cart__sum" href="#">337 703.45 ₽</a>
+							<div class="new-header-cart__icon"><svg width="24" height="24">
+									<use xlink:href="#icon-shopping-cart"></use>
+								</svg><small>12</small></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-content">
+			<div class="main-content__inner">
+				<div class="new-catalog">
+					<div class="new-catalog__part new-catalog__part--sidebar">
+						<form class="new-catalog-filters" action="./" method="post">
+							<div class="new-catalog-filters__section new-catalog-filters-section"><button class="new-catalog-filters-section__toggle js-active" data-toggle-filter-section>Цена ₽ (за т)</button>
+								<div class="new-catalog-filters-section__content" data-filter-section-content>
+									<div class="new-catalog-filters-price">
+										<div class="new-catalog-filters-price__col"><input class="new-catalog-filters-price__input" type="text" placeholder="от"></div>
+										<div class="new-catalog-filters-price__col"><input class="new-catalog-filters-price__input" type="text" placeholder="до"></div>
+									</div>
+									<div class="new-catalog-filters-checkbox"><input id="showinstock" type="checkbox" name="instock" value="1"><label for="showinstock">Есть в наличии</label></div>
+								</div>
+							</div>
+							<div class="new-catalog-filters__section new-catalog-filters-section"><button class="new-catalog-filters-section__toggle js-active" data-toggle-filter-section>Высота сечения трубы, мм</button>
+								<div class="new-catalog-filters-section__content" data-filter-section-content>
+									<div class="new-catalog-filters-checkbox"><input id="secheight10" type="checkbox" name="secheight[]" value="10"><label for="secheight10">10 <span class="grey">(5)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="secheight15" type="checkbox" name="secheight[]" value="15"><label for="secheight15">15 <span class="grey">(32)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="secheight20" type="checkbox" name="secheight[]" value="20" checked><label for="secheight20">20 <span class="grey">(53)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="secheight25" type="checkbox" name="secheight[]" value="25"><label for="secheight25">25 <span class="grey">(7)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="secheight34" type="checkbox" name="secheight[]" value="34"><label for="secheight34">34 <span class="grey">(32)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="secheight40" type="checkbox" name="secheight[]" value="40"><label for="secheight40">40 <span class="grey">(9)</span></label></div>
+								</div>
+							</div>
+							<div class="new-catalog-filters__section new-catalog-filters-section"><button class="new-catalog-filters-section__toggle" data-toggle-filter-section>Высота сечения трубы, мм</button>
+								<div class="new-catalog-filters-section__content" data-filter-section-content>
+									<div class="new-catalog-filters-checkbox"><input id="secheight110" type="checkbox" name="secheight2[]" value="10" disabled><label for="secheight110">10 <span class="grey">(0)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="secheight115" type="checkbox" name="secheight2[]" value="15"><label for="secheight115">15 <span class="grey">(7)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="secheight120" type="checkbox" name="secheight2[]" value="20"><label for="secheight120">20 <span class="grey">(23)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="secheight125" type="checkbox" name="secheight2[]" value="25"><label for="secheight125">25 <span class="grey">(11)</span></label></div>
+								</div>
+							</div>
+							<div class="new-catalog-filters__section new-catalog-filters-section"><button class="new-catalog-filters-section__toggle" data-toggle-filter-section>Толщина стенки, мм</button>
+								<div class="new-catalog-filters-section__content" data-filter-section-content>
+									<div class="new-catalog-filters-checkbox"><input id="thickness1" type="checkbox" name="thickness[]" value="1" disabled><label for="thickness1">1 <span class="grey">(0)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="thickness1_2" type="checkbox" name="thickness[]" value="1.2" disabled><label for="thickness1_2">1.2 <span class="grey">(0)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="thickness1_5" type="checkbox" name="thickness[]" value="1.5"><label for="thickness1_5">1.5 <span class="grey">(64)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="thickness1_75" type="checkbox" name="thickness[]" value="1.75"><label for="thickness1_75">1.75 <span class="grey">(34)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="thickness2" type="checkbox" name="thickness[]" value="2"><label for="thickness2">2 <span class="grey">(86)</span></label></div>
+									<div class="new-catalog-filters-checkbox"><input id="thickness2_5" type="checkbox" name="thickness[]" value="2.5"><label for="thickness2_5">2.5 <span class="grey">(23)</span></label></div>
+								</div>
+							</div>
+							<div class="new-catalog-filters__actions"><button class="new-catalog-filters__action msg-button" type="submit"><span>Применить</span></button><button class="new-catalog-filters__action msg-button msg-button--grey" type="reset"><span>Сбросить</span></button></div>
+						</form>
+					</div>
+					<div class="new-catalog__part new-catalog__part--content">
+						<div class="section-head">
+							<nav class="new-breadcrumbs">
+								<ul class="new-breadcrumbs__list">
+									<li class="new-breadcrumbs__item"><a class="new-breadcrumbs__link" href="#">Главная</a></li>
+									<li class="new-breadcrumbs__item"><a class="new-breadcrumbs__link" href="#">Каталог</a></li>
+									<li class="new-breadcrumbs__item"><a class="new-breadcrumbs__link" href="#">Металлопрокат</a></li>
+									<li class="new-breadcrumbs__item"><a class="new-breadcrumbs__link" href="#">Профнастил</a></li>
+									<li class="new-breadcrumbs__item"><span class="new-breadcrumbs__current">Профнастил C10</span></li>
+								</ul>
+							</nav>
+							<h2 class="section-head__title">Труба профильная</h2>
+						</div>
+						<div class="new-catalog-content">
+							<div class="new-catalog-banner"><a href="#"><img src="./assets/img/calc-banner.jpg" alt=""></a></div>
+							<div class="new-catalog-tags"><a class="new-catalog-tags__tag" href="#">Дешевый</a><a class="new-catalog-tags__tag" href="#">Для внтренних работ</a><a class="new-catalog-tags__tag" href="#">Для наружных работ</a><a class="new-catalog-tags__tag" href="#">Прозрачный</a><a class="new-catalog-tags__tag new-catalog-tags__tag--active" href="#">Пристенный</a><a class="new-catalog-tags__tag" href="#">Коньковый</a><a class="new-catalog-tags__tag" href="#">Для панелей 6 мм</a><a class="new-catalog-tags__tag" href="#">Для панелей 9 мм</a><a class="new-catalog-tags__tag" href="#">Для панелей 12 мм</a><a class="new-catalog-tags__tag" href="#">Термошайба</a><a class="new-catalog-tags__tag" href="#">Для панелей 3-4 мм</a></div>
+							<div class="new-catalog-head">
+								<div class="new-catalog-head__col">
+									<div class="new-catalog-view"><a class="new-catalog-view__switch" href="./new-catalog.html"> <svg width="14" height="14">
+												<use xlink:href="#icon-catalog-view-grid"></use>
+											</svg></a><a class="new-catalog-view__switch new-catalog-view__switch--active" href="./new-catalog-rows.html"> <svg width="14" height="14">
+												<use xlink:href="#icon-catalog-view-list"></use>
+											</svg><span>ПРО</span></a></div>
+								</div>
+								<div class="new-catalog-head__col">
+									<div class="new-catalog-head__sort"><select class="common-select" id="catalog-sort" name="">
+											<option value="0" selected>По умолчанию</option>
+											<option value="sortaz">По алфавиту А-Я</option>
+											<option value="sortza">По алфавиту Я-А</option>
+											<option value="sortcheapstart">Сначала дешевле</option>
+											<option value="sortexpstart">Сначала дороже</option>
+										</select></div>
+								</div>
+							</div>
+							<div class="new-catalog-rows">
+								<div class="new-catalog-row">
+									<div class="new-catalog-row__col new-catalog-row__col--image">
+										<div class="new-catalog-row__image"><img src="./assets/img/new-catalog-product-01.jpg" alt=""></div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--info"><a class="new-catalog-row__title" href="#">Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 60%; background-color: #FFB341"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--buy">
+										<div class="new-catalog-card__prices">
+											<p><strong>от 82 040</strong> ₽/тон</p>
+											<p><strong>от 20.14</strong> ₽/метр</p>
+										</div>
+										<div class="new-catalog-card__actions">
+											<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+											<div class="new-catalog-card__action"><button class="msg-button"><span>В корзину</span></button></div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-row">
+									<div class="new-catalog-row__col new-catalog-row__col--image">
+										<div class="new-catalog-row__image"><img src="./assets/img/new-catalog-product-02.jpg" alt=""></div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--info"><a class="new-catalog-row__title" href="#">Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 80%; background-color: #20A02E"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--buy">
+										<div class="new-catalog-card__prices">
+											<p><strong>от 82 040</strong> ₽/тон</p>
+											<p><strong>от 20.14</strong> ₽/метр</p>
+										</div>
+										<div class="new-catalog-card__actions">
+											<div class="new-catalog-card__action new-catalog-card__action--single"><button class="msg-button msg-button--grey"><span>Запросить цену</span></button></div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-row">
+									<div class="new-catalog-row__col new-catalog-row__col--image">
+										<div class="new-catalog-row__image"><img src="./assets/img/new-catalog-product-03.jpg" alt=""></div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--info"><a class="new-catalog-row__title" href="#">Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 30%; background-color: #DE1717"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--buy">
+										<div class="new-catalog-card__prices">
+											<p><strong>от 82 040</strong> ₽/тон</p>
+											<p><strong>от 20.14</strong> ₽/метр</p>
+										</div>
+										<div class="new-catalog-card__actions">
+											<div class="new-catalog-card__action new-catalog-card__action--single"><button class="msg-button msg-button--grey"><span>Запросить цену</span></button></div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-row">
+									<div class="new-catalog-row__col new-catalog-row__col--image">
+										<div class="new-catalog-row__image"><img src="./assets/img/new-catalog-product-01.jpg" alt=""></div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--info"><a class="new-catalog-row__title" href="#">Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 60%; background-color: #FFB341"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--buy">
+										<div class="new-catalog-card__prices">
+											<p><strong>от 82 040</strong> ₽/тон</p>
+											<p><strong>от 20.14</strong> ₽/метр</p>
+										</div>
+										<div class="new-catalog-card__actions">
+											<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+											<div class="new-catalog-card__action"><button class="msg-button"><span>В корзину</span></button></div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-row">
+									<div class="new-catalog-row__col new-catalog-row__col--image">
+										<div class="new-catalog-row__image"><img src="./assets/img/new-catalog-product-02.jpg" alt=""></div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--info"><a class="new-catalog-row__title" href="#">Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 80%; background-color: #20A02E"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--buy">
+										<div class="new-catalog-card__prices">
+											<p><strong>от 82 040</strong> ₽/тон</p>
+											<p><strong>от 20.14</strong> ₽/метр</p>
+										</div>
+										<div class="new-catalog-card__actions">
+											<div class="new-catalog-card__action new-catalog-card__action--single"><button class="msg-button msg-button--grey"><span>Запросить цену</span></button></div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-row">
+									<div class="new-catalog-row__col new-catalog-row__col--image">
+										<div class="new-catalog-row__image"><img src="./assets/img/new-catalog-product-03.jpg" alt=""></div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--info"><a class="new-catalog-row__title" href="#">Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 30%; background-color: #DE1717"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--buy">
+										<div class="new-catalog-card__prices">
+											<p><strong>от 82 040</strong> ₽/тон</p>
+											<p><strong>от 20.14</strong> ₽/метр</p>
+										</div>
+										<div class="new-catalog-card__actions">
+											<div class="new-catalog-card__action new-catalog-card__action--single"><button class="msg-button msg-button--grey"><span>Запросить цену</span></button></div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-row">
+									<div class="new-catalog-row__col new-catalog-row__col--image">
+										<div class="new-catalog-row__image"><img src="./assets/img/new-catalog-product-01.jpg" alt=""></div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--info"><a class="new-catalog-row__title" href="#">Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 60%; background-color: #FFB341"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+									<div class="new-catalog-row__col new-catalog-row__col--buy">
+										<div class="new-catalog-card__prices">
+											<p><strong>от 82 040</strong> ₽/тон</p>
+											<p><strong>от 20.14</strong> ₽/метр</p>
+										</div>
+										<div class="new-catalog-card__actions">
+											<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+											<div class="new-catalog-card__action"><button class="msg-button"><span>В корзину</span></button></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<nav class="paging">
+							<ul class="paging__list">
+								<li class="paging__item paging__item--prev"><a class="paging__button paging__button--arrow" href="#"><svg width="7" height="12">
+											<use xlink:href="#icon-paging-prev"></use>
+										</svg></a></li>
+								<li class="paging__item paging__item--page"><a class="paging__button paging__button--page paging__button--active" href="#">1</a></li>
+								<li class="paging__item paging__item--page"><a class="paging__button paging__button--page" href="#">2</a></li>
+								<li class="paging__item paging__item--page"><a class="paging__button paging__button--page" href="#">3</a></li>
+								<li class="paging__item paging__item--page"><a class="paging__button paging__button--page" href="#">...</a></li>
+								<li class="paging__item paging__item--next"><a class="paging__button paging__button--arrow" href="#"><svg width="7" height="12">
+											<use xlink:href="#icon-paging-next"></use>
+										</svg></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-top">
+				<div class="footer-top__inner">
+					<div class="footer-top__links">
+						<div class="footer-links-menu">
+							<h4 class="footer-links-menu__title">Продукция</h4>
+							<nav class="footer-links-menu__menu">
+								<ul>
+									<li><a href="#">Металлопрокат</a></li>
+									<li><a href="#">Кровля и фасад</a></li>
+									<li><a href="#">Электротовар</a></li>
+									<li><a href="#">Реш. настилы</a></li>
+									<li><a href="#">Забор</a></li>
+									<li><a href="#">Крепёж</a></li>
+									<li><a href="#">Бетон</a></li>
+									<li><a href="#">Сопут. товары</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="footer-links-menu">
+							<h4 class="footer-links-menu__title">Покупателям</h4>
+							<nav class="footer-links-menu__menu">
+								<ul>
+									<li><a href="#">О компании</a></li>
+									<li><a href="#">Контакты</a></li>
+									<li><a href="#">Покупателям</a></li>
+									<li><a href="#">Партнёрам</a></li>
+									<li><a href="#">Акции</a></li>
+									<li><a href="#">Доставка</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="footer-links-menu">
+							<h4 class="footer-links-menu__title">Холдинг</h4>
+							<nav class="footer-links-menu__menu">
+								<ul>
+									<li><a href="#">СК Настилы</a></li>
+									<li><a href="#">Кровля 2.0</a></li>
+									<li><a href="#">Строительные конструкции</a></li>
+									<li><a href="#">М-Сервис</a></li>
+									<li><a href="#">Свет</a></li>
+									<li><a href="#">Бетон</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="footer-links-menu footer-links-menu_price">
+							<h4 class="footer-links-menu__title">Прайс-листы</h4>
+							<nav class="footer-links-menu__menu">
+								<ul>
+									<li><a href="#" download="download"><span class="icon"><svg width="16" height="17"><use xlink:href="#icon-download-file"></use></svg></span>Металлопрокат</a></li>
+									<li><a href="#" download="download"><span class="icon"><svg width="16" height="17"><use xlink:href="#icon-download-file"></use></svg></span>Профнастил, сетка, мет. черепица</a></li>
+									<li><a href="#" download="download"><span class="icon"><svg width="16" height="17"><use xlink:href="#icon-download-file"></use></svg></span>Сопут. товары</a></li>
+									<li><a href="#" download="download"><span class="icon"><svg width="16" height="17"><use xlink:href="#icon-download-file"></use></svg></span>Крепёж</a></li>
+									<li><a href="#" download="download"><span class="icon"><svg width="16" height="17"><use xlink:href="#icon-download-file"></use></svg></span>Кровля</a></li>
+									<li><a href="#" download="download"><span class="icon"><svg width="16" height="17"><use xlink:href="#icon-download-file"></use></svg></span>Забор</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<div class="footer-top__contacts">
+						<div class="footer-links-menu footer-links-menu_price">
+							<h4 class="footer-links-menu__title">Контакты</h4>
+							<nav class="footer-links-menu__menu">
+								<ul>
+									<li><a href="tel:+74932930330"><span class="icon"><svg width="13" height="11"><use xlink:href="#icon-phone-wave"></use></svg></span>+7 (4932) 930-330</a></li>
+									<li><a href="mailto:mserviss@mail.ru"><span class="icon"><svg width="13" height="11"><use xlink:href="#icon-mail-hand"></use></svg></span>mserviss@mail.ru</a></li>
+									<li><a href="#"><span class="icon"><svg width="13" height="13"><use xlink:href="#icon-mail-box"></use></svg></span>г. Иваново, ул. Красных Зорь, д. 73</a></li>
+									<li></li>
+									<li><a href="#"><span class="icon"><svg width="7" height="14"><use xlink:href="#icon-blog-feather"></use></svg></span>Блог</a></li>
+									<li><a href="#"><span class="icon"><svg width="16" height="16"><use xlink:href="#icon-social-fb"></use></svg></span>Фэйсбук</a></li>
+									<li><a href="#"><span class="icon"><svg width="14" height="8"><use xlink:href="#icon-social-vk"></use></svg></span>ВКонтакте</a></li>
+									<li><a href="#"><span class="icon"><svg width="16" height="16"><use xlink:href="#icon-social-ok"></use></svg></span>Одноклассники</a></li>
+									<li><a href="#"><span class="icon"><svg width="16" height="16"><use xlink:href="#icon-social-ig"></use></svg></span>Инстаграм</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-middle">
+				<div class="footer-middle__inner">
+					<div class="footer-middle__col">
+						<h4 class="footer-middle__title">Способы оплаты</h4>
+						<div class="footer-middle__icons"><svg width="30" height="18">
+								<use xlink:href="#icon-payment-mc"></use>
+							</svg><svg width="30" height="9">
+								<use xlink:href="#icon-payment-visa"></use>
+							</svg><svg width="30" height="8">
+								<use xlink:href="#icon-payment-mir"></use>
+							</svg><svg width="34" height="16">
+								<use xlink:href="#icon-payment-apple-pay"></use>
+							</svg><svg width="35" height="14">
+								<use xlink:href="#icon-payment-google-pay"></use>
+							</svg></div>
+					</div>
+					<div class="footer-middle__col">
+						<h4 class="footer-middle__title">Наши друзья и партнёры</h4>
+						<div class="footer-middle__icons footer-middle__icons_partners"><a href="#"><img src="./assets/img/partner-home-credit.svg" alt="" /></a><a href="#"><img src="./assets/img/partner-halva.svg" alt="" /></a><a href="#"><img src="./assets/img/partner-spasibo.svg" alt="" /></a></div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="footer-bottom__inner">
+					<div class="footer-bottom__logo"><a href="#"><svg width="140" height="15">
+								<use xlink:href="#icon-msg-market-logo--black"></use>
+							</svg></a></div>
+					<div class="footer-bottom__info">
+						<div class="footer-bottom__info-col">
+							<h4 class="footer-middle__title">Продажа металлопроката в Иваново:</h4>
+							<div class="footer-bottom__text">
+								<p>Арматура,оцинкованный лист, профнастил (профлист), швеллер, сетка рабица, трубы, металлочерепица.</p>
+							</div>
+						</div>
+						<div class="footer-bottom__info-col">
+							<h4 class="footer-middle__title">Ошибка в тексте?</h4>
+							<div class="footer-bottom__text">
+								<p><img src="./assets/img/mark-error.svg" alt="" /> Выделите её мышкой и нажмите: Ctrl + Enter</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copy">
+				<div class="footer-copy__inner">
+					<p><strong>© 2013 — 2022 MSG Market.</strong> ООО «М-Сервис» ИНН 3702132807 / ОГРН 1163702056715</p>
+					<p class="akoya">Дизайн – <a href="https://itsakoya.com/" target="_blank">Akoya</a></p>
+				</div>
+			</div>
+		</div>
+		<script src="./assets/js/main.js?v=15a423168be0"></script>
+	</body>
+
+</html>

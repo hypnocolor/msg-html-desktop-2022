@@ -1,0 +1,130 @@
+.simple-catalog
+	position: relative
+	display: flex
+	align-items: flex-start
+	padding-bottom: 100px
+	padding-top: 40px
+	&__aside
+		flex-shrink: 0
+		width: 230px
+		margin-right: 25px
+	&__content
+		flex-grow: 1
+		.products-grid
+			padding-top: 0
+			&__col
+				width: 25%
+	&__cat-type
+		display: flex
+		align-items: flex-start
+		flex-wrap: wrap
+		.catalog-type-button
+			margin: 0 10px 10px 0
+
+.catalog-type-button
+	display: inline-block
+	vertical-align: middle
+	width: 31px
+	height: 31px
+	text-decoration: none
+	background-color: #edeeef
+	border-radius: 4px
+	text-align: center
+	position: relative
+	line-height: 31px
+	font-size: 0
+	appearance: none
+	cursor: pointer
+	outline: none
+	svg
+		display: inline-block
+		vertical-align: middle
+		margin: 0
+		fill: #A4A9AD
+	&_active
+		pointer-events: none
+		cursor: default
+		svg
+			fill: $color-black
+
+.simple-catalog-aside
+	&__small-title
+		display: block
+		font-size: 14px
+		margin: 0 0 20px
+		font-weight: 700
+
+.simple-catalog-links
+	list-style-type: none
+	margin: 0
+	padding: 0
+	&__item
+		box-sizing: border-box
+		&:not(:last-child)
+			margin-bottom: 20px
+		&_selected
+			strong
+				display: block
+				padding-left: 15px
+				box-sizing: border-box
+				border-left: 2px $color-black solid
+		> a, a:visited
+			color: $color-black
+			text-decoration: none
+			&:hover
+				opacity: .7
+			strong
+				font-weight: 500
+	&__submenu
+		list-style-type: none
+		margin: 20px 0 0
+		padding: 0 0 0 15px
+		li
+			&:not(:last-child)
+				margin-bottom: 15px
+			a, a:visited
+				text-decoration: none
+				color: #A4A9AD
+				&:hover
+					color: $color-black
+	&:not(:last-child)
+		margin-bottom: 20px
+
+.simple-catalog-grid
+	display: flex
+	position: relative
+	align-items: flex-start
+	flex-wrap: wrap
+	margin: 0 -10px
+	&__col
+		width: 25%
+		padding: 10px
+		box-sizing: border-box
+
+.simple-catalog-grid-item
+	position: relative
+	text-align: center
+	&__image
+		border: 1px #edeeef solid
+		box-sizing: border-box
+		height: 230px
+		overflow: hidden
+		position: relative
+		img
+			object-fit: cover
+			display: block
+			margin: 0
+			transition: .3s transform
+	&__title
+		margin: 20px 0
+		font-weight: 400
+	&__overlay-link
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		z-index: 5
+	&:hover
+		.simple-catalog-grid-item__image img
+			transform: scale(1.07)

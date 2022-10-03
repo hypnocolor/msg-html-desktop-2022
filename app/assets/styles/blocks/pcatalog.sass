@@ -1,0 +1,128 @@
+.pcatalog-list
+	.pcatalog-list-item
+		&:not(:last-child)
+			margin-bottom: 10px
+
+.pcatalog-list-item
+	padding: 20px
+	border: 1px #edeeef solid
+	border-radius: 4px
+	outline: none
+	position: relative
+	&:hover
+		background-color: #f9f9f9
+	&_has-hidden
+		&::before
+			content: ''
+			position: absolute
+			z-index: 3
+			width: 9px
+			height: 16px
+			left: 40px
+			top: 33px
+			background: url("data:image/svg+xml,%3Csvg width='9' height='16' viewBox='0 0 9 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L8 8L1 15' stroke='%23262626' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat 0 0 transparent
+			opacity: .6
+		&.js-active
+			&::before
+				transform: rotate(90deg)
+				opacity: 1
+			background-color: #f9f9f9
+	&__content
+		display: flex
+		align-items: center
+		justify-content: space-between
+		cursor: pointer
+		padding-left: 60px
+		position: relative
+		z-index: 4
+		&::before
+			content: ''
+			position: absolute
+			left: -20px
+			top: -20px
+			right: -20px
+			bottom: -20px
+			z-index: -1
+		.product-card__qty
+			margin-bottom: 0
+	&__main
+		display: flex
+		align-items: center
+	&__title
+		width: 370px
+		padding-right: 20px
+		box-sizing: border-box
+		font-weight: 400
+		margin: 0
+	&__hidden
+		display: none
+		padding-top: 20px
+		.pcatalog-list-item__content
+			border-top: 1px #edeeef solid
+			padding: 20px 0 20px 60px
+			position: relative
+			&:last-child
+				padding-bottom: 0
+				&::before
+					bottom: -20px
+			&::before
+				top: 0
+				left: -20px
+				right: -20px
+				bottom: 0
+			&:hover
+				&::before
+					background-color: #eee
+
+	&__small-size
+		width: 370px
+		padding-right: 20px
+		box-sizing: border-box
+		font-weight: 400
+		margin: 0
+		font-size: 14px
+		color: #A4A9AD
+		strong
+			color: $color-black
+			font-weight: 400
+			display: inline-block
+			margin-right: 10px
+	&__prices
+		white-space: nowrap
+		width: 200px
+		.product-card__price-col
+			text-align: right
+			strong
+				font-weight: 500
+				font-size: 15px
+
+.catalog-side-panel
+	position: fixed
+	right: 0
+	top: 0
+	bottom: 0
+	width: 400px
+	background-color: #f9f9f9
+	z-index: 100
+	border-left: 1px #edeeef solid
+	transform: translateX(100%)
+	opacity: 0
+	visibility: hidden
+	transition: .3s opacity, .3s visibility, .3s transform
+	&.js-active
+		opacity: 1
+		visibility: visible
+		transform: translateX(0)
+	&__content
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		overflow: auto
+	.product-aside-block
+		border: none
+		border-radius: 0
+		margin: 0 !important
+		&:not(:last-child)
+			border-bottom: 1px #edeeef solid

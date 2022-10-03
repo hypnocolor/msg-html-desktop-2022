@@ -1,0 +1,181 @@
+mixin footer()
+	.footer
+		.footer-top
+			.footer-top__inner
+				.footer-top__links
+					.footer-links-menu
+						h4.footer-links-menu__title Продукция
+						nav.footer-links-menu__menu
+							ul
+								li: a(href="#") Металлопрокат
+								li: a(href="#") Кровля и фасад
+								li: a(href="#") Электротовар
+								li: a(href="#") Реш. настилы
+								li: a(href="#") Забор
+								li: a(href="#") Крепёж
+								li: a(href="#") Бетон
+								li: a(href="#") Сопут. товары
+					.footer-links-menu
+						h4.footer-links-menu__title Покупателям
+						nav.footer-links-menu__menu
+							ul
+								li: a(href="#") О компании
+								li: a(href="#") Контакты
+								li: a(href="#") Покупателям
+								li: a(href="#") Партнёрам
+								li: a(href="#") Акции
+								li: a(href="#") Доставка
+					.footer-links-menu
+						h4.footer-links-menu__title Холдинг
+						nav.footer-links-menu__menu
+							ul
+								li: a(href="#") СК Настилы
+								li: a(href="#") Кровля 2.0
+								li: a(href="#") Строительные конструкции
+								li: a(href="#") М-Сервис
+								li: a(href="#") Свет
+								li: a(href="#") Бетон
+					.footer-links-menu.footer-links-menu_price
+						h4.footer-links-menu__title Прайс-листы
+						nav.footer-links-menu__menu
+							ul
+								li
+									a(href="#" download)
+										span.icon
+											svg(width="16" height="17")
+												use(xlink:href="#icon-download-file")
+										| Металлопрокат
+								li
+									a(href="#" download)
+										span.icon
+											svg(width="16" height="17")
+												use(xlink:href="#icon-download-file")
+										| Профнастил, сетка, мет. черепица
+								li
+									a(href="#" download)
+										span.icon
+											svg(width="16" height="17")
+												use(xlink:href="#icon-download-file")
+										| Сопут. товары
+								li
+									a(href="#" download)
+										span.icon
+											svg(width="16" height="17")
+												use(xlink:href="#icon-download-file")
+										| Крепёж
+								li
+									a(href="#" download)
+										span.icon
+											svg(width="16" height="17")
+												use(xlink:href="#icon-download-file")
+										| Кровля
+								li
+									a(href="#" download)
+										span.icon
+											svg(width="16" height="17")
+												use(xlink:href="#icon-download-file")
+										| Забор
+				.footer-top__contacts
+					.footer-links-menu.footer-links-menu_price
+						h4.footer-links-menu__title Контакты
+						nav.footer-links-menu__menu
+							ul
+								li
+									a(href="tel:+74932930330")
+										span.icon
+											svg(width="13" height="11")
+												use(xlink:href="#icon-phone-wave")
+										| +7 (4932) 930-330
+								li
+									a(href="mailto:mserviss@mail.ru")
+										span.icon
+											svg(width="13" height="11")
+												use(xlink:href="#icon-mail-hand")
+										| mserviss@mail.ru
+								li
+									a(href="#")
+										span.icon
+											svg(width="13" height="13")
+												use(xlink:href="#icon-mail-box")
+										| г. Иваново, ул. Красных Зорь, д. 73
+								li
+								li
+									a(href="#")
+										span.icon
+											svg(width="7" height="14")
+												use(xlink:href="#icon-blog-feather")
+										| Блог
+								li
+									a(href="#")
+										span.icon
+											svg(width="16" height="16")
+												use(xlink:href="#icon-social-fb")
+										| Фэйсбук
+								li
+									a(href="#")
+										span.icon
+											svg(width="14" height="8")
+												use(xlink:href="#icon-social-vk")
+										| ВКонтакте
+								li
+									a(href="#")
+										span.icon
+											svg(width="16" height="16")
+												use(xlink:href="#icon-social-ok")
+										| Одноклассники
+								li
+									a(href="#")
+										span.icon
+											svg(width="16" height="16")
+												use(xlink:href="#icon-social-ig")
+										| Инстаграм
+
+		.footer-middle
+			.footer-middle__inner
+				.footer-middle__col
+					h4.footer-middle__title Способы оплаты
+					.footer-middle__icons
+						svg(width="30" height="18")
+							use(xlink:href="#icon-payment-mc")
+						svg(width="30" height="9")
+							use(xlink:href="#icon-payment-visa")
+						svg(width="30" height="8")
+							use(xlink:href="#icon-payment-mir")
+						svg(width="34" height="16")
+							use(xlink:href="#icon-payment-apple-pay")
+						svg(width="35" height="14")
+							use(xlink:href="#icon-payment-google-pay")
+				.footer-middle__col
+					h4.footer-middle__title Наши друзья и партнёры
+					.footer-middle__icons.footer-middle__icons_partners
+						a(href="#")
+							img(src="./assets/img/partner-home-credit.svg", alt="")
+						a(href="#")
+							img(src="./assets/img/partner-halva.svg", alt="")
+						a(href="#")
+							img(src="./assets/img/partner-spasibo.svg", alt="")
+
+		.footer-bottom
+			.footer-bottom__inner
+				.footer-bottom__logo
+					a(href="#")
+						svg(width="140" height="15")
+							use(xlink:href="#icon-msg-market-logo--black")
+				.footer-bottom__info
+					.footer-bottom__info-col
+						h4.footer-middle__title Продажа металлопроката в Иваново:
+						.footer-bottom__text
+							p Арматура,оцинкованный лист, профнастил (профлист), швеллер, сетка рабица, трубы, металлочерепица.
+					.footer-bottom__info-col
+						h4.footer-middle__title Ошибка в тексте?
+						.footer-bottom__text
+							p #[img(src="./assets/img/mark-error.svg", alt="")] Выделите её мышкой и нажмите: Ctrl + Enter
+				//- .footer-bottom__anagram
+				//- 	a(href="http://anagramlab.ru" target="_blank")
+				//- 		svg(width="71" height="71")
+				//- 			use(xlink:href="#icon-anagram-logo")
+
+		.footer-copy
+			.footer-copy__inner
+				p #[strong © 2013 — 2022 MSG Market.] ООО «М-Сервис» ИНН 3702132807 / ОГРН 1163702056715
+				p.akoya Дизайн – #[a(href="https://itsakoya.com/" target="_blank") Akoya]

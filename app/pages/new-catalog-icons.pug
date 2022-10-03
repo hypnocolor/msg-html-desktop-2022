@@ -1,0 +1,242 @@
+extends ../layout/main-layout.pug
+
+block additionalScripts
+
+block pageTitle
+	title MSGMarket – New catalog list
+
+block mainContent
+
+	//- +header
+
+	.new-header
+		.new-header__inner
+			.new-header-top
+				.new-header-top__part
+					.new-header-top__logo
+						a(href="#")
+							svg(width="180" height="20")
+								use(xlink:href="#icon-msg-market-logo--white")
+					nav.new-header-menu
+						ul.new-header-menu__list
+							li.new-header-menu__item: a(href="#") О компании 
+							li.new-header-menu__item: a(href="#") Спецтехника
+							li.new-header-menu__item: a(href="#") Поставщикам
+							li.new-header-menu__item: a(href="#") Покупателям
+							li.new-header-menu__item: a(href="#") Контакты
+							li.new-header-menu__item: a(href="#") Блог 
+							li.new-header-menu__item: a(href="#") Калькуляторы
+				.new-header-top__part
+					.new-header-top__phone
+						a(href="+74932930330") 8 4932 930-330
+					.new-header-top__user
+						a(href="#")
+							svg(width="24" height="24")
+								use(xlink:href="#icon-user")
+			.new-header-bottom
+				.new-header-bottom__part.new-header-bottom__part--main
+					.new-header-bottom__catalog-button
+						button.msg-button
+							svg(width="24" height="24")
+								use(xlink:href="#icon-catalog-button-dark")
+							span Каталог
+					.new-header-bottom__search-form
+						form.search-form(action="./" method="post")
+							input.search-form__input(type="text" name="s" placeholder="Сетка-рабица ПВХ зел. 1,5м*10м")
+							button.search-form__submit.msg-button(type="submit") 
+								span Найти
+				.new-header-bottom__part.new-header-bottom__part--cart
+					.new-header-cart
+						a.new-header-cart__sum(href="#") 337 703.45 ₽
+						.new-header-cart__icon
+							svg(width="24" height="24")
+								use(xlink:href="#icon-shopping-cart")
+							small 12
+
+	.main-content
+		.main-content__inner
+			.section-head
+				nav.new-breadcrumbs
+					ul.new-breadcrumbs__list
+						li.new-breadcrumbs__item
+							a.new-breadcrumbs__link(href="#") Главная
+						li.new-breadcrumbs__item
+							span.new-breadcrumbs__current Каталог
+				h2.section-head__title Каталог
+
+			.new-catalog-list
+				.new-catalog-list__grid
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-01.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Металлопрокат
+							ul.new-catalog-list-item__links(data-catalog-links)
+								li.js-visible: a(href="#") Профнастил
+								li.js-visible: a(href="#") Трубы
+								li.js-visible: a(href="#") Арматура
+								li.js-visible: a(href="#") Сетки металлические и ПВХ
+								li: a(href="#") Профнастил
+								li: a(href="#") Трубы
+								li: a(href="#") Арматура
+								li: a(href="#") Сетки металлические и ПВХ
+								li: a(href="#") Профнастил
+								li: a(href="#") Трубы
+								li: a(href="#") Арматура
+								li: a(href="#") Сетки металлические и ПВХ
+								li: a(href="#") Профнастил
+							button.new-catalog-list-item__expand(data-expand-catalog-links) Ещё 9
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-02.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Стройматериалы
+							ul.new-catalog-list-item__links(data-catalog-links)
+								li.js-visible: a(href="#") Листовые материалы и комплектующие
+								li.js-visible: a(href="#") Сухие строительные смеси
+								li.js-visible: a(href="#") Кровля, водосточные и дренажные системы
+								li: a(href="#") Листовые материалы и комплектующие
+								li: a(href="#") Сухие строительные смеси
+								li: a(href="#") Кровля, водосточные и дренажные системы
+								li: a(href="#") Листовые материалы и комплектующие
+								li: a(href="#") Сухие строительные смеси
+								li: a(href="#") Кровля, водосточные и дренажные системы
+								li: a(href="#") Листовые материалы и комплектующие
+								li: a(href="#") Кровля, водосточные и дренажные системы
+								li: a(href="#") Листовые материалы и комплектующие
+								li: a(href="#") Сухие строительные смеси
+								li: a(href="#") Кровля, водосточные и дренажные системы
+								li: a(href="#") Листовые материалы и комплектующие
+							button.new-catalog-list-item__expand(data-expand-catalog-links) Ещё 12
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-03.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Крепёж
+							ul.new-catalog-list-item__links(data-catalog-links)
+								li.js-visible: a(href="#") Саморезы
+								li.js-visible: a(href="#") Метрический крепеж
+								li.js-visible: a(href="#") Дюбели
+								li.js-visible: a(href="#") Гвозди, шурупы
+								li: a(href="#") Саморезы
+								li: a(href="#") Метрический крепеж
+								li: a(href="#") Дюбели
+								li: a(href="#") Гвозди, шурупы
+								li: a(href="#") Саморезы
+								li: a(href="#") Метрический крепеж
+								li: a(href="#") Дюбели
+								li: a(href="#") Гвозди, шурупы
+								li: a(href="#") Саморезы
+								li: a(href="#") Метрический крепеж
+								li: a(href="#") Дюбели
+								li: a(href="#") Гвозди, шурупы
+								li: a(href="#") Саморезы
+								li: a(href="#") Метрический крепеж
+								li: a(href="#") Дюбели
+								li: a(href="#") Гвозди, шурупы
+							button.new-catalog-list-item__expand(data-expand-catalog-links) Ещё 16
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-04.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Лакокрасочные покрытия
+							ul.new-catalog-list-item__links(data-catalog-links)
+								li.js-visible: a(href="#") Грунт-эмаль
+								li.js-visible: a(href="#") Грунтовки
+								li.js-visible: a(href="#") Растворители
+								li.js-visible: a(href="#") Эмали
+								li: a(href="#") Грунт-эмаль
+								li: a(href="#") Грунтовки
+							button.new-catalog-list-item__expand(data-expand-catalog-links) Ещё 2
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-05.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Готовые решения
+							ul.new-catalog-list-item__links(data-catalog-links)
+								li.js-visible: a(href="#") Забор
+								li.js-visible: a(href="#") Кровля
+								li.js-visible: a(href="#") Фундамент
+								li.js-visible: a(href="#") Фасад
+								li.js-visible: a(href="#") Фундамент
+								li.js-visible: a(href="#") Фасад
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-06.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Инструменты
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-07.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Инженерная сантехника
+							ul.new-catalog-list-item__links(data-catalog-links)
+								li.js-visible: a(href="#") Воздухоотводчики
+								li.js-visible: a(href="#") Трубы пвх и комплектующие
+								li.js-visible: a(href="#") Грязевики и фильтры
+								li.js-visible: a(href="#") Задвижки
+							button.new-catalog-list-item__expand(data-expand-catalog-links) Ещё 48
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-08.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Решётчатые настилы
+							ul.new-catalog-list-item__links(data-catalog-links)
+								li.js-visible: a(href="#") Прессованные
+								li.js-visible: a(href="#") Сварные
+								li.js-visible: a(href="#") Крепеж для реш настилов
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-09.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Электротовары
+							ul.new-catalog-list-item__links(data-catalog-links)
+								li.js-visible: a(href="#") Автоматические выключатели
+								li.js-visible: a(href="#") Блоки питания
+								li.js-visible: a(href="#") Вилки
+								li.js-visible: a(href="#") Выключатели
+								li: a(href="#") Вилки
+								li: a(href="#") Выключатели
+							button.new-catalog-list-item__expand(data-expand-catalog-links) Ещё 2
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-10.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Всё для сада
+							ul.new-catalog-list-item__links(data-catalog-links)
+								li.js-visible: a(href="#") Всё для Дома и Дачи
+								li.js-visible: a(href="#") Садовая техника, оснастка и принадлежности
+								li.js-visible: a(href="#") Садовый инструмент, вазоны, теплицы, кашпо
+					.new-catalog-list__col
+						.new-catalog-list__item.new-catalog-list-item
+							.new-catalog-list-item__head
+								.new-catalog-list-item__icon
+									img(src="./assets/img/new-catalog-icon-11.jpg", alt="")
+								h4.new-catalog-list-item__title
+									a(href="#") Услуги
+							ul.new-catalog-list-item__links(data-catalog-links)
+								li.js-visible: a(href="#") Металлообработка
+								li.js-visible: a(href="#") Гибка металла
+								li.js-visible: a(href="#") Газы технические
+
+	+footer

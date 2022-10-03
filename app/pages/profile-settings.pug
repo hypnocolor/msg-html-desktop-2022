@@ -1,0 +1,76 @@
+extends ../layout/main-layout.pug
+
+block additionalScripts
+
+block pageTitle
+	title MSGMarket – Profile settings
+
+block mainContent
+
+	+header
+
+	.section-header
+		.section-header__inner
+			h2.section-header__title Профиль
+			ul.breadcrumbs
+				li
+					a(href="#")
+						svg(width="91" height="10")
+							use(xlink:href="#icon-msg-market-grey-logo")
+				li
+					strong Профиль
+
+	.main-content
+		.main-content__inner
+			.simple-catalog
+				aside.simple-catalog__aside.simple-catalog-aside
+					ul.simple-catalog-links
+						li.simple-catalog-links__item.simple-catalog-links__item_selected
+							strong Личные данные
+						li.simple-catalog-links__item: a(href="#") Мои заказы
+						li.simple-catalog-links__item: a(href="#") Реквизиты и документы
+						li.simple-catalog-links__item: a(href="#") Адреса
+
+				.simple-catalog__content
+					.static-page.static-page_full-width
+						.profile-page
+							.profile-page__content
+								form(action="./" method="post")
+									.set-profile-photo
+										button.set-profile-photo__placeholder.set-profile-photo__placeholder_empty(type="button" data-set-photo-button)
+											svg(width="56" height="56")
+												use(xlink:href="#icon-monalisa")
+										button.set-profile-photo__placeholder.set-profile-photo__placeholder_uploaded(type="button" data-reset-photo-button)
+										input#add-profile-photo(type="file" name="profilephoto" accept="image/*")
+									.set-profile-info
+										.set-profile-info__row
+											input.common-input(type="text" name="profilename" placeholder="Имя" required data-floating-label)
+										.set-profile-info__row
+											input.common-input(type="text" name="profilesurname" placeholder="Фамилия" required data-floating-label)
+										.set-profile-info__row
+											input.common-input(type="text" name="profilemidname" placeholder="Отчество" required data-floating-label)
+										.set-profile-info__row.set-profile-info__row_bday
+											input.common-input(type="text" name="profilebday" placeholder="Дата рождения" required data-date-select data-floating-label)
+									.set-profile-info.set-profile-info_contacts
+										h4.set-profile-info__title Контакты
+										.set-profile-info__row
+											input.common-input(type="email" name="profileemail" placeholder="Электронная почта" required data-floating-label)
+										.set-profile-info__row
+											input.common-input(type="text" name="profilephone" placeholder="Телефон" required data-floating-label)
+										.set-profile-info__row.set-profile-info__row_terms
+											input#profileterms(type="checkbox" name="profileterms" checked)
+											label(for="profileterms") Я соглашаюсь на обработку персональных данных в соответствии с #[a(href="#") Условиями использования сайта], #[a(href="#") Политикой обработки персональных данных] и на получение сообщений в процессе обработки заказа.
+									button.action-button(type="submit") Сохранить изменения
+							aside.profile-page__aside
+								.profile-status
+									h3.profile-status__title Ваш статус
+									h4.profile-status__status
+										svg(width="24" height="24")
+											use(xlink:href="#icon-profile-status")
+										span Мелкий опт
+									.profile-status__info
+										p Вы являетесь участником Программы лояльности. Ознакомиться с Правилами Программы и получить информацию о том, как отказаться от участия, вы можете, перейдя по #[a(href="#") ссылке].
+									.profile-status__request
+										a(href="#") Запросить статус – опт
+
+	+footer

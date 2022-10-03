@@ -1,0 +1,120 @@
+mixin header()
+
+	.main-header
+		.main-header-top
+			.main-header-top__inner
+				ul.main-header-top__links
+					li: a(href="#") О компании
+					li: a(href="#") Спецтехника
+					li: a(href="#") Поставщикам
+					li: a(href="#") Покупателям
+					li: a(href="#") Контакты
+					li: a(href="#") Блог
+					li: a(href="#") Калькуляторы
+				.main-header-top__phones
+					a.main-header-top__phone(href="tel:84932930330")
+						svg(width="19" height="16")
+							use(xlink:href="#icon-phone-wave")
+						| +7 (4932)&nbsp;#[span 930-330]
+					.phones-tooltip
+						.phones-tooltip__content
+							a.phones-tooltip__phone(href="tel:+73004005555")
+								.icon
+									svg(width="16" height="19")
+										use(xlink:href="#icon-viber-small")
+								span +7 (300) 400-55-55
+							a.phones-tooltip__phone(href="tel:+72003004040")
+								.icon
+									svg(width="18" height="18")
+										use(xlink:href="#icon-whatsapp-small")
+								span +7 (200) 300-40-40
+							a.phones-tooltip__phone(href="tel:+71002003030")
+								.icon
+									svg(width="18" height="18")
+										use(xlink:href="#icon-telegram-small")
+								span +7 (100) 200-30-30
+				.main-header-top__login
+					a.main-header-top__login-link(href="#login-popup" data-login-link)
+						small Вход
+						svg(width="26" height="26")
+							use(xlink:href="#icon-profile-small")
+					.login-tooltip
+						.login-tooltip__content
+							.login-tooltip__links
+								a.login-tooltip__link(href="#register-popup" data-login-link) Регистрация
+								a.login-tooltip__link(href="#") Личные данные
+								a.login-tooltip__link(href="#") Мои заказы
+								a.login-tooltip__link(href="#") Реквизиты и документы
+								a.login-tooltip__link(href="#") Адреса
+							.login-tooltip__quit
+								a.login-tooltip__link.login-tooltip__link_red(href="#")
+									.icon
+										svg(width="14" height="20")
+											use(xlink:href="#icon-quit-small")
+									span Выход
+		.main-header-bottom
+			.main-header-bottom__inner
+				.main-header-bottom__logo
+					a(href="#")
+						svg(width="180" height="20")
+							use(xlink:href="#icon-msg-market-logo")
+				.main-header-bottom__middle-area
+					button.main-header-bottom__catalog-button(data-catalog-button)
+						span Каталог товаров
+						svg(width="24" height="24")
+							use(xlink:href="#icon-catalog-button")
+					form.main-header-bottom__search(action="./" method="post")
+						input.common-input.common-input_search(type="text" name="s")
+				.main-header-bottom__cart-area.header-cart-area
+					.header-cart-area__text
+						small 15 товаров на сумму
+						strong 337 703.45 ₽
+					.header-cart-area__icon.header-cart-area__icon_active
+						svg(width="30" height="30")
+							use(xlink:href="#icon-cart")
+					a.header-cart-area__overlay-link(href="#")
+
+		.catalog-overlay
+			.catalog-overlay__inner
+				.catalog-overlay__banners
+					.catalog-overlay__banner
+						a(href="http://ya.ru")
+							img(src="./assets/img/co-banner-01@2x.jpg", alt="")
+					.catalog-overlay__banner
+						a(href="http://ya.ru")
+							img(src="./assets/img/co-banner-02@2x.jpg", alt="")
+				ul.catalog-overlay__menu
+					li: a.blue(href="#") Скидки
+					li: a(href="#") Кровля
+					li: a(href="#") Навесы и теплицы
+					li: a(href="#") Фасад
+					li: a(href="#") Фундамент
+					li
+						a(href="#") Металлопрокат
+						ul.catalog-overlay__menu
+							li: a(href="#") Арматура
+							li: a(href="#") Трубы
+							li: a(href="#") Труба профильная
+							li
+								a(href="#") Фасонный прокат
+								ul.catalog-overlay__menu
+									li: a(href="#") Балка
+									li: a(href="#") Уголок
+									li: a(href="#") Швеллер
+									li: a(href="#") Швеллер гнутый
+							li: a(href="#") Сортовой прокат
+							li: a(href="#") Листовой прокат
+							li: a(href="#") Профнастил
+							li: a(href="#") Металлочерепица
+							li: a(href="#") Рельса
+							li: a(href="#") Нержавеющая сталь
+							li: a(href="#") Сетка
+							li: a(href="#") Цветные металлы
+							li: a(href="#") Металлические пластины
+					li: a(href="#") Сопутствующие товары
+					li: a(href="#") Крепёж
+					li: a(href="#") Строительные смеси
+					li: a(href="#") Решётчатые настилы
+					li: a(href="#") Электротовары
+					li: a(href="#") Забор
+					li: a(href="#") Газы технические

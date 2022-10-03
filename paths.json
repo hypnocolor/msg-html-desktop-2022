@@ -1,0 +1,39 @@
+{
+	"styles": {
+		"dir": ["app/assets/styles"],
+		"src": ["app/assets/styles/*.sass"],
+		"watch": [
+			"app/assets/styles/**/*.sass",
+			"app/assets/styles/**/*.scss",
+			"app/blocks/**/*.sass",
+			"app/pages/**/*.sass"
+		],
+		"dest": "dist/assets/css"
+	},
+	"scripts": {
+		"src": [
+			"app/assets/scripts/*.js",
+			"app/assets/scripts/helpers/*.js",
+			"app/blocks/**/*.js",
+			"app/pages/**/*.js"
+		],
+		"dest": "dist/assets/js",
+		"vendors": [
+			"app/assets/scripts/vendors/*.js",
+			"app/assets/scripts/lib/*.js"
+		]
+	},
+	"images": {
+		"src": ["app/assets/images/**/*", "!app/assets/images/svg/**/*"],
+		"dest": "dist/assets/img"
+	},
+	"svg": {
+		"src": "app/assets/images/svg/**/*",
+		"dest": "dist/assets/img/svg"
+	},
+	"fonts": {
+		"src": "app/assets/fonts/**/*",
+		"dest": "dist/assets/fonts"
+	},
+	"dest": "dist"
+}

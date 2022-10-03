@@ -1,0 +1,432 @@
+.common-input
+	appearance: none
+	outline: none
+	padding: 0 15px
+	background: #FFF
+	border: 1px solid #EDEEEF
+	box-sizing: border-box
+	border-radius: 4px
+	height: 50px
+	font-size: 16px
+	+fontTTN
+	&_search
+		width: 520px
+		padding-right: 52px
+		background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20L15.0962 15.0962M15.0962 15.0962C16.2725 13.9199 17 12.2949 17 10.5C17 6.91015 14.0899 4 10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17C12.2949 17 13.9199 16.2725 15.0962 15.0962Z' stroke='%23A4A9AD' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat #FFF top 50% right 15px
+	&_smaller
+		height: 40px
+	~ .lb_label.top
+		font-size: 12px
+		top: -10px !important
+		left: 12px !important
+		color: #999
+		background-color: #fff
+		padding: 3px
+	&_login-code
+		width: 130px
+		text-align: center
+		font-size: 17px
+	&:focus
+		border-color: #aaa
+
+.buttons-group
+	display: flex
+	.standard-button
+		white-space: nowrap
+		&:not(:last-child)
+			border-top-right-radius: 0
+			border-bottom-right-radius: 0
+			margin-right: -1px
+		&:nth-child(n+2)
+			border-top-left-radius: 0
+			border-bottom-left-radius: 0
+		&_grow
+			flex-grow: 1
+
+.common-select
+	appearance: none
+	display: block
+	width: 100%
+	box-sizing: border-box
+	border: 1px #EDEEEF solid
+	border-radius: 4px
+	padding: 0 35px 0 8px
+	height: 40px
+	background: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 1.33331L5.5 5.66665L10.5 1.33331' stroke='%23262626' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat #fff top 50% right 15px
+	font-size: 14px
+	+fontTTN
+	color: $color-black
+	&::-ms-expand
+		display: none
+
+.filter-icon-checkbox
+	position: relative
+	input
+		position: absolute
+		clip: rect(0 0 0 0)
+		width: 1px
+		height: 1px
+		margin: -1px
+		opacity: 0
+		&:checked + label
+			border: 1px $color-blue solid
+			background-color: #f8f8fe
+			svg
+				fill: $color-blue
+			.filter-icon-checkbox__title
+				color: $color-black
+	&__label
+		display: flex
+		align-items: center
+		padding: 15px 10px
+		border: 1px #f1f2f3 solid
+		border-radius: 4px
+		cursor: pointer
+		&:hover
+			border: 1px #a4a8ad solid
+	&__icon
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-shrink: 0
+		margin-right: 10px
+		width: 21px
+		height: 21px
+		svg
+			display: block
+			margin: 0
+			fill: #A4A9AD
+	&__title
+		font-size: 14px
+		font-weight: 400
+		color: #A4A9AD
+
+.action-button
+	position: relative
+	display: block
+	width: 100%
+	max-width: 360px
+	appearance: none
+	cursor: pointer
+	outline: none
+	background-color: transparent
+	border: 1px #EDEEEF solid
+	border-radius: 4px
+	text-decoration: none
+	font-size: 16px
+	height: 55px
+	line-height: 53px
+	+fontTTN
+	color: $color-black
+	&:visited
+		color: $color-black
+	&:hover
+		background-color: #f2f2f8
+		border-color: $color-blue
+	&:disabled
+		opacity: .5
+		pointer-events: none
+		&:hover
+			background-color: transparent
+			border: 1px #EDEEEF solid
+	&_smaller
+		display: inline-block
+		width: auto
+		padding: 0 15px
+		font-size: 14px
+		font-weight: 700
+		height: 40px
+		line-height: 38px
+	&_cart-action
+		height: 55px
+		line-height: 53px
+		font-weight: 500
+		width: auto
+		padding: 0 20px
+		svg
+			display: inline-block
+			vertical-align: middle
+			margin: 0 15px 0 0
+			position: relative
+			top: -2px
+		&_manager
+			color: #A4A9AD
+			background-color: #fff
+			svg
+				fill: #A4A9AD
+			&:hover
+				background-color: #f9f9f9
+				border-color: #EDEEEF
+
+.standard-button
+	appearance: none
+	text-align: center
+	cursor: pointer
+	outline: none
+	font-size: 0
+	background-color: #fff
+	+fontTTN
+	font-weight: 400
+	border: 1px #EDEEEF solid
+	height: 40px
+	padding: 0 8px
+	border-radius: 4px
+	box-sizing: border-box
+	min-width: 90px
+	position: relative
+	color: $color-black
+	transition: .3s border, .3s background
+	&_bigger
+		height: 60px
+		min-width: 120px
+	&:hover
+		z-index: 2
+		background-color: #f2f2f8
+		border-color: $color-blue
+		transition: 0s border, 0s background
+	&:active
+		background-color: #f9f9f9
+		color: $color-black
+	&__icon
+		display: inline-block
+		vertical-align: middle
+		~ .standard-button__title
+			margin-left: 5px
+	&__title
+		display: inline-block
+		vertical-align: middle
+		font-size: 14px
+
+.sp-warehouse-card
+	position: relative
+	cursor: pointer
+	&_order
+		.sp-warehouse-card__label
+			padding: 15px 10px
+			background-color: #f9f9f9
+	input
+		position: absolute
+		clip: rect(0 0 0 0)
+		width: 1px
+		height: 1px
+		margin: -1px
+		opacity: 0
+		&:checked + label
+			background-color: #F9F9FE
+			border-color: #002D78
+			.sp-warehouse-card__scheme-link
+				pointer-events: auto
+				color: #002D78
+				svg
+					fill: #002D78
+			.sp-warehouse-card__title
+				color: #002d78
+				svg
+					fill: #002D78
+	&__label
+		position: relative
+		display: block
+		padding: 20px
+		background-color: #fff
+		border: 1px #EDEEEF solid
+		border-radius: 4px
+		cursor: pointer
+		&:hover
+			background-color: #f9f9f9
+			border-color: #002D78
+	&__title
+		display: flex
+		align-items: flex-start
+		margin: 0 0 15px
+		h4
+			margin: 0
+			padding-top: 3px
+	&__address
+		margin: 0
+		&:not(:last-child)
+			margin-bottom: 15px
+	&__icon
+		position: relative
+		width: 24px
+		height: 24px
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-right: 12px
+		flex-shrink: 0
+		svg
+			display: block
+			margin: 0
+			max-width: 100%
+			max-height: 100%
+	.product-card__qty
+		margin: 0
+		p
+			font-size: 14px
+			strong
+				font-weight: 500
+			&:not(:last-child)
+				margin-bottom: 5px
+	&__scheme-link
+		text-decoration: none
+		display: flex
+		align-items: center
+		color: $color-black
+		pointer-events: none
+		&:visited
+			color: $color-black
+		&:hover
+			opacity: .8
+		.icon
+			flex-shrink: 0
+			margin-right: 10px
+			width: 18px
+			height: 18px
+			position: relative
+			svg
+				display: block
+				margin: 0
+				max-width: 100%
+				max-height: 100%
+
+.get-method-card
+	position: relative
+	cursor: pointer
+	input
+		position: absolute
+		clip: rect(0 0 0 0)
+		width: 1px
+		height: 1px
+		margin: -1px
+		opacity: 0
+		&:checked + label
+			background-color: #f2f2f8
+			border-color: $color-blue
+			.get-method-card__title h4
+				color: $color-black
+			.get-method-card__icon svg
+				fill: $color-black
+			.get-method-card__info
+				color: $color-black
+				p
+					span.blue
+						background-color: $color-blue
+			.get-method-card__terms
+				color: $color-blue
+				pointer-events: auto
+				&:visited
+					color: $color-blue
+				&::before
+					background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.9941 4.47521C10.5652 4.84767 10.4651 6.15487 10.4651 6.15487H10.1616C10.1616 6.15487 10.1849 5.0829 9.66905 4.55053C9.1532 4.01816 8.2287 3.94078 8.2287 3.94078L8.25905 3.61475C8.25905 3.61475 9.32818 3.48578 9.6822 3.12055C10.1748 2.6181 10.1495 1.70708 10.1495 1.70708L10.4529 1.68129C10.4529 1.68129 10.5076 2.71302 10.9283 3.14531C11.3491 3.57761 12.4304 3.61578 12.4304 3.61578L12.4446 3.96038C12.4446 3.96038 11.5221 4.01609 10.9941 4.47521ZM8.39256 5.45123C8.29849 6.08987 7.33557 13.9847 7.25364 14.6687C7.17171 15.3528 5.65853 15.2073 5.74248 14.482C5.82644 13.7567 6.69125 6.159 6.78532 5.32845C6.87939 4.49791 8.48562 4.81259 8.39256 5.45123ZM6.45659 12.6971L6.26036 14.4108L6.7661 14.4665L6.9684 12.7714L6.45659 12.6971ZM7.28499 5.47496L7.0827 7.20827L7.62485 7.26398L7.82715 5.54924L7.28499 5.47496ZM6.91277 2.53969C6.66293 2.75944 6.60932 3.52912 6.60932 3.52912H6.42726C6.42726 3.52912 6.42726 2.89151 6.12381 2.57786C5.82037 2.26421 5.28732 2.22294 5.28732 2.22294L5.30552 2.03001C5.30552 2.03001 5.94781 1.96088 6.15618 1.74628C6.44445 1.45018 6.41512 0.904392 6.41512 0.904392L6.59516 0.888916C6.59516 0.888916 6.63461 1.49145 6.88242 1.74422C7.13023 1.997 7.7614 2.02898 7.7614 2.02898L7.76949 2.23532C7.76949 2.23532 7.22734 2.26937 6.91277 2.53969ZM6.03076 4.0553L6.03986 4.26164C6.03986 4.26164 5.49771 4.29672 5.18617 4.57116C4.9333 4.78989 4.87362 5.55956 4.87362 5.55956H4.69763C4.69763 5.55956 4.69763 4.92298 4.39418 4.60934C4.09074 4.29569 3.55566 4.25649 3.55566 4.25649L3.57488 4.05736C3.57488 4.05736 4.21717 3.9872 4.42655 3.7726C4.71381 3.4765 4.68751 2.93174 4.68751 2.93174L4.86755 2.91627C4.86755 2.91627 4.89588 3.52912 5.14369 3.78189C5.3915 4.03466 6.03076 4.0553 6.03076 4.0553Z' fill='%232F2BDF'/%3E%3C/svg%3E%0A") no-repeat 50% 50% transparent
+	&__label
+		position: relative
+		display: block
+		padding: 10px
+		background-color: #f9f9f9
+		border: 1px #EDEEEF solid
+		border-radius: 4px
+		cursor: pointer
+		user-select: none
+		&:hover
+			background-color: #f2f2f8
+			border-color: $color-blue
+	&__title
+		display: flex
+		align-items: flex-start
+		margin: 0 0 15px
+		h4
+			margin: 0
+			font-size: 20px
+			color: #A1A1A1
+	&__address
+		margin: 0 0 15px
+	&__icon
+		position: relative
+		width: 24px
+		height: 24px
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-right: 12px
+		flex-shrink: 0
+		svg
+			display: block
+			margin: 0
+			max-width: 100%
+			max-height: 100%
+			fill: #A1A1A1
+	&__info
+		font-size: 14px
+		color: #A1A1A1
+		strong
+			font-weight: 500
+		p
+			margin: 0
+			&:not(:last-child)
+				margin-bottom: 7px
+			span
+				display: inline-block
+				padding: 3px 4px
+				border-radius: 4px
+				&.blue
+					background-color: #A4A9AD
+					color: #fff
+	&__terms
+		font-size: 12px
+		text-decoration: none
+		color: #A1A1A1
+		pointer-events: none
+		position: relative
+		display: inline-block
+		padding-left: 20px
+		&:visited
+			color: #A1A1A1
+		&:hover
+			opacity: .8
+		&::before
+			content: ''
+			position: absolute
+			width: 16px
+			height: 16px
+			left: 0
+			background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.9941 4.47521C10.5652 4.84767 10.4651 6.15487 10.4651 6.15487H10.1616C10.1616 6.15487 10.1849 5.0829 9.66905 4.55053C9.1532 4.01816 8.2287 3.94078 8.2287 3.94078L8.25905 3.61475C8.25905 3.61475 9.32818 3.48578 9.6822 3.12055C10.1748 2.6181 10.1495 1.70708 10.1495 1.70708L10.4529 1.68129C10.4529 1.68129 10.5076 2.71302 10.9283 3.14531C11.3491 3.57761 12.4304 3.61578 12.4304 3.61578L12.4446 3.96038C12.4446 3.96038 11.5221 4.01609 10.9941 4.47521ZM8.39256 5.45123C8.29849 6.08987 7.33557 13.9847 7.25364 14.6687C7.17171 15.3528 5.65853 15.2073 5.74248 14.482C5.82644 13.7567 6.69125 6.159 6.78532 5.32845C6.87939 4.49791 8.48562 4.81259 8.39256 5.45123ZM6.45659 12.6971L6.26036 14.4108L6.7661 14.4665L6.9684 12.7714L6.45659 12.6971ZM7.28499 5.47496L7.0827 7.20827L7.62485 7.26398L7.82715 5.54924L7.28499 5.47496ZM6.91277 2.53969C6.66293 2.75944 6.60932 3.52912 6.60932 3.52912H6.42726C6.42726 3.52912 6.42726 2.89151 6.12381 2.57786C5.82037 2.26421 5.28732 2.22294 5.28732 2.22294L5.30552 2.03001C5.30552 2.03001 5.94781 1.96088 6.15618 1.74628C6.44445 1.45018 6.41512 0.904392 6.41512 0.904392L6.59516 0.888916C6.59516 0.888916 6.63461 1.49145 6.88242 1.74422C7.13023 1.997 7.7614 2.02898 7.7614 2.02898L7.76949 2.23532C7.76949 2.23532 7.22734 2.26937 6.91277 2.53969ZM6.03076 4.0553L6.03986 4.26164C6.03986 4.26164 5.49771 4.29672 5.18617 4.57116C4.9333 4.78989 4.87362 5.55956 4.87362 5.55956H4.69763C4.69763 5.55956 4.69763 4.92298 4.39418 4.60934C4.09074 4.29569 3.55566 4.25649 3.55566 4.25649L3.57488 4.05736C3.57488 4.05736 4.21717 3.9872 4.42655 3.7726C4.71381 3.4765 4.68751 2.93174 4.68751 2.93174L4.86755 2.91627C4.86755 2.91627 4.89588 3.52912 5.14369 3.78189C5.3915 4.03466 6.03076 4.0553 6.03076 4.0553Z' fill='%23A1A1A1'/%3E%3C/svg%3E%0A") no-repeat 50% 50% transparent
+
+
+
+
+
+.msg-button
+	appearance: none
+	height: 40px
+	line-height: 40px
+	white-space: nowrap
+	border: none
+	cursor: pointer
+	outline: none
+	+fontTTN
+	font-weight: 500
+	font-size: 14px
+	color: #262626
+	border-radius: 4px
+	margin: 0
+	padding: 0 16px
+	background-color: #FDB508
+	font-size: 0
+	transition: .3s background
+	text-decoration: none
+	&:visited
+		color: #262626
+	&:hover
+		background-color: lighten(#FDB508, 5)
+		transition: 0s background
+	svg, span
+		display: inline-block
+		vertical-align: middle
+	span
+		font-size: 16px
+	svg + span
+		margin-left: 10px
+	&--grey
+		background-color: #EDEEEF
+		&:hover
+			background-color: darken(#EDEEEF, 5)

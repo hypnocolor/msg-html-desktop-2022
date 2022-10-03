@@ -1,0 +1,583 @@
+.new-catalog
+	position: relative
+	display: flex
+	&__part
+		&--sidebar
+			flex-shrink: 0
+			width: 232px
+			margin-right: 20px
+
+.new-catalog-filters
+	// position: sticky
+	box-shadow: 0px 2px 24px rgba(29, 29, 29, 0.16)
+	background-color: #fff
+	border-radius: 4px
+	padding: 16px
+	// top: 20px
+	// max-height: calc(100vh - 70px)
+	overflow: hidden
+	&__section
+		padding-top: 15px
+		padding-bottom: 24px
+		border-bottom: 1px solid #EDEEEF
+	&__actions
+		padding-top: 24px
+	&__action
+		display: block
+		width: 100%
+		text-align: center
+		height: 44px
+		&:not(:last-child)
+			margin-bottom: 8px
+
+.new-catalog-filters-section
+	&__toggle
+		appearance: none
+		display: block
+		cursor: pointer
+		outline: none
+		margin: 0
+		padding: 0 20px
+		position: relative
+		border: none
+		background: transparent
+		+fontTTN
+		font-size: 16px
+		font-weight: 500
+		text-align: left
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 2px
+			width: 14px
+			height: 14px
+			background: url("data:image/svg+xml,%3Csvg width='14' height='15' viewBox='0 0 14 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.08334 6.91669L7.00001 9.25002L9.91668 6.91669' stroke='%23262626' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat 50% 50% transparent
+		&.js-active
+			&::before
+				transform: rotate(180deg)
+			~ .new-catalog-filters-section__content
+				display: block
+	&__content
+		padding-top: 20px
+		display: none
+
+.new-catalog-filters-price
+	display: flex
+	margin: 0 -4px 16px
+	&__col
+		width: 50%
+		padding: 0 4px
+		box-sizing: border-box
+	&__input
+		display: block
+		width: 100%
+		box-sizing: border-box
+		appearance: none
+		background: #FFF
+		border: none
+		height: 30px
+		+fontTTN
+		font-size: 14px
+		color: $color-black
+		border-bottom: 1px solid #EDEEEF
+		outline: none
+
+.new-catalog-filters-checkbox
+	position: relative
+	&:not(:last-child)
+		margin-bottom: 16px
+	input[type="checkbox"]
+		position: absolute
+		width: 1px
+		height: 1px
+		margin: -1px
+		border: 0
+		padding: 0
+		white-space: nowrap
+		clip-path: inset(100%)
+		clip: rect(0 0 0 0)
+		overflow: hidden
+		opacity: 0
+		&:checked + label::before
+			border-color: #002D78
+			background-color: #002D78
+			background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.9408 9.79995C3.66935 9.8025 3.41512 9.66723 3.26559 9.44066L0.332258 4.99622C0.08888 4.62746 0.190518 4.13123 0.559271 3.88786C0.928025 3.64448 1.42425 3.74612 1.66763 4.11487L3.91943 7.52668L8.32409 0.571946C8.56049 0.198682 9.05472 0.0877313 9.42799 0.324132C9.80125 0.560534 9.9122 1.05477 9.6758 1.42803L4.60913 9.42803C4.46389 9.65737 4.21225 9.7974 3.9408 9.79995Z' fill='white'/%3E%3C/svg%3E%0A")
+		&:disabled + label
+			pointer-events: none
+			&::before
+				background-color: #E9EAEB
+				border-color: #E9EAEB
+	label
+		display: block
+		font-size: 14px
+		color: $color-black
+		padding-left: 32px
+		user-select: none
+		cursor: pointer
+		.grey
+			color: #A4A9AD
+		&::before
+			content: ''
+			position: absolute
+			width: 20px
+			height: 20px
+			box-sizing: border-box
+			border: 2px #A4A9AD solid
+			border-radius: 4px
+			left: 0
+			top: -2px
+			background-repeat: no-repeat
+			background-position: 50% 50%
+		&:hover::before
+			border-color: #002D78
+
+.new-catalog-banner
+	position: relative
+	padding: 16px 0
+	border-top: 1px solid #EDEEEF
+	img
+		display: block
+		max-width: 100%
+		margin: 0
+		border-radius: 4px
+	a
+		text-decoration: none
+		transition: .3s opacity
+		&:hover
+			opacity: 0.8
+			transition: 0s opacity
+
+.new-catalog-tags
+	position: relative
+	margin: -4px
+	display: flex
+	align-items: flex-start
+	flex-wrap: wrap
+	&__tag
+		appearance: none
+		cursor: pointer
+		outline: none
+		+fontTTN
+		padding: 10px 12px
+		margin: 4px
+		font-size: 14px
+		text-decoration: none
+		color: $color-black
+		box-sizing: border-box
+		border: 1px #EDEEEF solid
+		background: #FFF
+		border-radius: 4px
+		&.js-hidden
+			display: none
+		&--toggle
+			font-weight: 500
+		&:visited
+			color: $color-black
+		&:hover
+			background-color: #FAFAFA
+			border-color: #A1A1A1
+		&--active
+			background-color: #FDB508 !important
+			border-color: #FDB508 !important
+			font-weight: 500
+			&:hover
+				opacity: 0.85
+
+.new-catalog-head
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding: 16px 0
+	&__sort
+		width: 230px
+
+.new-catalog-view
+	position: relative
+	display: flex
+	padding: 2px
+	border-radius: 4px
+	background-color: #E4E5E6
+	&__switch
+		padding: 12px
+		text-decoration: none
+		color: $color-black
+		border-radius: 4px
+		display: flex
+		align-items: center
+		justify-content: center
+		opacity: 0.5
+		&:visited
+			color: $color-black
+		&:hover
+			opacity: 1
+		svg
+			display: inline-block
+			vertical-align: middle
+			fill: $color-black
+			& + span
+				margin-left: 8px
+				font-size: 14px
+				display: inline-block
+				vertical-align: middle
+				font-weight: 500
+		&--active
+			background-color: #fff
+			pointer-events: none
+			opacity: 1
+
+.new-catalog-grid
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	&__col
+		position: relative
+		width: 33.3333%
+		box-sizing: border-box
+		border-right: 1px #EDEEEF solid
+		border-bottom: 1px #EDEEEF solid
+		&:nth-child(3n)
+			border-right-color: transparent
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3)
+			border-bottom: 1px #EDEEEF solid !important
+		&:nth-last-child(-n+3)
+			border-bottom-color: transparent
+		.new-catalog-card
+			min-height: 100%
+
+.new-catalog-card
+	position: relative
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	padding: 20px 18px 32px
+	box-sizing: border-box
+	&__image
+		position: relative
+		margin-bottom: 20px
+		display: flex
+		align-items: center
+		justify-content: center
+		img
+			display: block
+			max-width: 100%
+			max-height: 100%
+			margin: 0
+	&__info
+		padding: 0 20px
+	&__title
+		display: block
+		height: 55px
+		text-decoration: none
+		overflow: hidden
+		font-size: 14px
+		line-height: 1.3
+		color: $color-black
+		margin-bottom: 10px
+		&:visited
+			color: $color-black
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+	&__bottom
+		padding: 20px 20px 0
+	&__prices
+		margin-bottom: 15px
+		line-height: 1.3
+		p
+			margin: 0
+			font-size: 12px
+			color: #A4A9AD
+			strong
+				font-size: 16px
+				font-weight: 700
+				color: $color-black
+	&__actions
+		display: flex
+		margin: 0 -4px
+	&__action
+		position: relative
+		width: 50%
+		padding: 0 4px
+		box-sizing: border-box
+		.msg-button
+			display: block
+			width: 100%
+			padding-left: 10px
+			padding-right: 10px
+			span
+				font-size: 14px
+		&--single
+			width: auto
+			.msg-button
+				width: auto
+
+.new-catalog-card-amount
+	position: relative
+	padding-right: 32px
+	.new-catalog-card-show-popup
+		appearance: none
+		position: absolute
+		right: 0
+		top: 0
+		font-size: 0
+		border: none
+		font-size: 0
+		margin: 0
+		padding: 0
+		width: 26px
+		height: 26px
+		border-radius: 4px
+		background-color: #EDEEEF
+		cursor: pointer
+		outline: none
+		&:hover
+			opacity: 0.85
+		svg
+			display: inline-block
+			vertical-align: middle
+		&.js-active
+			svg
+				transform: rotate(180deg)
+	.card-price-popup
+		position: absolute
+		background-color: #fff
+		z-index: 10
+		box-shadow: 0px 2px 24px rgba(29, 29, 29, 0.16)
+		border-radius: 4px
+		overflow: hidden
+		width: 100%
+		top: 100%
+		margin-top: 7px
+		transition: .3s opacity, .3s visibility, .3s transform
+		opacity: 0
+		visibility: hidden
+		transform: translate3d(0,5px,0)
+		&.js-active
+			opacity: 1
+			visibility: visible
+			transform: translate3d(0,0,0)
+		&__item
+			display: flex
+			padding: 13px 16px
+			align-items: flex-start
+			justify-content: space-between
+			user-select: none
+			position: relative
+			&:not(:last-child)
+				&::after
+					content: ''
+					position: absolute
+					left: 16px
+					right: 16px
+					bottom: 0
+					border-top: 1px solid #EDEEEF
+			&:hover
+				background-color: #EDEEEF
+				cursor: pointer
+		&__col
+			&--value p
+				font-size: 14px
+				margin: 0
+			&--price
+				line-height: 1.5
+				p
+					font-size: 12px
+					margin: 0
+					color: #A4A9AD
+					strong
+						font-weight: 500
+						color: $color-black
+	&__progress
+		position: relative
+		height: 5px
+		box-sizing: border-box
+		width: 120px
+		margin-bottom: 5px
+		overflow: hidden
+		border-radius: 8px
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			border: 1px #EDEEEF solid
+			border-radius: 8px
+		div
+			position: absolute
+			left: -1px
+			top: -1px
+			bottom: -1px
+	&__info
+		p
+			margin: 0
+			font-size: 12px
+
+
+.new-catalog-rows
+	position: relative
+
+.new-catalog-row
+	position: relative
+	padding: 20px 48px 20px 40px
+	display: flex
+	align-items: center
+	&:not(:last-child)
+		border-bottom: 1px solid #EDEEEF
+	&__col
+		&--image
+			flex-shrink: 0
+			margin-right: 30px
+			margin-left: 30px
+		&--info
+			flex-grow: 1
+			padding-left: 40px
+			padding-right: 60px
+		&--buy
+			flex-shrink: 0
+			width: 240px
+			position: relative
+	&__image
+		width: 120px
+		height: 112px
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		img
+			display: block
+			max-width: 100%
+			max-height: 100%
+			margin: 0
+	&__title
+		text-decoration: none
+		overflow: hidden
+		font-size: 14px
+		line-height: 1.3
+		color: $color-black
+		margin-bottom: 5px
+		display: inline-block
+		&:hover
+			opacity: 0.85
+		&:visited
+			color: $color-black
+
+.new-catalog-list
+	position: relative
+	padding-top: 24px
+	border-top: 1px solid #EDEEEF
+	&__grid
+		display: flex
+		align-items: flex-start
+		flex-wrap: wrap
+		margin: 0 -8px
+	&__col
+		width: 25%
+		position: relative
+		padding: 0 8px 42px
+		box-sizing: border-box
+	&__top-actions
+		margin-bottom: 32px
+		display: flex
+		align-items: center
+	&__action
+		display: inline-block
+		padding: 8px 12px
+		box-sizing: border-box
+		background-color: #fff
+		border-radius: 4px
+		border: 1px #EDEEEF solid
+		font-size: 0
+		font-weight: 500
+		text-decoration: none
+		color: $color-black
+		&:visited
+			color: $color-black
+		&:hover
+			background-color: #E1E1E1
+		svg, span
+			display: inline-block
+			vertical-align: middle
+		svg + span
+			margin-left: 12px
+			font-size: 14px
+
+.new-catalog-list-item
+	position: relative
+	&__head
+		display: flex
+		align-items: center
+		position: relative
+		&:not(:last-child)
+			margin-bottom: 5px
+	&__icon
+		position: relative
+		flex-shrink: 0
+		width: 64px
+		height: 64px
+		margin-right: 20px
+		display: flex
+		align-items: center
+		justify-content: center
+		img
+			display: block
+			max-width: 100%
+			max-height: 100%
+			margin: 0
+	&__title
+		font-size: 18px
+		margin: 0
+		a, a:visited
+			color: $color-black
+			text-decoration: none
+			&::before
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				right: 0
+				bottom: 0
+			&:hover
+				color: #002D78
+	&__links
+		list-style-type: none
+		margin: 0
+		padding: 0 0 0 84px
+		li
+			font-size: 14px
+			display: none
+			line-height: 1.3
+			&:not(:last-child)
+				margin-bottom: 5px
+			&.js-visible
+				display: block
+			a, a:visited
+				text-decoration: none
+				color: $color-black
+				display: inline-block
+				&:hover
+					color: #002D78
+	&__expand
+		appearance: none
+		border: none
+		font-size: 14px
+		+fontTTN
+		font-weight: 500
+		padding: 5px 10px
+		background-color: #F2F5F8
+		border-radius: 4px
+		margin: 10px 0 0 84px
+		color: #002D78
+		cursor: pointer
+		outline: none
+		&:hover
+			background-color: #D9DBDF

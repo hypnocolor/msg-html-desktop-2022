@@ -1,0 +1,451 @@
+extends ../layout/main-layout.pug
+
+block additionalScripts
+
+block pageTitle
+	title MSGMarket – New catalog
+
+block mainContent
+
+	//- +header
+
+	.new-header
+		.new-header__inner
+			.new-header-top
+				.new-header-top__part
+					.new-header-top__logo
+						a(href="#")
+							svg(width="180" height="20")
+								use(xlink:href="#icon-msg-market-logo--white")
+					nav.new-header-menu
+						ul.new-header-menu__list
+							li.new-header-menu__item: a(href="#") О компании 
+							li.new-header-menu__item: a(href="#") Спецтехника
+							li.new-header-menu__item: a(href="#") Поставщикам
+							li.new-header-menu__item: a(href="#") Покупателям
+							li.new-header-menu__item: a(href="#") Контакты
+							li.new-header-menu__item: a(href="#") Блог 
+							li.new-header-menu__item: a(href="#") Калькуляторы
+				.new-header-top__part
+					.new-header-top__phone
+						a(href="+74932930330") 8 4932 930-330
+					.new-header-top__user
+						a(href="#")
+							svg(width="24" height="24")
+								use(xlink:href="#icon-user")
+			.new-header-bottom
+				.new-header-bottom__part.new-header-bottom__part--main
+					.new-header-bottom__catalog-button
+						button.msg-button
+							svg(width="24" height="24")
+								use(xlink:href="#icon-catalog-button-dark")
+							span Каталог
+					.new-header-bottom__search-form
+						form.search-form(action="./" method="post")
+							input.search-form__input(type="text" name="s" placeholder="Сетка-рабица ПВХ зел. 1,5м*10м")
+							button.search-form__submit.msg-button(type="submit") 
+								span Найти
+				.new-header-bottom__part.new-header-bottom__part--cart
+					.new-header-cart
+						a.new-header-cart__sum(href="#") 337 703.45 ₽
+						.new-header-cart__icon
+							svg(width="24" height="24")
+								use(xlink:href="#icon-shopping-cart")
+							small 12
+
+	.main-content
+		.main-content__inner
+			.new-catalog
+				.new-catalog__part.new-catalog__part--sidebar
+					form.new-catalog-filters(action="./" method="post")
+						.new-catalog-filters__section.new-catalog-filters-section
+							button.new-catalog-filters-section__toggle.js-active(data-toggle-filter-section) Цена ₽ (за т)
+							.new-catalog-filters-section__content(data-filter-section-content)
+								.new-catalog-filters-price
+									.new-catalog-filters-price__col
+										input.new-catalog-filters-price__input(type="text" placeholder="от")
+									.new-catalog-filters-price__col
+										input.new-catalog-filters-price__input(type="text" placeholder="до")
+								.new-catalog-filters-checkbox
+									input#showinstock(type="checkbox" name="instock" value="1")
+									label(for="showinstock") Есть в наличии
+						.new-catalog-filters__section.new-catalog-filters-section
+							button.new-catalog-filters-section__toggle.js-active(data-toggle-filter-section) Высота сечения трубы, мм
+							.new-catalog-filters-section__content(data-filter-section-content)
+								.new-catalog-filters-checkbox
+									input#secheight10(type="checkbox" name="secheight[]" value="10")
+									label(for="secheight10") 10 #[span.grey (5)]
+								.new-catalog-filters-checkbox
+									input#secheight15(type="checkbox" name="secheight[]" value="15")
+									label(for="secheight15") 15 #[span.grey (32)]
+								.new-catalog-filters-checkbox
+									input#secheight20(type="checkbox" name="secheight[]" value="20" checked)
+									label(for="secheight20") 20 #[span.grey (53)]
+								.new-catalog-filters-checkbox
+									input#secheight25(type="checkbox" name="secheight[]" value="25")
+									label(for="secheight25") 25 #[span.grey (7)]
+								.new-catalog-filters-checkbox
+									input#secheight34(type="checkbox" name="secheight[]" value="34")
+									label(for="secheight34") 34 #[span.grey (32)]
+								.new-catalog-filters-checkbox
+									input#secheight40(type="checkbox" name="secheight[]" value="40")
+									label(for="secheight40") 40 #[span.grey (9)]
+						.new-catalog-filters__section.new-catalog-filters-section
+							button.new-catalog-filters-section__toggle(data-toggle-filter-section) Высота сечения трубы, мм
+							.new-catalog-filters-section__content(data-filter-section-content)
+								.new-catalog-filters-checkbox
+									input#secheight110(type="checkbox" name="secheight2[]" value="10" disabled)
+									label(for="secheight110") 10 #[span.grey (0)]
+								.new-catalog-filters-checkbox
+									input#secheight115(type="checkbox" name="secheight2[]" value="15")
+									label(for="secheight115") 15 #[span.grey (7)]
+								.new-catalog-filters-checkbox
+									input#secheight120(type="checkbox" name="secheight2[]" value="20")
+									label(for="secheight120") 20 #[span.grey (23)]
+								.new-catalog-filters-checkbox
+									input#secheight125(type="checkbox" name="secheight2[]" value="25")
+									label(for="secheight125") 25 #[span.grey (11)]
+						.new-catalog-filters__section.new-catalog-filters-section
+							button.new-catalog-filters-section__toggle(data-toggle-filter-section) Толщина стенки, мм
+							.new-catalog-filters-section__content(data-filter-section-content)
+								.new-catalog-filters-checkbox
+									input#thickness1(type="checkbox" name="thickness[]" value="1" disabled)
+									label(for="thickness1") 1 #[span.grey (0)]
+								.new-catalog-filters-checkbox
+									input#thickness1_2(type="checkbox" name="thickness[]" value="1.2" disabled)
+									label(for="thickness1_2") 1.2 #[span.grey (0)]
+								.new-catalog-filters-checkbox
+									input#thickness1_5(type="checkbox" name="thickness[]" value="1.5")
+									label(for="thickness1_5") 1.5 #[span.grey (64)]
+								.new-catalog-filters-checkbox
+									input#thickness1_75(type="checkbox" name="thickness[]" value="1.75")
+									label(for="thickness1_75") 1.75 #[span.grey (34)]
+								.new-catalog-filters-checkbox
+									input#thickness2(type="checkbox" name="thickness[]" value="2")
+									label(for="thickness2") 2 #[span.grey (86)]
+								.new-catalog-filters-checkbox
+									input#thickness2_5(type="checkbox" name="thickness[]" value="2.5")
+									label(for="thickness2_5") 2.5 #[span.grey (23)]
+						.new-catalog-filters__actions
+							button.new-catalog-filters__action.msg-button(type="submit") #[span Применить]
+							button.new-catalog-filters__action.msg-button.msg-button--grey(type="reset") #[span Сбросить]
+
+				.new-catalog__part.new-catalog__part--content
+					.section-head
+						nav.new-breadcrumbs
+							ul.new-breadcrumbs__list
+								li.new-breadcrumbs__item
+									a.new-breadcrumbs__link(href="#") Главная
+								li.new-breadcrumbs__item
+									a.new-breadcrumbs__link(href="#") Каталог
+								li.new-breadcrumbs__item
+									a.new-breadcrumbs__link(href="#") Металлопрокат
+								li.new-breadcrumbs__item
+									a.new-breadcrumbs__link(href="#") Профнастил
+								li.new-breadcrumbs__item
+									span.new-breadcrumbs__current Профнастил C10
+						h2.section-head__title Труба профильная
+
+					.new-catalog-content
+						.new-catalog-banner
+							a(href="#")
+								img(src="./assets/img/calc-banner.jpg", alt="")
+						.new-catalog-tags
+							a.new-catalog-tags__tag(href="#") Дешёвый
+							a.new-catalog-tags__tag(href="#") Для внутренних работ
+							a.new-catalog-tags__tag(href="#") Для наружных работ
+							a.new-catalog-tags__tag(href="#") Прозрачный
+							a.new-catalog-tags__tag.new-catalog-tags__tag--active(href="#") Пристенный
+							a.new-catalog-tags__tag(href="#") Коньковый
+							a.new-catalog-tags__tag(href="#") Для панелей 6 мм
+							a.new-catalog-tags__tag(href="#") Для панелей 9 мм
+							a.new-catalog-tags__tag(href="#") Для панелей 12 мм
+							a.new-catalog-tags__tag(href="#") Термошайба
+							a.new-catalog-tags__tag(href="#") Для панелей 3-4 мм
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Дешёвый
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Для внутренних работ
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Для наружных работ
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Прозрачный
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Пристенный
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Коньковый
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Для панелей 6 мм
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Для панелей 9 мм
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Для панелей 12 мм
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Термошайба
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Для панелей 3-4 мм
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Для панелей 6 мм
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Для панелей 9 мм
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Для панелей 12 мм
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Термошайба
+							a.new-catalog-tags__tag.js-hidden(data-hidden-tag href="#") Для панелей 3-4 мм
+							button.new-catalog-tags__tag.new-catalog-tags__tag--toggle(data-toggle-hidden-tags="+16") +16
+						.new-catalog-head
+							.new-catalog-head__col
+								.new-catalog-view
+									a.new-catalog-view__switch.new-catalog-view__switch--active(href="#") 
+										svg(width="14" height="14")
+											use(xlink:href="#icon-catalog-view-grid")
+									a.new-catalog-view__switch(href="./new-catalog-rows.html") 
+										svg(width="14" height="14")
+											use(xlink:href="#icon-catalog-view-list")
+										span ПРО
+							.new-catalog-head__col
+								.new-catalog-head__sort
+									select.common-select#catalog-sort(name="") 
+										option(value="0" selected) По умолчанию
+										option(value="sortaz") По алфавиту А-Я
+										option(value="sortza") По алфавиту Я-А
+										option(value="sortcheapstart") Сначала дешевле
+										option(value="sortexpstart") Сначала дороже
+						.new-catalog-grid
+							.new-catalog-grid__col
+								.new-catalog-card
+									.new-catalog-card__top
+										.new-catalog-card__image
+											img(src="./assets/img/new-catalog-product-01.jpg", alt="")
+										.new-catalog-card__info
+											a.new-catalog-card__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+											.new-catalog-card-amount
+												.new-catalog-card-amount__progress
+													div(style="width: 80%; background-color: #22A930")
+												.new-catalog-card-amount__info
+													p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-card__bottom
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить]
+											.new-catalog-card__action
+												button.msg-button #[span В корзину]
+							.new-catalog-grid__col
+								.new-catalog-card
+									.new-catalog-card__top
+										.new-catalog-card__image
+											img(src="./assets/img/new-catalog-product-02.jpg", alt="")
+										.new-catalog-card__info
+											a.new-catalog-card__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж 
+											.new-catalog-card-amount
+												.new-catalog-card-amount__progress
+													div(style="width: 80%; background-color: #22A930")
+												.new-catalog-card-amount__info
+													p Остаток: 1000 штук, 2.4455 тонн
+												button.new-catalog-card-show-popup(data-toggle-price-popup)
+													svg(width="12" height="7")
+														use(xlink:href="#icon-down-arrow-small")
+												.card-price-popup(data-price-popup)
+													.card-price-popup__item
+														.card-price-popup__col.card-price-popup__col--value
+															p 4 см
+														.card-price-popup__col.card-price-popup__col--price
+															p #[strong от 82 040] ₽/тон
+															p #[strong от 20.14] ₽/метр
+													.card-price-popup__item
+														.card-price-popup__col.card-price-popup__col--value
+															p 6 см
+														.card-price-popup__col.card-price-popup__col--price
+															p #[strong от 82 040] ₽/тон
+															p #[strong от 20.14] ₽/метр
+													.card-price-popup__item
+														.card-price-popup__col.card-price-popup__col--value
+															p 10 см
+														.card-price-popup__col.card-price-popup__col--price
+															p #[strong от 82 040] ₽/тон
+															p #[strong от 20.14] ₽/метр
+													.card-price-popup__item
+														.card-price-popup__col.card-price-popup__col--value
+															p 12 см
+														.card-price-popup__col.card-price-popup__col--price
+															p #[strong от 82 040] ₽/тон
+															p #[strong от 20.14] ₽/метр
+									.new-catalog-card__bottom
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить в 1 клик]
+											.new-catalog-card__action
+												button.msg-button #[span В корзину]
+							.new-catalog-grid__col
+								.new-catalog-card
+									.new-catalog-card__top
+										.new-catalog-card__image
+											img(src="./assets/img/new-catalog-product-03.jpg", alt="")
+										.new-catalog-card__info
+											a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+											.new-catalog-card-amount
+												.new-catalog-card-amount__progress
+													div(style="width: 80%; background-color: #22A930")
+												.new-catalog-card-amount__info
+													p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-card__bottom
+										.new-catalog-card__prices
+											p #[strong по запросу]
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить в 1 клик]
+							.new-catalog-grid__col
+								.new-catalog-card
+									.new-catalog-card__top
+										.new-catalog-card__image
+											img(src="./assets/img/new-catalog-product-03.jpg", alt="")
+										.new-catalog-card__info
+											a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+											.new-catalog-card-amount
+												.new-catalog-card-amount__progress
+													div(style="width: 80%; background-color: #22A930")
+												.new-catalog-card-amount__info
+													p Остаток: 1000 штук, 2.4455 тонн
+												button.new-catalog-card-show-popup(data-toggle-price-popup)
+													svg(width="12" height="7")
+														use(xlink:href="#icon-down-arrow-small")
+												.card-price-popup(data-price-popup)
+													.card-price-popup__item
+														.card-price-popup__col.card-price-popup__col--value
+															p 4 см
+														.card-price-popup__col.card-price-popup__col--price
+															p #[strong от 82 040] ₽/тон
+															p #[strong от 20.14] ₽/метр
+													.card-price-popup__item
+														.card-price-popup__col.card-price-popup__col--value
+															p 6 см
+														.card-price-popup__col.card-price-popup__col--price
+															p #[strong от 82 040] ₽/тон
+															p #[strong от 20.14] ₽/метр
+													.card-price-popup__item
+														.card-price-popup__col.card-price-popup__col--value
+															p 10 см
+														.card-price-popup__col.card-price-popup__col--price
+															p #[strong от 82 040] ₽/тон
+															p #[strong от 20.14] ₽/метр
+													.card-price-popup__item
+														.card-price-popup__col.card-price-popup__col--value
+															p 12 см
+														.card-price-popup__col.card-price-popup__col--price
+															p #[strong от 82 040] ₽/тон
+															p #[strong от 20.14] ₽/метр
+									.new-catalog-card__bottom
+										.new-catalog-card__prices
+											p #[strong по запросу]
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить в 1 клик]
+							.new-catalog-grid__col
+								.new-catalog-card
+									.new-catalog-card__top
+										.new-catalog-card__image
+											img(src="./assets/img/new-catalog-product-03.jpg", alt="")
+										.new-catalog-card__info
+											a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+											.new-catalog-card-amount
+												.new-catalog-card-amount__progress
+													div(style="width: 80%; background-color: #22A930")
+												.new-catalog-card-amount__info
+													p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-card__bottom
+										.new-catalog-card__prices
+											p #[strong по запросу]
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить в 1 клик]
+							.new-catalog-grid__col
+								.new-catalog-card
+									.new-catalog-card__top
+										.new-catalog-card__image
+											img(src="./assets/img/new-catalog-product-03.jpg", alt="")
+										.new-catalog-card__info
+											a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+											.new-catalog-card-amount
+												.new-catalog-card-amount__progress
+													div(style="width: 80%; background-color: #22A930")
+												.new-catalog-card-amount__info
+													p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-card__bottom
+										.new-catalog-card__prices
+											p #[strong по запросу]
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить в 1 клик]
+							.new-catalog-grid__col
+								.new-catalog-card
+									.new-catalog-card__top
+										.new-catalog-card__image
+											img(src="./assets/img/new-catalog-product-01.jpg", alt="")
+										.new-catalog-card__info
+											a.new-catalog-card__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+											.new-catalog-card-amount
+												.new-catalog-card-amount__progress
+													div(style="width: 80%; background-color: #22A930")
+												.new-catalog-card-amount__info
+													p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-card__bottom
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить]
+											.new-catalog-card__action
+												button.msg-button #[span В корзину]
+							.new-catalog-grid__col
+								.new-catalog-card
+									.new-catalog-card__top
+										.new-catalog-card__image
+											img(src="./assets/img/new-catalog-product-02.jpg", alt="")
+										.new-catalog-card__info
+											a.new-catalog-card__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж 
+											.new-catalog-card-amount
+												.new-catalog-card-amount__progress
+													div(style="width: 80%; background-color: #22A930")
+												.new-catalog-card-amount__info
+													p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-card__bottom
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить в 1 клик]
+											.new-catalog-card__action
+												button.msg-button #[span В корзину]
+							.new-catalog-grid__col
+								.new-catalog-card
+									.new-catalog-card__top
+										.new-catalog-card__image
+											img(src="./assets/img/new-catalog-product-03.jpg", alt="")
+										.new-catalog-card__info
+											a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+											.new-catalog-card-amount
+												.new-catalog-card-amount__progress
+													div(style="width: 80%; background-color: #22A930")
+												.new-catalog-card-amount__info
+													p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-card__bottom
+										.new-catalog-card__prices
+											p #[strong по запросу]
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить в 1 клик]
+
+					nav.paging
+						ul.paging__list
+							li.paging__item.paging__item--prev
+								a.paging__button.paging__button--arrow(href="#")
+									svg(width="7" height="12")
+										use(xlink:href="#icon-paging-prev")
+							li.paging__item.paging__item--page
+								a.paging__button.paging__button--page.paging__button--active(href="#") 1
+							li.paging__item.paging__item--page
+								a.paging__button.paging__button--page(href="#") 2
+							li.paging__item.paging__item--page
+								a.paging__button.paging__button--page(href="#") 3
+							li.paging__item.paging__item--page
+								a.paging__button.paging__button--page(href="#") ...
+							li.paging__item.paging__item--next
+								a.paging__button.paging__button--arrow(href="#")
+									svg(width="7" height="12")
+										use(xlink:href="#icon-paging-next")
+
+	+footer

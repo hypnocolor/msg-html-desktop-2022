@@ -1,0 +1,163 @@
+include ../blocks/_mixins.pug
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=1280")
+		meta(name="format-detection" content="telephone=no")
+
+		link(rel="apple-touch-icon", sizes="180x180", href="./assets/img/favicon/apple-touch-icon.png")
+		link(rel="icon", type="image/png", sizes="32x32", href="./assets/img/favicon/favicon-32x32.png")
+		link(rel="icon", type="image/png", sizes="16x16", href="./assets/img/favicon/favicon-16x16.png")
+		link(rel="mask-icon", href="./assets/img/favicon/safari-pinned-tab.svg", color="#09631d")
+		link(rel="shortcut icon", href="./assets/img/favicon/favicon.ico")
+		meta(name="msapplication-config", content="./assets/img/favicon/browserconfig.xml")
+		meta(name="theme-color", content="#ffffff")
+
+		link(rel="stylesheet", href="./assets/css/main.css?v=@version@")
+		block pageTitle
+			title МСГ
+
+	body
+
+		#msgtip-01.tippy-template
+			.msgtip.msgtip_info
+				p Выберите количество товаров
+		#msgtip-02.tippy-template
+			.msgtip.msgtip_error
+				p Текст ошибки в несколько слов. А возможно, и предложений.
+
+		#thanks-popup.msg-popup
+			.msg-popup__content.msg-popup__content_center
+				.msg-popup__icon
+					<svg width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity=".3" cx="30" cy="30" r="30" fill="#4EDD87"/><circle cx="30.005" cy="30" fill="#4EDD87" r="20.454"/><path d="M37.5 22.5L26.812 39.375 20.625 30" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				h4.msg-popup__title Заказ успешно добавлен в&nbsp;корзину
+				.msg-popup__text
+					p.grey-text Это сообщение автоматически закроется через несколько секунд
+
+		//- Login popup
+		.login-popup#login-popup
+			form.login-popup__content(action="./" method="post")
+				.login-popup__logo
+					svg(width="150" height="18")
+						use(xlink:href="#icon-msg-market-grey-logo")
+				h4.login-popup__title Войти на сайт
+				.login-popup__fields
+					fieldset(data-login-type="phone")
+						.login-popup__fieldset
+							.login-popup__fieldset-main
+								.login-popup__input
+									input.common-input(type="text" required placeholder="Телефон" data-login-phone-input)
+								.login-popup__check-code-area(data-login-code-area="phone")
+									.login-popup__code-area
+										.login-popup__check-code
+											.login-popup__code
+												input.common-input.common-input_login-code.common-input_error(type="text" required placeholder="Код из СМС" data-login-code-input)
+											.login-popup__refresh-code
+												button.login-popup__refresh-code-button(type="button")
+													.icon
+														svg(width="16" height="16")
+															use(xlink:href="#icon-arrow-refresh")
+													span Получить код ещё раз #[br](осталось #[strong 27 секунд])
+											.login-popup__check-code-error
+												p Неверный код :( Попробуйте еще раз
+										.login-popup__fieldset-agreement
+											input#loginterms(type="checkbox" name="loginterms" checked required)
+											label(for="loginterms") Даю согласие на обработку #[a(href="#") персональных данных] и принимаю #[a(href="#") пользовательское соглашение]
+					fieldset(data-login-type="email" disabled)
+						.login-popup__fieldset
+							.login-popup__fieldset-main
+								.login-popup__input
+									input.common-input(type="text" required placeholder="Эл. почта" data-login-email-input)
+								.login-popup__check-code-area(data-login-code-area="email")
+									.login-popup__code-area
+										.login-popup__check-code
+											.login-popup__code
+												input.common-input.common-input_login-code(type="text" required placeholder="Код из письма" data-login-code-input)
+											.login-popup__refresh-code
+												button.login-popup__refresh-code-button(type="button")
+													.icon
+														svg(width="16" height="16")
+															use(xlink:href="#icon-arrow-refresh")
+													span Получить код ещё раз #[br](осталось #[strong 27 секунд])
+										.login-popup__fieldset-agreement
+											input#logintermsemail(type="checkbox" name="logintermsemail" checked required)
+											label(for="logintermsemail") Даю согласие на обработку #[a(href="#") персональных данных] и принимаю #[a(href="#") пользовательское соглашение]
+				.login-popup__buttons
+					button.login-popup__button.login-popup__button_main(type="submit" data-login-button disabled) Продолжить
+					button.login-popup__button.login-popup__button_typeselect(type="button" data-login-type-button="email") Войти по почте
+
+		//- Register popup
+		.login-popup#register-popup
+			form.login-popup__content.login-popup__content_one-click(action="./" method="post" data-register-form)
+				.login-popup__logo
+					svg(width="150" height="18")
+						use(xlink:href="#icon-msg-market-grey-logo")
+				h4.login-popup__title Регистрация
+				.login-popup__text
+					p Для регистрации необходимо указать адрес электронной почты.
+					p Регистрация поможет следить за заказом (и сократит время оформления последующих покупок).
+				.login-popup__fields
+					fieldset
+						.login-popup__fieldset
+							.login-popup__fieldset-main
+								.login-popup__input
+									input.common-input(type="email" required placeholder="Эл. почта" data-register-email-input)
+								.login-popup__input
+									input.common-input(type="text" required placeholder="ФИО" data-register-name-input)
+								.login-popup__input
+									input.common-input(type="text" required placeholder="Телефон" data-register-phone-input data-mask-phone)
+								.login-popup__fieldset-agreement
+									input#loginnewsletter(type="checkbox" name="loginnewsletter")
+									label(for="loginnewsletter") Да, я хочу получать информацию о новых товарах, скидках и распродажах]
+								.login-popup__fieldset-agreement
+									input#loginterms(type="checkbox" name="loginterms" checked required)
+									label(for="loginterms") Даю согласие на обработку #[a(href="#") персональных данных] и принимаю #[a(href="#") пользовательское соглашение]
+				.login-popup__buttons
+					button.login-popup__button.login-popup__button_main(type="submit" data-register-button disabled) Зарегистрироваться
+					button.login-popup__button.login-popup__button_typeselect(type="button" data-close-popup) Закрыть
+
+		//- Register successful
+		.login-popup#register-success
+			.login-popup__content.login-popup__content_one-click
+				.login-popup__logo
+					svg(width="150" height="18")
+						use(xlink:href="#icon-msg-market-grey-logo")
+				h4.login-popup__title Регистрация прошла успешно
+				.login-popup__text
+					p Загляните в свой почтовый ящик #[span.blue helloanagrm@lab.ru].
+					p На него отправлены инструкции по активации вашей учетной записи.
+				.login-popup__buttons
+					button.login-popup__button.login-popup__button_main(type="button" data-close-popup) Закрыть
+
+		//- One click popup
+		.login-popup#one-click-popup
+			form.login-popup__content.login-popup__content_one-click(action="./" method="post" data-one-click-form)
+				.login-popup__logo
+					svg(width="150" height="18")
+						use(xlink:href="#icon-msg-market-grey-logo")
+				h4.login-popup__title Купить в 1 клик
+				.login-popup__fields
+					fieldset
+						.login-popup__fieldset
+							.login-popup__fieldset-main
+								.login-popup__input
+									input.common-input(type="text" required placeholder="Ваше имя" data-one-click-name)
+								.login-popup__input
+									input.common-input(type="text" required placeholder="Телефон" data-one-click-phone data-mask-phone)
+								.login-popup__input
+									input.common-input(type="text" required placeholder="Товар" value="Арматура А500С" disabled)
+				.login-popup__buttons
+					button.login-popup__button.login-popup__button_main(type="submit" data-one-click-buy disabled) Отправить
+					button.login-popup__button.login-popup__button_typeselect(type="button" data-close-popup) Закрыть
+
+		block mainContent
+
+		include ../blocks/overlays.pug
+
+		block scripts
+			script(src="./assets/js/main.js?v=@version@")
+
+		block additionalScripts

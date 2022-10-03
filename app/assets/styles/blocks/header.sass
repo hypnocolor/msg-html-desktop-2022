@@ -1,0 +1,605 @@
+.main-header
+	position: relative
+	z-index: 25
+
+.main-header-top
+	position: relative
+	border-bottom: 1px #edeeef solid
+	padding: 20px
+	z-index: 10
+	&__inner
+		display: flex
+		align-items: center
+		justify-content: space-between
+		max-width: $content-width
+		margin: 0 auto
+	&__links
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: flex
+		align-items: center
+		font-size: 14px
+		font-weight: 500
+		li
+			&:not(:last-child)
+				margin-right: 30px
+			a, a:visited
+				color: $color-black
+				text-decoration: none
+				transition: .3s color
+				&:hover
+					color: lighten($color-black, 20)
+					transition: 0s color
+	&__phones
+		position: relative
+		margin-left: -75px
+		.phones-tooltip
+			opacity: 0
+			visibility: hidden
+			top: 100%
+			left: 50%
+			transform: translateX(-50%) translateY(5px)
+			transition: .3s opacity, .3s visibility, .3s transform
+		&:hover
+			.phones-tooltip
+				opacity: 1
+				visibility: visible
+				transform: translateX(-50%) translateY(0)
+	&__phone
+		font-size: 14px
+		text-decoration: none
+		color: $color-blue
+		transition: .3s color
+		display: flex
+		align-items: center
+		white-space: nowrap
+		svg
+			fill: $color-blue
+			transition: .3s fill
+			margin: 0
+			transform: translate3d(0,0,0)
+			margin-right: 12px
+		&:hover
+			color: lighten($color-blue, 20)
+			transition: 0s color
+			svg
+				fill: lighten($color-blue, 20)
+				transition: 0s fill
+		span
+			font-weight: 700
+		&:visited
+			color: $color-blue
+			&:hover
+				color: lighten($color-blue, 20)
+	&__login
+		position: relative
+		.login-tooltip
+			opacity: 0
+			visibility: hidden
+			top: 100%
+			margin-top: -5px
+			right: -3px
+			transform: translateY(5px)
+			transition: .3s opacity, .3s visibility, .3s transform
+		&:hover
+			.login-tooltip
+				opacity: 1
+				visibility: visible
+				transform: translateY(0)
+	&__login-link
+		text-decoration: none
+		color: $color-black
+		display: flex
+		align-items: center
+		transition: .3s opacity
+		white-space: nowrap
+		&:hover
+			opacity: .7
+			transition: 0s opacity
+		&:visited
+			color: $color-black
+		small
+			margin-right: 10px
+			font-weight: 500
+			font-size: 12px
+			max-width: 150px
+			text-overflow: ellipsis
+			overflow: hidden
+			position: relative
+		svg
+			margin: 0
+			transform: translate3d(0,0,0)
+
+.login-tooltip
+	position: absolute
+	padding-top: 15px
+	width: 180px
+	&::before
+		content: ''
+		position: absolute
+		top: 8px
+		right: 10px
+		border-left: 7px solid transparent
+		border-right: 7px solid transparent
+		border-bottom: 7px solid #fff
+		z-index: 5
+	&__content
+		background: #FFF
+		box-shadow: 0px 0px 20px rgba(33, 42, 50, 0.15)
+		border-radius: 4px
+	&__links
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		padding: 15px 10px
+	&__link
+		display: flex
+		align-items: center
+		color: $color-black
+		font-weight: 500
+		text-decoration: none
+		white-space: nowrap
+		font-size: 12px
+		transition: .3s opacity
+		&:not(:last-child)
+			margin-bottom: 22px
+		&:visited
+			color: $color-black
+		&:hover
+			opacity: .7
+			transition: 0s opacity
+		&_red
+			color: $color-red
+			&:visited
+				color: $color-red
+		.icon
+			display: flex
+			position: relative
+			align-items: center
+			justify-content: center
+			width: 20px
+			height: 20px
+			margin-right: 10px
+			svg
+				display: block
+				max-width: 100%
+				max-height: 100%
+				margin: 0
+	&__quit
+		padding: 15px 10px
+		background-color: #f9f9f9
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		border-radius: 0 0 4px 4px
+
+.phones-tooltip
+	position: absolute
+	padding-top: 15px
+	&::before
+		content: ''
+		position: absolute
+		top: 8px
+		left: 50%
+		margin-left: -6px
+		border-left: 7px solid transparent
+		border-right: 7px solid transparent
+		border-bottom: 7px solid #fff
+		z-index: 5
+	&__content
+		background: #FFF
+		box-shadow: 0px 0px 20px rgba(33, 42, 50, 0.15)
+		border-radius: 4px
+		padding: 15px 10px
+	&__phone
+		display: flex
+		align-items: center
+		color: $color-black
+		font-weight: 500
+		text-decoration: none
+		white-space: nowrap
+		font-size: 14px
+		transition: .3s opacity
+		&:not(:last-child)
+			margin-bottom: 13px
+		&:visited
+			color: $color-black
+		&:hover
+			opacity: .7
+			transition: 0s opacity
+		.icon
+			display: flex
+			position: relative
+			align-items: center
+			justify-content: center
+			width: 18px
+			height: 18px
+			margin-right: 15px
+			svg
+				display: block
+				max-width: 100%
+				max-height: 100%
+				margin: 0
+
+.main-header-bottom
+	position: relative
+	padding: 30px 20px
+	border-bottom: 1px #edeeef solid
+	&__inner
+		display: flex
+		align-items: center
+		justify-content: space-between
+		max-width: $content-width
+		margin: 0 auto
+	&__logo
+		transition: .3s opacity
+		transform: translate3d(0,0,0)
+		&:hover
+			opacity: .7
+			transition: 0s opacity
+	&__middle-area
+		display: flex
+		align-items: center
+	&__catalog-button
+		appearance: none
+		cursor: pointer
+		outline: none
+		padding: 0 10px
+		background: #FFFFFF
+		border: 1px solid #EDEEEF
+		box-sizing: border-box
+		border-radius: 4px
+		height: 50px
+		font-size: 0
+		margin-right: 20px
+		transition: .3s border, .3s background
+		position: relative
+		color: $color-black
+		&:hover
+			background-color: #f2f2f8
+			border-color: $color-blue
+			transition: 0s border, 0s background
+		&.js-active
+			border-color: $color-blue
+			background-color: #f9f9fe
+		span
+			font-size: 14px
+			+fontTTN
+			display: inline-block
+			vertical-align: middle
+			font-weight: 500
+		svg
+			display: inline-block
+			vertical-align: middle
+			margin-left: 20px
+
+.header-cart-area
+	display: flex
+	align-items: center
+	position: relative
+	transition: .3s opacity
+	&:hover
+		opacity: .7
+		transition: 0s opacity
+	&__icon
+		margin-left: 10px
+		position: relative
+		svg
+			display: block
+			margin: 0
+		&_active
+			&::after
+				content: ''
+				position: absolute
+				right: -5px
+				top: -3px
+				z-index: 5
+				width: 12px
+				height: 12px
+				border: 3px #fff solid
+				background-color: #D3AEF8
+				border-radius: 50%
+	&__text
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		text-align: right
+		line-height: 1.3
+		small, strong
+			font-size: 14px
+		small
+			font-weight: 500
+	&__overlay-link
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+
+.catalog-overlay
+	position: absolute
+	left: 0
+	right: 0
+	top: 100%
+	background-color: #FFF
+	z-index: 4
+	opacity: 0
+	visibility: hidden
+	transform: translateY(-5px)
+	transition: .3s opacity, .3s visibility, .3s transform
+	&.js-active
+		opacity: 1
+		visibility: visible
+		transform: translateY(0)
+	&::before
+		content: ''
+		position: absolute
+		width: 50%
+		top: 0
+		bottom: 0
+		background-color: #f9f9f9
+	&__inner
+		position: relative
+		max-width: $content-width
+		margin: 0 auto
+		display: flex
+		align-items: flex-start
+		&::before
+			content: ''
+			position: absolute
+			left: 500px
+			top: 0
+			bottom: 0
+			right: 0
+			background-color: #fff
+	&__banners
+		position: relative
+		display: flex
+		flex-direction: column
+		width: 230px
+		padding: 20px 0
+		flex-shrink: none
+		margin-right: 25px
+	&__banner
+		position: relative
+		overflow: hidden
+		border-radius: 4px
+		backface-visibility: hidden
+		a
+			display: block
+			position: relative
+			transform: translate3d(0,0,0)
+			backface-visibility: hidden
+			&::before
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				right: 0
+				bottom: 0
+				background-color: rgba(#000, .25)
+				opacity: 0
+				transition: .5s opacity
+				z-index: 5
+			&:hover
+				img
+					transform: scale(1.05) translate3d(0,0,0)
+				&::before
+					opacity: 1
+		&:not(:last-child)
+			margin-bottom: 20px
+		img
+			display: block
+			margin: 0
+			max-width: 100%
+			transition: .3s transform
+	&__menu
+		width: 250px
+		background-color: #f9f9f9
+		list-style-type: none
+		margin: 0
+		padding: 20px 0
+		position: relative
+		.catalog-overlay__menu
+			display: none
+			position: absolute
+			background-color: #fff
+			left: 100%
+			top: 0
+		li:hover
+			> a
+				background-color: #edeeef
+			> .catalog-overlay__menu
+				display: block
+		a
+			text-decoration: none
+			font-weight: 500
+			display: block
+			padding: 20px 10px
+			line-height: 1.2
+			color: $color-black
+			&:visited
+				color: $color-black
+			&.blue, &.blue:visited
+				color: $color-blue
+			&:hover
+				background-color: #edeeef
+
+
+
+
+
+
+
+.new-header
+	position: fixed
+	width: 100%
+	top: 0
+	z-index: 20
+	padding: 0 20px
+	background-color: #002D78
+	transition: .3s top
+	transform: translate3d(0,0,0)
+	&__inner
+		position: relative
+		max-width: 1240px
+		padding: 25px 0
+		margin: 0 auto
+
+.new-header-top
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: space-between
+	&__part
+		display: flex
+		align-items: center
+	&__logo
+		flex-shrink: 0
+		margin-right: 40px
+		transition: .3s opacity
+		&:hover
+			opacity: 0.8
+			transition: 0s opacity
+		svg
+			display: block
+			margin: 0
+	&__phone
+		flex-shrink: 0
+		margin-right: 24px
+		a, a:visited
+			font-size: 14px
+			font-weight: 700
+			color: #FFF
+			transition: .3s opacity
+			text-decoration: none
+			&:hover
+				opacity: 0.8
+				transition: 0s opacity
+	&__user
+		a, a:visited
+			transition: .3s opacity
+			text-decoration: none
+			&:hover
+				opacity: 0.8
+				transition: 0s opacity
+			svg
+				fill: #FFF
+				display: block
+				margin: 0
+
+.new-header-menu
+	position: relative
+	&__list
+		list-style-type: none
+		margin: 0
+		padding: 0
+		display: flex
+		align-items: center
+	&__item
+		position: relative
+		&:not(:last-child)
+			margin-right: 20px
+		a, a:visited
+			text-decoration: none
+			color: #99ABC9
+			font-weight: 500
+			font-size: 14px
+			transition: .3s color
+			&:hover
+				color: #FFF
+				transition: 0s color
+
+.new-header-bottom
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding-top: 25px
+	&__part
+		display: flex
+		align-items: center
+		&--main
+			flex-grow: 1
+			max-width: 875px
+			position: relative
+			display: flex
+	&__catalog-button
+		flex-shrink: 0
+		margin-right: 16px
+	&__search-form
+		position: relative
+		flex-grow: 1
+
+.search-form
+	position: relative
+	&__submit
+		position: absolute
+		height: 38px
+		right: 1px
+		top: 1px
+	&__input
+		appearance: none
+		display: block
+		width: 100%
+		box-sizing: border-box
+		padding: 0 87px 0 12px
+		font-size: 14px
+		+fontTTN
+		outline: none
+		border: none
+		background: #FFF
+		border-radius: 4px
+		height: 40px
+
+.new-header-cart
+	position: relative
+	padding: 8px 12px 8px 16px
+	display: flex
+	align-items: center
+	border-radius: 4px
+	transition: .3s background
+	user-select: none
+	&:hover
+		background-color: rgba(#FFF, .18)
+		transition: 0s background
+	&__sum
+		text-decoration: none
+		font-size: 14px
+		font-weight: 700
+		color: #FFF
+		margin-right: 12px
+		&:visited
+			color: #FFF
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			z-index: 2
+			border-radius: 4px
+	&__icon
+		flex-shrink: 0
+		position: relative
+		svg
+			display: block
+			margin: 0
+			fill: #FFF
+		small
+			position: absolute
+			right: -30%
+			top: -4px
+			box-sizing: border-box
+			padding: 0 3px
+			letter-spacing: -.01em
+			height: 15px
+			line-height: 15px
+			min-width: 15px
+			text-align: center
+			border-radius: 20px
+			background-color: #FDB508
+			font-size: 9px
+			font-weight: 700
+			color: #262626

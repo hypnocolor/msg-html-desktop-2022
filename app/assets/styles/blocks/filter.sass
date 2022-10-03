@@ -1,0 +1,77 @@
+.filter-form-block
+	position: relative
+	padding: 20px 0
+	border-top: 1px #edeeef solid
+	&:not(:last-child)
+		margin-bottom: 10px
+	&__title
+		font-weight: 400
+		margin: 0 0 15px
+	&__cols
+		display: flex
+		margin: 0 -5px
+		position: relative
+		.input-col
+			padding: 0 5px
+			position: relative
+			box-sizing: border-box
+			width: 50%
+	.filter-icon-checkbox
+		&:not(:last-child)
+			margin-bottom: 15px
+
+.filter-colors
+	display: flex
+	align-items: flex-start
+	flex-wrap: wrap
+	margin: 0 -5px
+	&__item
+		position: relative
+		box-sizing: border-box
+		padding: 5px
+		width: 16.6666%
+	&__color
+		padding-bottom: 100%
+		position: relative
+		input[type="checkbox"]
+			position: absolute
+			clip: rect(0 0 0 0)
+			width: 1px
+			height: 1px
+			margin: -1px
+			opacity: 0
+			&:checked + label::before
+				content: ''
+				position: absolute
+				left: -2px
+				right: -2px
+				top: -2px
+				bottom: -2px
+				border-radius: 50%
+				border: 2px $color-blue solid
+		label
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			border-radius: 50%
+			border: 1px #edeeef solid
+			cursor: pointer
+			outline: none
+	&__more
+		appearance: none
+		cursor: pointer
+		outline: none
+		display: block
+		position: relative
+		background-color: transparent
+		font-size: 14px
+		+fontTTN
+		border-radius: 0
+		border: none
+		padding: 0
+		height: 30px
+		color: #A4A9AD
+		&:hover
+			color: $color-black

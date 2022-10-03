@@ -1,0 +1,279 @@
+.cart-block
+	position: relative
+	&:not(:last-child)
+		margin-bottom: 50px
+	&__toggle-details
+		width: 36px
+		height: 36px
+		position: absolute
+		top: 5px
+		right: 0
+		border: none
+		appearance: none
+		cursor: pointer
+		outline: none
+		padding: 0
+		background: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 15L18 21L25.5 15' stroke='%23262626' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat 0 0 transparent
+		transition: .2s transform
+		&:hover
+			opacity: .7
+		&.js-active
+			transform: rotate(180deg)
+	&__heading
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		margin-bottom: 20px
+		padding-right: 50px
+		.select2-selection.select2-selection--single
+			height: 36px
+			background-color: #f9f9f9
+			.select2-selection__rendered
+				line-height: 34px
+		.select2-container--default .select2-selection--single .select2-selection__arrow
+			top: 5px
+	&__title
+		font-size: 25px
+		font-weight: 700
+		margin: 5px 20px 5px 0
+	&__wh-select
+		appearance: none
+		display: block
+		box-sizing: border-box
+		border: 1px #edeeef solid
+		border-radius: 4px
+		padding: 0 35px 0 8px
+		height: 36px
+		margin: 5px 0
+		background: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 1.33331L5.5 5.66665L10.5 1.33331' stroke='%23262626' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat #f9f9f9 top 50% right 15px
+		font-size: 14px
+		+fontTTN
+		color: $color-black
+		&::-ms-expand
+			display: none
+	&__details
+		display: none
+
+.cart-single-item
+	padding: 20px 0
+	&:not(:last-child)
+		border-bottom: 1px #edeeef solid
+
+.cart-single-item-heading
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+	margin-bottom: 25px
+	&__title
+		max-width: 550px
+		margin: 0
+		font-weight: 500
+		padding-top: 3px
+	&__actions
+		flex-shrink: 0
+		margin-left: 35px
+		width: 315px
+		display: flex
+		justify-content: flex-end
+		position: relative
+	&__badge
+		position: absolute
+		left: 0
+		top: 5px
+		font-size: 14px
+		font-weight: 700
+		span
+			padding: 4px 12px
+			border-radius: 8px
+			&.yellow
+				background-color: #EFF185
+	&__buttons
+		button
+			appearance: none
+			width: 24px
+			height: 24px
+			border: none
+			cursor: pointer
+			outline: none
+			background-color: transparent
+			padding: 0
+			text-align: center
+			opacity: .4
+			svg
+				display: inline-block
+				margin: 0
+			&:hover
+				opacity: .8
+
+.cart-single-item-data
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+	&__left,
+	&__right
+		display: flex
+		align-items: flex-start
+	&__cut-button
+		appearance: none
+		cursor: pointer
+		outline: none
+		font-size: 14px
+		+fontTTN
+		font-weight: 400
+		color: #111
+		outline: none
+		border: none
+		background-color: #edeeef
+		padding: 3px 7px
+		margin: -3px 0 13px
+		border-radius: 8px
+		&:hover
+			background-color: #ddd
+		&:active
+			color: #111
+		span
+			svg
+				margin-left: 5px
+				margin-bottom: 2px
+				display: inline-block
+				vertical-align: middle
+	&__col
+		position: relative
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		&:not(:last-child)
+			margin-right: 35px
+		p
+			font-size: 14px
+			font-weight: 500
+			margin: 0 0 15px
+			white-space: nowrap
+			width: 100%
+			&.color
+				margin-top: -6px
+				span
+					display: inline-block
+					padding: 3px 7px
+					border-radius: 8px
+					background-color: #edeeef
+					font-weight: 400
+					position: relative
+					top: 3px
+				&.red span
+					background-color: $color-red
+					color: #fff
+				&.green span
+					background-color: #63E8B8
+					color: #fff
+			strong
+				font-weight: 700
+			svg
+				display: inline-block
+				vertical-align: middle
+				margin: 0 0 2px 5px
+			span
+				position: relative
+				z-index: 10
+				cursor: default
+				&.dashed
+					border-bottom-width: 1px
+					border-bottom-color: inherit
+					border-bottom-style: dashed
+			&.has-popup
+				&:hover ~ .popup-digits
+					opacity: 1
+					visibility: visible
+		.popup-digits
+			position: absolute
+			background-color: #fff
+			padding: 10px 15px
+			left: -15px
+			top: -10px
+			z-index: 5
+			box-shadow: 0px 0px 10px rgba(33, 42, 50, 0.25)
+			opacity: 0
+			visibility: hidden
+			transition: .3s opacity, .3s visibility
+			border-radius: 5px
+			&:hover
+				opacity: 1
+				visibility: visible
+			span
+				font-size: 14px
+				font-weight: 500
+				display: block
+				cursor: default
+				&:not(:last-child)
+					margin-bottom: 8px
+				&:not(:first-child)
+					font-weight: 400
+					color: #999
+		small
+			font-size: 12px
+			color: #A4A9AD
+	&__right
+		width: 315px
+		justify-content: space-between
+		.cart-single-item-data__col:last-child
+			text-align: right
+			p
+				font-size: 16px
+				margin-top: -2px
+				&.old
+					position: absolute
+					right: 0
+					bottom: 100%
+					margin-bottom: 3px
+					margin-top: 0
+					span
+						position: relative
+						color: #aaa
+						&::before
+							content: ''
+							position: absolute
+							left: 0
+							top: 0
+							right: 0
+							bottom: 0
+							background: url("data:image/svg+xml,%3Csvg width='65' height='14' viewBox='0 0 65 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect opacity='0.8' x='0.774414' y='8.90527' width='63.8782' height='4.41659' transform='rotate(-8.01347 0.774414 8.90527)' fill='%23E25959'/%3E%3C/svg%3E%0A") no-repeat 50% 50% transparent
+							background-size: 100%
+
+.cart-block-total
+	position: relative
+	margin-bottom: 20px
+	padding: 20px
+	background-color: #f9f9f9
+	border-radius: 4px
+	border: 1px #edeeef solid
+	&__heading
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin-bottom: 15px
+		h4
+			font-size: 25px
+			margin: 0
+	&__data-row
+		position: relative
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		&:not(:last-child)
+			margin-bottom: 12px
+		&_grey
+			opacity: .4
+		&_final
+			padding-top: 20px
+	h5, p
+		font-size: 16px
+		margin: 0
+		font-weight: 400
+
+.cart-block-buttons
+	display: flex
+	align-items: center
+	justify-content: flex-end
+	.action-button
+		&:not(:last-child)
+			margin-right: 20px

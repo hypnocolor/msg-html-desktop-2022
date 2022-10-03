@@ -1,0 +1,43 @@
+.index-banners
+	padding: 15px 0
+
+.banner-area
+	position: relative
+	display: flex
+	align-items: flex-start
+	flex-wrap: wrap
+	margin: 0 -10px
+	&__col
+		position: relative
+		padding: 10px
+		box-sizing: border-box
+		&_1-5
+			width: 20%
+	&__banner
+		position: relative
+		display: block
+		border-radius: 4px
+		overflow: hidden
+		backface-visibility: hidden
+		transform: translate3d(0,0,0)
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			background-color: rgba(#000, .25)
+			opacity: 0
+			transition: .5s opacity
+			z-index: 5
+		&:hover
+			img
+				transform: scale(1.05) translate3d(0,0,0)
+			&::before
+				opacity: 1
+		img
+			transition: .5s transform
+			display: block
+			max-width: 100%
+			border: none

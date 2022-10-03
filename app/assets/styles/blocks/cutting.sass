@@ -1,0 +1,383 @@
+.cut-block
+	position: relative
+	margin: 20px 0
+	border-radius: 4px
+	overflow: hidden
+	box-shadow: 0px 0px 20px rgba(33, 42, 50, 0.15)
+	display: none
+	&__heading
+		padding: 20px
+		position: relative
+		background-color: #f9f9f9
+		border-bottom: 1px #edeeef solid
+	&__title
+		font-size: 16px
+		margin: 0 0 15px
+		font-weight: 500
+		line-height: 1.5
+	&__content
+		position: relative
+		background-color: #fff
+		padding: 20px 20px 0
+	&__summary
+		padding: 20px
+		background-color: #fff
+		display: flex
+		justify-content: space-between
+	&__summary-row
+		display: flex
+		align-items: flex-start
+		font-size: 15px
+		font-weight: 400
+		color: #A4A9AD
+		&:not(:last-child)
+			margin-bottom: 10px
+		h4
+			width: 145px
+			margin: 0
+			font-weight: 400
+			flex-shrink: 0
+			box-sizing: border-box
+			padding-right: 15px
+			line-height: 1.3
+		p
+			margin: 0
+			line-height: 1.3
+		&_final
+			color: $color-black
+			font-weight: 500
+			h4
+				font-weight: 500
+	&__save-button
+		appearance: none
+		box-sizing: border-box
+		height: 50px
+		padding: 0 25px
+		min-width: 260px
+		font-size: 13px
+		font-weight: 500
+		+fontTTN
+		border-radius: 4px
+		border: 1px #edeeef solid
+		background-color: #f9f9f9
+		color: $color-black
+		margin: 0
+		cursor: pointer
+		outline: none
+	&__type-template
+		display: none
+
+.cut-block-actions
+	display: flex
+	align-items: center
+	justify-content: space-between
+	&__col
+		width: 50%
+		display: flex
+		align-items: center
+		&_last
+			justify-content: flex-end
+	&__action-button
+		appearance: none
+		cursor: pointer
+		outline: none
+		height: 30px
+		font-size: 12px
+		white-space: nowrap
+		+fontTTN
+		color: $color-black
+		border: 1px #edeeef solid
+		padding: 0 15px
+		border-radius: 18px
+		box-sizing: border-box
+		background-color: #fff
+		margin: 0
+		text-align: center
+		min-width: 95px
+		&:not(:last-child)
+			margin-right: 10px
+		span, svg
+			display: inline-block
+			vertical-align: middle
+		span
+			margin-bottom: 2px
+		svg
+			margin-left: 10px
+		&:hover
+			background-color: #edeeef
+
+.cut-single-type
+	display: flex
+	align-items: flex-start
+	background-color: #f9f9f9
+	border: 1px #edeeef solid
+	padding: 15px
+	position: relative
+	cursor: pointer
+	&:not(:last-child)
+		margin-bottom: 20px
+	&::before
+		content: ''
+		position: absolute
+		width: 24px
+		height: 24px
+		background: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 17.5L14 12.5L10 7.5' stroke='%23262626' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat 50% 50% transparent
+		left: 14px
+		top: 18px
+	&__qty
+		flex-shrink: 0
+		width: 80px
+		padding-left: 35px
+		margin-right: 20px
+		position: relative
+		z-index: 5
+		cursor: pointer
+	&__qty-input
+		appearance: none
+		display: block
+		width: 100%
+		height: 30px
+		box-sizing: border-box
+		border: 1px #edeeef solid
+		padding: 0 10px
+		background-color: #fff
+		font-size: 14px
+		+fontTTN
+		font-weight: 500
+		border-radius: 4px
+	&__summary
+		p
+			font-size: 14px
+			line-height: 1.33
+			margin: 6px 0 0
+	.cut-single-type-armature
+		display: none
+	&_expanded
+		background-color: #fff
+		border-color: transparent
+		cursor: default
+		&::before
+			transform: rotate(90deg)
+		.cut-single-type-armature
+			display: block
+			margin-top: 5px
+			margin-bottom: 35px
+		.cut-single-type__summary
+			display: none
+
+.cut-single-type-armature
+	&__rail
+		position: relative
+		user-select: none
+		z-index: 6
+		img
+			display: block
+			margin: 0
+			width: 100%
+			max-width: 100%
+	&__new-cut-rail
+		position: absolute
+		z-index: 2
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		&:hover
+			.cut-single-type-armature__new-cut
+				display: block
+	&__new-cut
+		position: absolute
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		top: 50%
+		margin-top: -25px
+		margin-left: -25px
+		display: none
+		z-index: 3
+		cursor: pointer
+		background: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.6' d='M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z' fill='transparent'/%3E%3Ccircle cx='25' cy='25' r='17' fill='%2363E8B8'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M26 19C26 18.4477 25.5523 18 25 18C24.4477 18 24 18.4477 24 19V22C24 23.1046 23.1046 24 22 24H19C18.4477 24 18 24.4477 18 25C18 25.5523 18.4477 26 19 26H22C23.1046 26 24 26.8954 24 28V31C24 31.5523 24.4477 32 25 32C25.5523 32 26 31.5523 26 31V28C26 26.8954 26.8954 26 28 26H31C31.5523 26 32 25.5523 32 25C32 24.4477 31.5523 24 31 24H28C26.8954 24 26 23.1046 26 22V19Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat 50% 50% transparent
+		&::before
+			content: ''
+			position: absolute
+			left: -10px
+			top: -10px
+			width: 70px
+			height: 70px
+			opacity: .7
+			background-color: #63E8B8
+			border-radius: 50%
+			animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite
+			pointer-events: none
+		span
+			position: absolute
+			white-space: nowrap
+			background-color: #fff
+			text-align: center
+			border: 1px #edeeef solid
+			font-size: 14px
+			padding: 3px 5px
+			top: -12px
+			left: 50%
+			border-radius: 3px
+			transform: translateX(-50%)
+			strong
+				font-weight: 400
+	&__test-point
+		position: absolute
+		width: 30px
+		height: 30px
+		top: 50%
+		margin-top: -15px
+		z-index: 7
+		margin-left: -15px
+		border-radius: 50%
+		cursor: pointer
+		span
+			position: absolute
+			top: 100%
+			left: 100%
+			margin-left: -15px
+			white-space: nowrap
+			text-align: center
+			font-size: 11px
+			pointer-events: none
+			color: #888
+			&.to-start
+				left: auto
+				right: 100%
+				margin-right: -15px
+				margin-left: auto
+		&::after
+			// content: attr(data-point-cm) " см"
+			content: attr(data-point-cm) " мм"
+			position: absolute
+			white-space: nowrap
+			background-color: #fff
+			text-align: center
+			border: 1px #eee solid
+			font-size: 13px
+			padding: 1px 5px
+			top: -23px
+			left: 50%
+			border-radius: 3px
+			transform: translateX(-50%)
+			display: none
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			background: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.3' cx='9' cy='9' r='9' fill='%2363E8B8'/%3E%3Ccircle cx='8.99965' cy='9.00001' r='6.13636' fill='%2363E8B8'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.36118 6.47314H8.63926V8.63887H6.47363L6.47363 9.36079H8.63926V11.5266H9.36118V9.36079H11.5271V8.63887H9.36118V6.47314Z' fill='white'/%3E%3C/svg%3E") no-repeat 50% 50% transparent
+			background-size: contain
+			cursor: -webkit-grab
+			cursor: grab
+		&:hover
+			&::before
+				transform: scale(1.2)
+			&::after
+				display: block
+			.settings-button
+				opacity: 1
+				visibility: visible
+				transform: translateX(-50%) translateY(0)
+		.settings-button
+			position: absolute
+			top: 100%
+			margin-top: 4px
+			appearance: none
+			left: 50%
+			transform: translateX(-50%) translateY(-3px)
+			opacity: 0
+			visibility: hidden
+			transition: .2s transform, .2s opacity, .2s visibility
+			padding: 0
+			height: 23px
+			width: 50px
+			cursor: pointer
+			outline: none
+			border: 1px #ccc solid
+			border-radius: 4px
+			+fontTTN
+			font-size: 13px
+			background-image: url("data:image/svg+xml,%3Csvg width='17' height='12' viewBox='0 0 17 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.9371 10.5239L15.4056 10.4748L15.472 9.69642L16.8514 9.55267L17 11.9807L11.8112 11.9281L11.9371 10.5239ZM3.91608 12C1.6049 12 0 10.6203 0 8.00292V6.77575C0 -0.489116 11.0682 -0.443537 11.0682 6.65128C11.0682 9.39489 11.028 11.9509 11.028 11.9509C11.028 11.9509 5.79545 12 3.91608 12ZM5.5979 4.46165C2.40909 4.46165 2.25524 9.33002 5.6521 9.33002C8.75524 9.33178 8.77622 4.4634 5.5979 4.4634V4.46165ZM7.65035 0.876552L9.35315 0C9.92506 0.408602 10.38 0.960625 10.6723 1.60085C10.9647 2.24108 11.0843 2.94707 11.0192 3.64821C10.6701 2.98449 10.1923 2.3974 9.61374 1.92144C9.03522 1.44548 8.36769 1.09023 7.65035 0.876552Z' fill='%23A4A9AD'/%3E%3C/svg%3E%0A")
+			background-repeat: no-repeat
+			background-position: 50% 50%
+			background-color: #fff
+			text-indent: -9999px
+			&:hover
+				background-color: #eee
+
+
+.accurate-cut
+	position: relative
+	width: 300px
+	box-sizing: border-box
+	padding: 20px
+	background-color: #fff
+	display: none
+	&__title
+		font-size: 16px
+		font-weight: 500
+		margin: 0 0 15px
+		line-height: 1.3
+		&_cut
+			margin-top: 15px
+			font-size: 14px
+			font-weight: 400
+			color: $color-red
+	&__value
+		position: relative
+		.common-input
+			display: block
+			width: 100%
+			margin-bottom: 10px
+		p
+			font-size: 14px
+			margin: 0
+			color: #A4A9AD
+	&__details
+		position: relative
+		margin-top: 20px
+		padding-top: 15px
+		border-top: 1px $color-black solid
+	&__type
+		position: relative
+		.common-select,
+		.select2-container
+			width: 100% !important
+		.select2-dropdown
+			z-index: 9999
+	&__buttons
+		padding-top: 5px
+		display: flex
+		justify-content: space-between
+	&__button
+		appearance: none
+		box-sizing: border-box
+		height: 50px
+		padding: 0 25px
+		min-width: 125px
+		font-size: 13px
+		font-weight: 500
+		+fontTTN
+		border-radius: 4px
+		border: 1px #edeeef solid
+		background-color: #f9f9f9
+		color: $color-black
+		margin: 0
+		cursor: pointer
+		outline: none
+		&_delete
+			color: #fff
+			background-color: $color-red
+			border: 1px #c64b4b solid
+		&:hover
+			opacity: .8
+@keyframes pulse-ring
+	0%
+		transform: scale(.5)
+	80%, 100%
+		opacity: 0
