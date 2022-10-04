@@ -27,5 +27,23 @@ $(function () {
 	})
 	$(document).on('click', 'body', function (e) {
 		$('[data-price-popup], [data-toggle-price-popup]').removeClass('js-active');
-	})
+	});
+
+
+	$('[data-cards-carousel]').each(function () {
+		var $thisSlider = $(this).find('[data-cards-carousel-shaft]'),
+			$thisSliderPrev = $(this).find('[data-cards-carousel-prev]'),
+			$thisSliderNext = $(this).find('[data-cards-carousel-next]');
+
+		$thisSlider.slick({
+			infinite: true,
+			dots: false,
+			arrows: true,
+			prevArrow: $thisSliderPrev,
+			nextArrow: $thisSliderNext,
+			adaptiveHeight: false,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+		});
+	});
 });

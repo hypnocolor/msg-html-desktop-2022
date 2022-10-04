@@ -73,10 +73,87 @@ block mainContent
 					.single-product-gallery(data-spgallery)
 						.single-product-gallery__thumbs(data-spgallery-thumbs)
 							a.single-product-gallery__thumb.single-product-gallery__thumb--active(href="#" data-load-image="./assets/img/full-product-sample.jpg")
+								img(src="./assets/img/full-product-sample.jpg", alt="")
 							a.single-product-gallery__thumb(href="#" data-load-image="./assets/img/full-product-sample.jpg")
+								img(src="./assets/img/full-product-sample.jpg", alt="")
 							a.single-product-gallery__thumb(href="#" data-load-image="./assets/img/full-product-sample.jpg")
+								img(src="./assets/img/full-product-sample.jpg", alt="")
 						.single-product-gallery__full-image(data-spgallery-full-image)
 							img(src="./assets/img/full-product-sample.jpg", alt="")
+					.single-product__condition-warning
+						p Внимание! Цвет, характеристика и комплектация товаров, указанные на сайте, могут отличаться от реальных.
+					nav.single-product-tabs
+						a.single-product-tabs__link.single-product-tabs__link--active(href="#") Описание
+						a.single-product-tabs__link(href="#product-specs") Характеристики
+						a.single-product-tabs__link(href="#product-reviews") Отзывы
+						a.single-product-tabs__link(href="#product-buy") С этим товаром покупают
+
+					.single-product-info-section
+						h3.single-product-info-section__title Описание
+						p Когда Наташа вышла из гостиной и побежала, она добежала только до цветочной. В этой комнате она остановилась, прислушиваясь к говору в гостиной и ожидая выхода Бориса. Она уже начинала приходить в нетерпение и, топнув ножкой, сбиралась было заплакать оттого, что он не сейчас шел, когда заслышались не тихие, не быстрые, приличные шаги молодого человека. Наташа быстро бросилась между кадок цветов и спряталась.
+						p Борис остановился посреди комнаты, оглянулся, смахнул рукой соринки с рукава мундира и подошел к зеркалу, рассматривая свое красивое лицо. Наташа, притихнув, выглядывала из своей засады, ожидая, что он будет делать. Он постоял несколько времени перед зеркалом, улыбнулся и пошел к выходной двери. Наташа хотела его окликнуть, но потом раздумала.
+					.single-product-info-section
+						h3.single-product-info-section__title Характеристика
+						.single-product-specs
+							.single-product-specs__row
+								.single-product-specs__title
+									p Огнестойкий
+								.single-product-specs__dots
+								.single-product-specs__value
+									p Нет
+							.single-product-specs__row
+								.single-product-specs__title
+									p Страна производства
+								.single-product-specs__dots
+								.single-product-specs__value
+									p Россия
+							.single-product-specs__row
+								.single-product-specs__title
+									p Длина (см)
+								.single-product-specs__dots
+								.single-product-specs__value
+									p 150
+							.single-product-specs__row
+								.single-product-specs__title
+									p Ширина (см)
+								.single-product-specs__dots
+								.single-product-specs__value
+									p 60
+							.single-product-specs__row
+								.single-product-specs__title
+									p Вес (кг)
+								.single-product-specs__dots
+								.single-product-specs__value
+									p 8.5
+							.single-product-specs__row
+								.single-product-specs__title
+									p Толщина (мм)
+								.single-product-specs__dots
+								.single-product-specs__value
+									p 12.5
+							.single-product-specs__row
+								.single-product-specs__title
+									p Площадь покрытия продуктом (м²)
+								.single-product-specs__dots
+								.single-product-specs__value
+									p 0.9
+							.single-product-specs__row
+								.single-product-specs__title
+									p Влагостойкий продукт (для влажных помещений)
+								.single-product-specs__dots
+								.single-product-specs__value
+									p Да
+					.single-product-info-section
+						h3.single-product-info-section__title Отзывов ещё нет
+						.single-product-rating-widget
+							p Оцените товар
+							img(src="./assets/img/rating-stars-empty.svg", alt="")
+						.single-product-rating-form
+							p Опишите ваши впечатления о товаре
+							p
+								button.msg-button: span Оставить отзыв
+
+
 				//- .single-product__scroll
 				//- 	.single-product__col.single-product__col_image
 				//- 		img(src="./assets/img/single-sheeting.jpg", alt="")
@@ -102,6 +179,18 @@ block mainContent
 				//- 					h5 50 л
 
 				aside.single-product__col.single-product__col--aside
+					.single-product__heading
+						p.single-product__code Код товара: 00000018504000003591
+						h2.single-product__title Гипсокартон влагостойкий 12.5 мм Knauf 1500х600 0.9 м²
+						.single-product-rstats
+							.single-product-rstats__stars
+								.single-product-rstats__star.single-product-rstats__star--filled
+								.single-product-rstats__star.single-product-rstats__star--filled
+								.single-product-rstats__star.single-product-rstats__star--filled
+								.single-product-rstats__star.single-product-rstats__star--filled
+								.single-product-rstats__star
+							.single-product-rstats__reviews
+								p 13 отзывов
 					form(action="./" method="post")
 						.product-aside-block
 							.sp-select-size
@@ -149,16 +238,15 @@ block mainContent
 									.sp-total-prices__col
 										p 130 ₽
 							.buttons-group
-								button.standard-button.standard-button_bigger(type="button")
-									span.standard-button__icon
-										svg(width="16" height="16")
-											use(xlink:href="#icon-lightning")
-									span.standard-button__title В один клик
-								button.standard-button.standard-button_bigger.standard-button_grow(type="button")
-									span.standard-button__icon
-										svg(width="16" height="16")
-											use(xlink:href="#icon-cart")
-							small.product-aside-block__note Не забудьте выбрать склад, от этого может зависеть цена доставки.
+								button.msg-button.msg-button--grey(type="button")
+									span Купить в 1 клик
+								button.msg-button(type="button")
+									span В корзину
+							.product-aside-block__note 
+								div.icon
+									svg(width="24" height="24")
+										use(xlink:href="#icon-warning-cube")
+								p Не забудьте выбрать склад, от этого может зависеть цена доставки.
 
 						.product-aside-block
 							h4.product-aside-block__title Склад отгрузки
@@ -207,1253 +295,165 @@ block mainContent
 												span(style="width: 80%; background-color: #22A930; border-color: #22A930")
 											p Склад: 430 штук, 1.4455 тонн
 
-
-
-
-			.products-grid
-				h3.color-title.color-title_pink #[span С этим товаром часто покупают]
-				.products-grid__cols
-					.products-grid__col
-						.product-card
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-01.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 82 040 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-								.product-card__buttons.buttons-group
-									button.standard-button.standard-button_grow(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-lightning")
-										span.standard-button__title В один клик
-									button.standard-button(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-cart")
-
-					.products-grid__col
-						.product-card.product-card_border
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-02.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details.product-card__details_grey
-								button.product-card__sizes-button(data-pcard-show-sizes="1") Все размеры
-								.product-card__hidden-sizes(data-hidden-sizes="1")
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 24 240 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-
-					.products-grid__col
-						.product-card
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-01.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											small Старая цена
-										.product-card__price-col.product-card__price-col_grey
-											strong.old-price #[span 4700] ₽
-									.product-card__price-row
-										.product-card__price-col
-											small Новая цена
-										.product-card__price-col
-											strong.new-price #[span 3700] ₽
-								.product-card__buttons.buttons-group
-									button.standard-button.standard-button_grow(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-lightning")
-										span.standard-button__title В один клик
-									button.standard-button(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-cart")
-
-					.products-grid__col
-						.product-card.product-card_border
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-03.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details.product-card__details_grey
-								button.product-card__sizes-button(data-pcard-show-sizes="2") Все размеры
-								.product-card__hidden-sizes(data-hidden-sizes="2")
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 24 240 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-
-					.products-grid__col
-						.product-card
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-01.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											small Старая цена
-										.product-card__price-col.product-card__price-col_grey
-											strong.old-price #[span 4700] ₽
-									.product-card__price-row
-										.product-card__price-col
-											small Новая цена
-										.product-card__price-col
-											strong.new-price #[span 3700] ₽
-								.product-card__buttons.buttons-group
-									button.standard-button.standard-button_grow(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-lightning")
-										span.standard-button__title В один клик
-									button.standard-button(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-cart")
-
-					.products-grid__col
-						.product-card.product-card_border
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-04.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details.product-card__details_grey
-								button.product-card__sizes-button(data-pcard-show-sizes="3") Все размеры
-								.product-card__hidden-sizes(data-hidden-sizes="3")
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 24 240 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-
-					.products-grid__col
-						.product-card
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-01.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 82 040 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-								.product-card__buttons.buttons-group
-									button.standard-button.standard-button_grow(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-lightning")
-										span.standard-button__title В один клик
-									button.standard-button(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-cart")
-
-					.products-grid__col
-						.product-card.product-card_border
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-02.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details.product-card__details_grey
-								button.product-card__sizes-button(data-pcard-show-sizes="4") Все размеры
-								.product-card__hidden-sizes(data-hidden-sizes="4")
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 24 240 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-
-					.products-grid__col
-						.product-card
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-06.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											small Старая цена
-										.product-card__price-col.product-card__price-col_grey
-											strong.old-price #[span 4700] ₽
-									.product-card__price-row
-										.product-card__price-col
-											small Новая цена
-										.product-card__price-col
-											strong.new-price #[span 3700] ₽
-								.product-card__buttons.buttons-group
-									button.standard-button.standard-button_grow(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-lightning")
-										span.standard-button__title В один клик
-									button.standard-button(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-cart")
-
-					.products-grid__col
-						.product-card.product-card_border
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-06.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details.product-card__details_grey
-								button.product-card__sizes-button(data-pcard-show-sizes="5") Все размеры
-								.product-card__hidden-sizes(data-hidden-sizes="5")
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 24 240 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-
-			.products-grid
-				h3.color-title.color-title_yellow #[span Товары партнёров]
-				.products-grid__cols
-					.products-grid__col
-						.product-card
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-01.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 82 040 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-								.product-card__buttons.buttons-group
-									button.standard-button.standard-button_grow(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-lightning")
-										span.standard-button__title В один клик
-									button.standard-button(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-cart")
-
-					.products-grid__col
-						.product-card.product-card_border
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-02.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details.product-card__details_grey
-								button.product-card__sizes-button(data-pcard-show-sizes="12121") Все размеры
-								.product-card__hidden-sizes(data-hidden-sizes="12121")
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 24 240 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-
-					.products-grid__col
-						.product-card
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-01.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											small Старая цена
-										.product-card__price-col.product-card__price-col_grey
-											strong.old-price #[span 4700] ₽
-									.product-card__price-row
-										.product-card__price-col
-											small Новая цена
-										.product-card__price-col
-											strong.new-price #[span 3700] ₽
-								.product-card__buttons.buttons-group
-									button.standard-button.standard-button_grow(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-lightning")
-										span.standard-button__title В один клик
-									button.standard-button(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-cart")
-
-					.products-grid__col
-						.product-card.product-card_border
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-03.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details.product-card__details_grey
-								button.product-card__sizes-button(data-pcard-show-sizes="2") Все размеры
-								.product-card__hidden-sizes(data-hidden-sizes="2")
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 24 240 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-
-					.products-grid__col
-						.product-card
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-01.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											small Старая цена
-										.product-card__price-col.product-card__price-col_grey
-											strong.old-price #[span 4700] ₽
-									.product-card__price-row
-										.product-card__price-col
-											small Новая цена
-										.product-card__price-col
-											strong.new-price #[span 3700] ₽
-								.product-card__buttons.buttons-group
-									button.standard-button.standard-button_grow(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-lightning")
-										span.standard-button__title В один клик
-									button.standard-button(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-cart")
-
-					.products-grid__col
-						.product-card.product-card_border
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-04.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details.product-card__details_grey
-								button.product-card__sizes-button(data-pcard-show-sizes="123") Все размеры
-								.product-card__hidden-sizes(data-hidden-sizes="123")
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 24 240 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-
-					.products-grid__col
-						.product-card
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-01.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 82 040 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-								.product-card__buttons.buttons-group
-									button.standard-button.standard-button_grow(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-lightning")
-										span.standard-button__title В один клик
-									button.standard-button(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-cart")
-
-					.products-grid__col
-						.product-card.product-card_border
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-02.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details.product-card__details_grey
-								button.product-card__sizes-button(data-pcard-show-sizes="124") Все размеры
-								.product-card__hidden-sizes(data-hidden-sizes="124")
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 24 240 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-
-					.products-grid__col
-						.product-card
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-06.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											small Старая цена
-										.product-card__price-col.product-card__price-col_grey
-											strong.old-price #[span 4700] ₽
-									.product-card__price-row
-										.product-card__price-col
-											small Новая цена
-										.product-card__price-col
-											strong.new-price #[span 3700] ₽
-								.product-card__buttons.buttons-group
-									button.standard-button.standard-button_grow(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-lightning")
-										span.standard-button__title В один клик
-									button.standard-button(type="button")
-										span.standard-button__icon
-											svg(width="16" height="16")
-												use(xlink:href="#icon-cart")
-
-					.products-grid__col
-						.product-card.product-card_border
-							a.product-card__overlay-link(href="#")
-							.product-card__image
-								img(src="./assets/img/product-06.jpg", alt="")
-								.product-card__delivery-badge
-									svg(width="33" height="33")
-										use(xlink:href="#icon-delivery-badge")
-							h4.product-card__title Арматура А500С ф 06 рифлёная
-							.product-card__details.product-card__details_grey
-								button.product-card__sizes-button(data-pcard-show-sizes="125") Все размеры
-								.product-card__hidden-sizes(data-hidden-sizes="125")
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 2,0 м
-											.size-row__col
-												small от 3 000 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 450.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 12,0 м
-											.size-row__col
-												small от 1 230 040 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 20.14 ₽ метр
-									.product-card__hidden-size
-										.size-row
-											.size-row__col
-												strong 34,0 м
-											.size-row__col
-												small от 122 060 ₽ тонна
-										.size-row
-											.size-row__col
-											.size-row__col
-												small.grey от 234.14 ₽ метр
-								.product-card__qty
-									.product-card__progress-line
-										span(style="width: 80%")
-									p Склад: 1000 штук, 2.4455 тонн
-								.product-card__prices
-									.product-card__price-row
-										.product-card__price-col
-											strong от 24 240 ₽
-										.product-card__price-col
-											small тонну
-									.product-card__price-row
-										.product-card__price-col.product-card__price-col_grey
-											strong от 20.14 ₽
-										.product-card__price-col.product-card__price-col_grey
-											small метр
-
+			.product-cards-carousel(data-cards-carousel)
+				h3.product-cards-carousel__title С этим товаром покупают
+				.product-cards-carousel__shaft(data-cards-carousel-shaft)
+					.new-catalog-grid__col
+						.new-catalog-card
+							.new-catalog-card__top
+								.new-catalog-card__image
+									img(src="./assets/img/new-catalog-product-01.jpg", alt="")
+								.new-catalog-card__info
+									a.new-catalog-card__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+									.new-catalog-card-amount
+										.new-catalog-card-amount__progress
+											div(style="width: 80%; background-color: #22A930")
+										.new-catalog-card-amount__info
+											p Остаток: 1000 штук, 2.4455 тонн
+							.new-catalog-card__bottom
+								.new-catalog-card__prices
+									p #[strong от 82 040] ₽/тон
+									p #[strong от 20.14] ₽/метр
+								.new-catalog-card__actions
+									.new-catalog-card__action
+										button.msg-button.msg-button--grey #[span Купить в 1 клик]
+									.new-catalog-card__action
+										button.msg-button #[span В корзину]
+					.new-catalog-grid__col
+						.new-catalog-card
+							.new-catalog-card__top
+								.new-catalog-card__image
+									img(src="./assets/img/new-catalog-product-02.jpg", alt="")
+								.new-catalog-card__info
+									a.new-catalog-card__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж 
+									.new-catalog-card-amount
+										.new-catalog-card-amount__progress
+											div(style="width: 80%; background-color: #22A930")
+										.new-catalog-card-amount__info
+											p Остаток: 1000 штук, 2.4455 тонн
+										button.new-catalog-card-show-popup(data-toggle-price-popup)
+											svg(width="12" height="7")
+												use(xlink:href="#icon-down-arrow-small")
+										.card-price-popup(data-price-popup)
+											.card-price-popup__item
+												.card-price-popup__col.card-price-popup__col--value
+													p 4 см
+												.card-price-popup__col.card-price-popup__col--price
+													p #[strong от 82 040] ₽/тон
+													p #[strong от 20.14] ₽/метр
+											.card-price-popup__item
+												.card-price-popup__col.card-price-popup__col--value
+													p 6 см
+												.card-price-popup__col.card-price-popup__col--price
+													p #[strong от 82 040] ₽/тон
+													p #[strong от 20.14] ₽/метр
+											.card-price-popup__item
+												.card-price-popup__col.card-price-popup__col--value
+													p 10 см
+												.card-price-popup__col.card-price-popup__col--price
+													p #[strong от 82 040] ₽/тон
+													p #[strong от 20.14] ₽/метр
+											.card-price-popup__item
+												.card-price-popup__col.card-price-popup__col--value
+													p 12 см
+												.card-price-popup__col.card-price-popup__col--price
+													p #[strong от 82 040] ₽/тон
+													p #[strong от 20.14] ₽/метр
+							.new-catalog-card__bottom
+								.new-catalog-card__prices
+									p #[strong от 82 040] ₽/тон
+									p #[strong от 20.14] ₽/метр
+								.new-catalog-card__actions
+									.new-catalog-card__action
+										button.msg-button.msg-button--grey #[span Купить в 1 клик]
+									.new-catalog-card__action
+										button.msg-button #[span В корзину]
+					.new-catalog-grid__col
+						.new-catalog-card
+							.new-catalog-card__top
+								.new-catalog-card__image
+									img(src="./assets/img/new-catalog-product-03.jpg", alt="")
+								.new-catalog-card__info
+									a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+									.new-catalog-card-amount
+										.new-catalog-card-amount__progress
+											div(style="width: 80%; background-color: #22A930")
+										.new-catalog-card-amount__info
+											p Остаток: 1000 штук, 2.4455 тонн
+							.new-catalog-card__bottom
+								.new-catalog-card__prices
+									p #[strong по запросу]
+								.new-catalog-card__actions
+									.new-catalog-card__action
+										button.msg-button.msg-button--grey #[span Купить в 1 клик]
+					.new-catalog-grid__col
+						.new-catalog-card
+							.new-catalog-card__top
+								.new-catalog-card__image
+									img(src="./assets/img/new-catalog-product-03.jpg", alt="")
+								.new-catalog-card__info
+									a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+									.new-catalog-card-amount
+										.new-catalog-card-amount__progress
+											div(style="width: 80%; background-color: #22A930")
+										.new-catalog-card-amount__info
+											p Остаток: 1000 штук, 2.4455 тонн
+										button.new-catalog-card-show-popup(data-toggle-price-popup)
+											svg(width="12" height="7")
+												use(xlink:href="#icon-down-arrow-small")
+										.card-price-popup(data-price-popup)
+											.card-price-popup__item
+												.card-price-popup__col.card-price-popup__col--value
+													p 4 см
+												.card-price-popup__col.card-price-popup__col--price
+													p #[strong от 82 040] ₽/тон
+													p #[strong от 20.14] ₽/метр
+											.card-price-popup__item
+												.card-price-popup__col.card-price-popup__col--value
+													p 6 см
+												.card-price-popup__col.card-price-popup__col--price
+													p #[strong от 82 040] ₽/тон
+													p #[strong от 20.14] ₽/метр
+											.card-price-popup__item
+												.card-price-popup__col.card-price-popup__col--value
+													p 10 см
+												.card-price-popup__col.card-price-popup__col--price
+													p #[strong от 82 040] ₽/тон
+													p #[strong от 20.14] ₽/метр
+											.card-price-popup__item
+												.card-price-popup__col.card-price-popup__col--value
+													p 12 см
+												.card-price-popup__col.card-price-popup__col--price
+													p #[strong от 82 040] ₽/тон
+													p #[strong от 20.14] ₽/метр
+							.new-catalog-card__bottom
+								.new-catalog-card__prices
+									p #[strong по запросу]
+								.new-catalog-card__actions
+									.new-catalog-card__action
+										button.msg-button.msg-button--grey #[span Купить в 1 клик]
+					.new-catalog-grid__col
+						.new-catalog-card
+							.new-catalog-card__top
+								.new-catalog-card__image
+									img(src="./assets/img/new-catalog-product-03.jpg", alt="")
+								.new-catalog-card__info
+									a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+									.new-catalog-card-amount
+										.new-catalog-card-amount__progress
+											div(style="width: 80%; background-color: #22A930")
+										.new-catalog-card-amount__info
+											p Остаток: 1000 штук, 2.4455 тонн
+							.new-catalog-card__bottom
+								.new-catalog-card__prices
+									p #[strong по запросу]
+								.new-catalog-card__actions
+									.new-catalog-card__action
+										button.msg-button.msg-button--grey #[span Купить в 1 клик]
+				button.product-cards-carousel__arrow.product-cards-carousel__arrow--prev(data-cards-carousel-prev)
+					svg(width="7" height="12")
+						use(xlink:href="#icon-paging-prev")
+				button.product-cards-carousel__arrow.product-cards-carousel__arrow--next(data-cards-carousel-next)
+					svg(width="7" height="12")
+						use(xlink:href="#icon-paging-next")
 	+footer
