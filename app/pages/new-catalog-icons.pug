@@ -9,49 +9,7 @@ block mainContent
 
 	//- +header
 
-	.new-header
-		.new-header__inner
-			.new-header-top
-				.new-header-top__part
-					.new-header-top__logo
-						a(href="#")
-							svg(width="180" height="20")
-								use(xlink:href="#icon-msg-market-logo--white")
-					nav.new-header-menu
-						ul.new-header-menu__list
-							li.new-header-menu__item: a(href="#") О компании 
-							li.new-header-menu__item: a(href="#") Спецтехника
-							li.new-header-menu__item: a(href="#") Поставщикам
-							li.new-header-menu__item: a(href="#") Покупателям
-							li.new-header-menu__item: a(href="#") Контакты
-							li.new-header-menu__item: a(href="#") Блог 
-							li.new-header-menu__item: a(href="#") Калькуляторы
-				.new-header-top__part
-					.new-header-top__phone
-						a(href="+74932930330") 8 4932 930-330
-					.new-header-top__user
-						a(href="#")
-							svg(width="24" height="24")
-								use(xlink:href="#icon-user")
-			.new-header-bottom
-				.new-header-bottom__part.new-header-bottom__part--main
-					.new-header-bottom__catalog-button
-						button.msg-button
-							svg(width="24" height="24")
-								use(xlink:href="#icon-catalog-button-dark")
-							span Каталог
-					.new-header-bottom__search-form
-						form.search-form(action="./" method="post")
-							input.search-form__input(type="text" name="s" placeholder="Сетка-рабица ПВХ зел. 1,5м*10м")
-							button.search-form__submit.msg-button(type="submit") 
-								span Найти
-				.new-header-bottom__part.new-header-bottom__part--cart
-					.new-header-cart
-						a.new-header-cart__sum(href="#") 337 703.45 ₽
-						.new-header-cart__icon
-							svg(width="24" height="24")
-								use(xlink:href="#icon-shopping-cart")
-							small 12
+	+header
 
 	.main-content
 		.main-content__inner

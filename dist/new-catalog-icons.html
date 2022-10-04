@@ -13,147 +13,12 @@
 		<link rel="shortcut icon" href="./assets/img/favicon/favicon.ico">
 		<meta name="msapplication-config" content="./assets/img/favicon/browserconfig.xml">
 		<meta name="theme-color" content="#ffffff">
-		<link rel="stylesheet" href="./assets/css/main.css?v=15baba4fa878">
+		<link rel="stylesheet" href="./assets/css/main.css?v=15bf85699ce0">
 		<title>MSGMarket – New catalog list</title>
 	</head>
 
 	<body>
-		<div class="tippy-template" id="msgtip-01">
-			<div class="msgtip msgtip_info">
-				<p>Выберите количество товаров</p>
-			</div>
-		</div>
-		<div class="tippy-template" id="msgtip-02">
-			<div class="msgtip msgtip_error">
-				<p>Текст ошибки в несколько слов. А возможно, и предложений.</p>
-			</div>
-		</div>
-		<div class="msg-popup" id="thanks-popup">
-			<div class="msg-popup__content msg-popup__content_center">
-				<div class="msg-popup__icon"><svg width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<circle opacity=".3" cx="30" cy="30" r="30" fill="#4EDD87" />
-						<circle cx="30.005" cy="30" fill="#4EDD87" r="20.454" />
-						<path d="M37.5 22.5L26.812 39.375 20.625 30" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-					</svg></div>
-				<h4 class="msg-popup__title">Заказ успешно добавлен в&nbsp;корзину</h4>
-				<div class="msg-popup__text">
-					<p class="grey-text">Это сообщение автоматически закроется через несколько секунд</p>
-				</div>
-			</div>
-		</div>
-		<div class="login-popup" id="login-popup">
-			<form class="login-popup__content" action="./" method="post">
-				<div class="login-popup__logo"><svg width="150" height="18">
-						<use xlink:href="#icon-msg-market-grey-logo"></use>
-					</svg></div>
-				<h4 class="login-popup__title">Войти на сайт</h4>
-				<div class="login-popup__fields">
-					<fieldset data-login-type="phone">
-						<div class="login-popup__fieldset">
-							<div class="login-popup__fieldset-main">
-								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Телефон" data-login-phone-input></div>
-								<div class="login-popup__check-code-area" data-login-code-area="phone">
-									<div class="login-popup__code-area">
-										<div class="login-popup__check-code">
-											<div class="login-popup__code"><input class="common-input common-input_login-code common-input_error" type="text" required placeholder="Код из СМС" data-login-code-input></div>
-											<div class="login-popup__refresh-code"><button class="login-popup__refresh-code-button" type="button">
-													<div class="icon"><svg width="16" height="16">
-															<use xlink:href="#icon-arrow-refresh"></use>
-														</svg></div><span>Получить код ещё раз <br>(осталось <strong>27 секунд</strong>)</span>
-												</button></div>
-											<div class="login-popup__check-code-error">
-												<p>Неверный код :( Попробуйте еще раз</p>
-											</div>
-										</div>
-										<div class="login-popup__fieldset-agreement"><input id="loginterms" type="checkbox" name="loginterms" checked required><label for="loginterms">Даю согласие на обработку <a href="#">персональных данных</a> и принимаю <a href="#">пользовательское соглашение</a></label></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-					<fieldset data-login-type="email" disabled>
-						<div class="login-popup__fieldset">
-							<div class="login-popup__fieldset-main">
-								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Эл. почта" data-login-email-input></div>
-								<div class="login-popup__check-code-area" data-login-code-area="email">
-									<div class="login-popup__code-area">
-										<div class="login-popup__check-code">
-											<div class="login-popup__code"><input class="common-input common-input_login-code" type="text" required placeholder="Код из письма" data-login-code-input></div>
-											<div class="login-popup__refresh-code"><button class="login-popup__refresh-code-button" type="button">
-													<div class="icon"><svg width="16" height="16">
-															<use xlink:href="#icon-arrow-refresh"></use>
-														</svg></div><span>Получить код ещё раз <br>(осталось <strong>27 секунд</strong>)</span>
-												</button></div>
-										</div>
-										<div class="login-popup__fieldset-agreement"><input id="logintermsemail" type="checkbox" name="logintermsemail" checked required><label for="logintermsemail">Даю согласие на обработку <a href="#">персональных данных</a> и принимаю <a href="#">пользовательское соглашение</a></label></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-				</div>
-				<div class="login-popup__buttons"><button class="login-popup__button login-popup__button_main" type="submit" data-login-button disabled>Продолжить</button><button class="login-popup__button login-popup__button_typeselect" type="button" data-login-type-button="email">Войти по почте</button></div>
-			</form>
-		</div>
-		<div class="login-popup" id="register-popup">
-			<form class="login-popup__content login-popup__content_one-click" action="./" method="post" data-register-form>
-				<div class="login-popup__logo"><svg width="150" height="18">
-						<use xlink:href="#icon-msg-market-grey-logo"></use>
-					</svg></div>
-				<h4 class="login-popup__title">Регистрация</h4>
-				<div class="login-popup__text">
-					<p>Для регистрации необходимо указать адрес электронной почты.</p>
-					<p>Регистрация поможет следить за заказом (и сократит время оформления последующих покупок).</p>
-				</div>
-				<div class="login-popup__fields">
-					<fieldset>
-						<div class="login-popup__fieldset">
-							<div class="login-popup__fieldset-main">
-								<div class="login-popup__input"><input class="common-input" type="email" required placeholder="Эл. почта" data-register-email-input></div>
-								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="ФИО" data-register-name-input></div>
-								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Телефон" data-register-phone-input data-mask-phone></div>
-								<div class="login-popup__fieldset-agreement"><input id="loginnewsletter" type="checkbox" name="loginnewsletter"><label for="loginnewsletter">Да, я хочу получать информацию о новых товарах, скидках и распродажах]</label></div>
-								<div class="login-popup__fieldset-agreement"><input id="loginterms" type="checkbox" name="loginterms" checked required><label for="loginterms">Даю согласие на обработку <a href="#">персональных данных</a> и принимаю <a href="#">пользовательское соглашение</a></label></div>
-							</div>
-						</div>
-					</fieldset>
-				</div>
-				<div class="login-popup__buttons"><button class="login-popup__button login-popup__button_main" type="submit" data-register-button disabled>Зарегистрироваться</button><button class="login-popup__button login-popup__button_typeselect" type="button" data-close-popup>Закрыть</button></div>
-			</form>
-		</div>
-		<div class="login-popup" id="register-success">
-			<div class="login-popup__content login-popup__content_one-click">
-				<div class="login-popup__logo"><svg width="150" height="18">
-						<use xlink:href="#icon-msg-market-grey-logo"></use>
-					</svg></div>
-				<h4 class="login-popup__title">Регистрация прошла успешно</h4>
-				<div class="login-popup__text">
-					<p>Загляните в свой почтовый ящик <span class="blue">helloanagrm@lab.ru</span>.</p>
-					<p>На него отправлены инструкции по активации вашей учетной записи.</p>
-				</div>
-				<div class="login-popup__buttons"><button class="login-popup__button login-popup__button_main" type="button" data-close-popup>Закрыть</button></div>
-			</div>
-		</div>
-		<div class="login-popup" id="one-click-popup">
-			<form class="login-popup__content login-popup__content_one-click" action="./" method="post" data-one-click-form>
-				<div class="login-popup__logo"><svg width="150" height="18">
-						<use xlink:href="#icon-msg-market-grey-logo"></use>
-					</svg></div>
-				<h4 class="login-popup__title">Купить в 1 клик</h4>
-				<div class="login-popup__fields">
-					<fieldset>
-						<div class="login-popup__fieldset">
-							<div class="login-popup__fieldset-main">
-								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Ваше имя" data-one-click-name></div>
-								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Телефон" data-one-click-phone data-mask-phone></div>
-								<div class="login-popup__input"><input class="common-input" type="text" required placeholder="Товар" value="Арматура А500С" disabled></div>
-							</div>
-						</div>
-					</fieldset>
-				</div>
-				<div class="login-popup__buttons"><button class="login-popup__button login-popup__button_main" type="submit" data-one-click-buy disabled>Отправить</button><button class="login-popup__button login-popup__button_typeselect" type="button" data-close-popup>Закрыть</button></div>
-			</form>
-		</div>
+		<div class="search-results-fade"></div>
 		<div class="new-header">
 			<div class="new-header__inner">
 				<div class="new-header-top">
@@ -186,7 +51,7 @@
 									<use xlink:href="#icon-catalog-button-dark"></use>
 								</svg><span>Каталог</span></button></div>
 						<div class="new-header-bottom__search-form">
-							<form class="search-form" action="./" method="post"><input class="search-form__input" type="text" name="s" placeholder="Сетка-рабица ПВХ зел. 1,5м*10м"><button class="search-form__submit msg-button" type="submit"> <span>Найти</span></button></form>
+							<form class="search-form" action="./" method="post"><input class="search-form__input" type="text" name="s" placeholder="Сетка-рабица ПВХ зел. 1,5м*10м" autocomplete="off" /><button class="search-form__reset" type="reset"></button><button class="search-form__submit msg-button" type="submit"> <span>Найти</span></button></form>
 						</div>
 					</div>
 					<div class="new-header-bottom__part new-header-bottom__part--cart">
@@ -532,7 +397,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="./assets/js/main.js?v=15baba4fa878"></script>
+		<script src="./assets/js/main.js?v=15bf85699ce0"></script>
 	</body>
 
 </html>

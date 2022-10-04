@@ -525,6 +525,23 @@
 			max-width: 875px
 			position: relative
 			display: flex
+			transition: .3s width, .3s max-width
+			z-index: 3
+			&.js-wide
+				max-width: 100%
+				.search-form__input
+					padding-right: 110px
+				.search-form__reset
+					opacity: 1
+					visibility: visible
+		&--cart
+			transition: .3s opacity, .3s visibility
+			right: 0
+			position: absolute
+			&.js-hidden
+				position: absolute
+				opacity: 0
+				visibility: hidden
 	&__catalog-button
 		flex-shrink: 0
 		margin-right: 16px
@@ -534,6 +551,24 @@
 
 .search-form
 	position: relative
+	&__reset
+		position: absolute
+		border: none
+		right: 85px
+		top: 9px
+		width: 22px
+		height: 22px
+		appearance: none
+		cursor: pointer
+		outline: none
+		margin: 0
+		padding: 0
+		background: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='22' height='22' rx='11' fill='%23A4A9AD'/%3E%3Cpath d='M14.5 7.44751L7.5 14.5525' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M7.5 7.44751L14.5 14.5525' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat 50% 50% transparent
+		transition: .3s opacity, .3s visibility
+		opacity: 0
+		visibility: hidden
+		&:hover
+			opacity: 0.8
 	&__submit
 		position: absolute
 		height: 38px
@@ -604,3 +639,18 @@
 			font-size: 9px
 			font-weight: 700
 			color: #262626
+
+.search-results-fade
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	z-index: 15
+	background-color: rgba(#262626, .5)
+	transition: .3s opacity, .3s visibility
+	opacity: 0
+	visibility: hidden
+	&.js-visible
+		opacity: 1
+		visibility: visible

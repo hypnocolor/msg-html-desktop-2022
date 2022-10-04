@@ -9,49 +9,7 @@ block mainContent
 
 	//- +header
 
-	.new-header
-		.new-header__inner
-			.new-header-top
-				.new-header-top__part
-					.new-header-top__logo
-						a(href="#")
-							svg(width="180" height="20")
-								use(xlink:href="#icon-msg-market-logo--white")
-					nav.new-header-menu
-						ul.new-header-menu__list
-							li.new-header-menu__item: a(href="#") О компании 
-							li.new-header-menu__item: a(href="#") Спецтехника
-							li.new-header-menu__item: a(href="#") Поставщикам
-							li.new-header-menu__item: a(href="#") Покупателям
-							li.new-header-menu__item: a(href="#") Контакты
-							li.new-header-menu__item: a(href="#") Блог 
-							li.new-header-menu__item: a(href="#") Калькуляторы
-				.new-header-top__part
-					.new-header-top__phone
-						a(href="+74932930330") 8 4932 930-330
-					.new-header-top__user
-						a(href="#")
-							svg(width="24" height="24")
-								use(xlink:href="#icon-user")
-			.new-header-bottom
-				.new-header-bottom__part.new-header-bottom__part--main
-					.new-header-bottom__catalog-button
-						button.msg-button
-							svg(width="24" height="24")
-								use(xlink:href="#icon-catalog-button-dark")
-							span Каталог
-					.new-header-bottom__search-form
-						form.search-form(action="./" method="post")
-							input.search-form__input(type="text" name="s" placeholder="Сетка-рабица ПВХ зел. 1,5м*10м")
-							button.search-form__submit.msg-button(type="submit") 
-								span Найти
-				.new-header-bottom__part.new-header-bottom__part--cart
-					.new-header-cart
-						a.new-header-cart__sum(href="#") 337 703.45 ₽
-						.new-header-cart__icon
-							svg(width="24" height="24")
-								use(xlink:href="#icon-shopping-cart")
-							small 12
+	+header
 
 	.main-content
 		.main-content__inner
@@ -91,7 +49,7 @@ block mainContent
 									input#secheight40(type="checkbox" name="secheight[]" value="40")
 									label(for="secheight40") 40 #[span.grey (9)]
 						.new-catalog-filters__section.new-catalog-filters-section
-							button.new-catalog-filters-section__toggle(data-toggle-filter-section) Высота сечения трубы, мм
+							button.new-catalog-filters-section__toggle.js-active(data-toggle-filter-section) Высота сечения трубы, мм
 							.new-catalog-filters-section__content(data-filter-section-content)
 								.new-catalog-filters-checkbox
 									input#secheight110(type="checkbox" name="secheight2[]" value="10" disabled)
@@ -106,7 +64,7 @@ block mainContent
 									input#secheight125(type="checkbox" name="secheight2[]" value="25")
 									label(for="secheight125") 25 #[span.grey (11)]
 						.new-catalog-filters__section.new-catalog-filters-section
-							button.new-catalog-filters-section__toggle(data-toggle-filter-section) Толщина стенки, мм
+							button.new-catalog-filters-section__toggle.js-active(data-toggle-filter-section) Толщина стенки, мм
 							.new-catalog-filters-section__content(data-filter-section-content)
 								.new-catalog-filters-checkbox
 									input#thickness1(type="checkbox" name="thickness[]" value="1" disabled)

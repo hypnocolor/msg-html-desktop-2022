@@ -45,8 +45,6 @@ $(function() {
 		$('[data-catalog-side-panel]').toggleClass('js-active');
 	});
 
-	$('.single-product__scroll, .single-product__col_aside').stickybits();
-
 	// Order
 
 	$('[data-fieldset-switching]').each(function () {
@@ -131,37 +129,6 @@ $(function() {
 		$('[data-order-details="' + detailsToToggle + '"]').stop().slideToggle(200);
 	});
 
-	// Date picker
-
-	pickmeup.defaults.locales['ru'] = {
-		days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-		daysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-		daysMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-		months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-		monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
-	};
-
-	$('[data-date-range]').each(function() {
-		pickmeup(this, {
-			format: 'd.m.Y',
-			locale: 'ru',
-			max: new Date(),
-			mode: 'range',
-			hide_on_select: true,
-			default_date: false
-		});
-	});
-
-	$('[data-date-select]').each(function() {
-		pickmeup(this, {
-			format: 'd.m.Y',
-			locale: 'ru',
-			max: new Date(),
-			hide_on_select: true,
-			default_date: false
-		});
-	});
-
 
 	$('[data-floating-label]').label_better({
 		position: "top",
@@ -210,23 +177,6 @@ $(function() {
 		});
 	})
 
-	$('[data-login-code-input]').inputmask("9    9    9    9", {
-		oncomplete: function () {
-			$('[data-login-button]').attr('disabled', false)
-		},
-		onincomplete: function () {
-			$('[data-login-button]').attr('disabled', true)
-		},
-	})
-
-	$('[data-login-phone-input]').inputmask("+7 (999) 999-9999", {
-		oncomplete: function () {
-			$('[data-login-code-area="phone"]').show();
-		},
-		onincomplete: function () {
-			$('[data-login-code-area="phone"]').hide();
-		},
-	});
 
 	$('[data-login-email-input]').on('keyup', function (e) {
 		var re = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -259,25 +209,6 @@ $(function() {
 		$(this).data('login-type-button', currentLoginType);
 		$('[data-login-email-input], [data-login-phone-input]').val('').trigger("change");
 		$('[data-login-button]').attr('disabled', true);
-	});
-	
-	// Tippy
-	tippy.delegate('body', {
-		target: '[data-has-tippy]',
-		onCreate: function (instance) {
-			instance.setContent(function () {
-				const id = instance.reference.getAttribute('data-tippy-template');
-				if (id != null) {
-					const template = document.getElementById(id);
-					return template.innerHTML;
-				}
-			})
-		},
-		theme: 'light',
-		placement: 'left',
-		hideOnClick: false,
-		trigger: 'focus',
-		allowHTML: true,
 	});
 
 
@@ -346,90 +277,16 @@ $(function() {
 		});
 	});
 
-	$('[data-mask-phone]').inputmask("+7 (999) 999-9999", {
-		// oncomplete: function () {
-		// 	$('[data-login-code-area="phone"]').show();
-		// },
-		// onincomplete: function () {
-		// 	$('[data-login-code-area="phone"]').hide();
-		// },
-	});
-
-	$('[data-one-click-form]').each(function () {
-		var $thisName = $(this).find('[data-one-click-name]'),
-			$thisPhone = $(this).find('[data-one-click-phone]'),
-			$thisSubmit = $(this).find('[data-one-click-buy]');
-
-		function checkFields() {
-			if (($thisName.val() != '') && ($thisPhone.inputmask('isComplete'))) {
-				buttonIsDisabled = false;
-			} else {
-				buttonIsDisabled = true;
-			}
-			$thisSubmit.attr('disabled', buttonIsDisabled);
-		}
-		
-		$thisName.keyup(function () { checkFields(); });
-		$thisPhone.keyup(function () { checkFields(); });
-	});
 
 	$('[data-close-popup]').on('click', function (e) {
 		e.preventDefault();
 		$.fancybox.close();
 	});
 
-	// Register
-
-	$('[data-register-form]').each(function () {
-		var $thisName = $(this).find('[data-register-name-input]'),
-			$thisPhone = $(this).find('[data-register-phone-input]'),
-			$thisEmail = $(this).find('[data-register-email-input]'),
-			$thisSubmit = $(this).find('[data-register-button]');
-
-		function validateEmail(email) {
-			const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-			return re.test(String(email).toLowerCase());
-		}
-
-		function checkRegFields() {
-			if (($thisName.val() != '') && ($thisPhone.inputmask('isComplete')) && validateEmail($thisEmail.val())) {
-				buttonIsDisabled = false;
-			} else {
-				buttonIsDisabled = true;
-			}
-			$thisSubmit.attr('disabled', buttonIsDisabled);
-		}
-		
-		$thisName.keyup(function () { checkRegFields(); });
-		$thisPhone.keyup(function () { checkRegFields(); });
-		$thisEmail.keyup(function () { checkRegFields(); });
-
-		$(this).on('submit', function (e) {
-			e.preventDefault();
-			$.fancybox.open({
-				margin: 0,
-				padding: 0,
-				closeBtn: false,
-				width: '100%',
-				maxWidth: 980,
-				type: 'inline',
-				href: '#register-success',
-				openMethod: 'zoomIn',
-				helpers: {
-					overlay: {
-						locked: false
-					}
-				},
-				beforeShow : function() {
-					$(".fancybox-skin").css({
-						"box-shadow": "0px 0px 20px rgba(33, 42, 50, 0.15)",
-						"background": "transparent"
-					});
-					$(".fancybox-overlay").css({
-						// "background": "transparent"
-					});
-				}
-			});
-		})
+	$('.new-catalog__part--sidebar').stickySidebar({
+		topSpacing: 100,
+		containerSelector: '.new-catalog',
+		innerWrapperSelector: '.new-catalog-filters'
 	});
+
 });
