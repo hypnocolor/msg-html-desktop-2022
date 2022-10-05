@@ -14,13 +14,41 @@
 	border-radius: 4px
 	padding: 16px
 	box-sizing: border-box
+	z-index: 2
 	// top: 20px
 	// bottom: 20px
 	// max-height: calc(100vh - 70px)
-	overflow: hidden
+	// overflow: hidden
+	&__floating-submit
+		position: absolute
+		z-index: 3
+		padding: 10px
+		border-radius: 4px
+		left: 100%
+		margin-left: 16px
+		background-color: #fff
+		box-shadow: 0px 2px 24px rgba(29, 29, 29, 0.16)
+		opacity: 0
+		visibility: hidden
+		transition: .2s transform, .2s opacity
+		&.js-visible
+			opacity: 1
+			visibility: visible
+		&::before
+			content: ''
+			position: absolute
+			width: 16px
+			height: 16px
+			transform: rotate(45deg)
+			left: -8px
+			top: 50%
+			margin-top: -8px
+			background-color: #fff
+		.msg-button
+			position: relative
 	&__section
-		padding-top: 15px
-		padding-bottom: 24px
+		padding-top: 18px
+		padding-bottom: 18px
 		border-bottom: 1px solid #EDEEEF
 	&__actions
 		padding-top: 24px
@@ -71,6 +99,9 @@
 		width: 50%
 		padding: 0 4px
 		box-sizing: border-box
+		.lb_label
+			user-select: none
+			font-size: 14px
 	&__input
 		display: block
 		width: 100%
@@ -84,6 +115,8 @@
 		color: $color-black
 		border-bottom: 1px solid #EDEEEF
 		outline: none
+		&:focus
+			border-color: $color-black
 
 .new-catalog-filters-checkbox
 	position: relative
@@ -257,6 +290,16 @@
 	justify-content: space-between
 	padding: 20px 18px 32px
 	box-sizing: border-box
+	&__badges
+		position: absolute
+		z-index: 1
+		right: 0
+		top: 0
+		display: flex
+		align-items: center
+	&__badge
+		&:not(:last-child)
+			margin-right: 4px
 	&__image
 		position: relative
 		margin-bottom: 20px
@@ -315,7 +358,7 @@
 			padding-left: 10px
 			padding-right: 10px
 			span
-				font-size: 14px
+				font-size: 13px
 		&--single
 			width: auto
 			.msg-button
@@ -431,15 +474,53 @@
 .new-catalog-row
 	position: relative
 	padding: 20px 48px 20px 40px
-	display: flex
-	align-items: center
+	&__expand
+		position: absolute
+		left: -40px
+		top: -20px
+		bottom: -20px
+		width: 40px
+		box-sizing: border-box
+		margin: 0
+		padding: 0
+		border: none
+		appearance: none
+		cursor: pointer
+		outline: none
+		background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.8335 7.5L10.0002 13.3333L4.16683 7.5' stroke='%23262626' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat 100% 50% transparent
+		&:hover
+			opacity: 0.8
 	&:not(:last-child)
 		border-bottom: 1px solid #EDEEEF
+	&__grid
+		display: flex
+		align-items: center
+		position: relative
+		&--internal
+			display: none
+			border-top: 1px solid #EDEEEF
+			padding: 16px 0
+			margin-top: 16px
+			& + &
+				margin-top: 0
+			.new-catalog-card__prices
+				margin: 0
+	&__value
+		font-size: 14px
+		margin: 0
 	&__col
 		&--image
 			flex-shrink: 0
-			margin-right: 30px
-			margin-left: 30px
+			padding-left: 30px
+			padding-right: 30px
+			width: 180px
+			box-sizing: border-box
+			position: relative
+		&--value
+			flex-shrink: 0
+			padding-right: 30px
+			width: 180px
+			box-sizing: border-box
 		&--info
 			flex-grow: 1
 			padding-left: 40px
@@ -448,6 +529,11 @@
 			flex-shrink: 0
 			width: 240px
 			position: relative
+			.new-catalog-card__prices
+				pointer-events: none
+			.new-catalog-card__actions
+				position: relative
+				z-index: 2
 	&__image
 		width: 120px
 		height: 112px
@@ -472,6 +558,13 @@
 			opacity: 0.85
 		&:visited
 			color: $color-black
+	&.js-expanded
+		box-shadow: 0px 2px 24px rgba(29, 29, 29, 0.16)
+		z-index: 2
+		.new-catalog-row__grid--internal
+			display: flex
+		.new-catalog-row__expand
+			background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.1665 12.5L9.99984 6.66667L15.8332 12.5' stroke='%23262626' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat 100% 50% transparent
 
 .new-catalog-list
 	position: relative

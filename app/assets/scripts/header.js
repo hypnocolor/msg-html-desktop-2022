@@ -62,13 +62,13 @@ $(function () {
 	$(document).on('open', '.search-form__input', function (e) {
 		$('.search-results-fade').addClass('js-visible');
 	});
+	$(document).on('close', '.search-form__input', function (e) {
+		$('.search-results-fade').remove('js-visible');
+	});
 
-	// document.querySelector(".search-form__input").addEventListener("open", function (event) {
-	// 	// "event.detail" carries the autoComplete.js "feedback" object
-	// 	$('.search-results-fade').addClass('js-visible');
-	// });
-	document.querySelector(".search-form__input").addEventListener("close", function (event) {
-		// "event.detail" carries the autoComplete.js "feedback" object
-		$('.search-results-fade').removeClass('js-visible');
+	$(document).on('click', '[data-toggle-catalog-overlay]', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		$('[data-catalog-overlay]').toggleClass('js-active');
 	});
 })

@@ -1,13 +1,6 @@
 $(function() {
 
-	$('[data-catalog-button]').on('click', function (e) {
-		e.preventDefault();
-		e.stopPropagation();
-		$(this).toggleClass('js-active');
-		$('.catalog-overlay').toggleClass('js-active');
-	});
-
-	$('.catalog-overlay, [data-catalog-side-panel], [data-toggle-cside-panel]').on('click', function (e) {
+	$('.catalog-overlay, [data-catalog-side-panel], [data-toggle-cside-panel], [data-catalog-overlay]').on('click', function (e) {
 		e.stopPropagation();
 	});
 
@@ -21,6 +14,7 @@ $(function() {
 		$('[data-catalog-button], .catalog-overlay').removeClass('js-active');
 		$('[data-catalog-side-panel]').removeClass('js-active');
 		$('[data-address-popup]').removeClass('js-active');
+		$('[data-catalog-overlay]').removeClass('js-active');
 	});
 
 	$('[data-pcard-show-sizes]').on('click', function (e) {

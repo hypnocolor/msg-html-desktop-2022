@@ -13,8 +13,8 @@
 		<link rel="shortcut icon" href="./assets/img/favicon/favicon.ico">
 		<meta name="msapplication-config" content="./assets/img/favicon/browserconfig.xml">
 		<meta name="theme-color" content="#ffffff">
-		<link rel="stylesheet" href="./assets/css/main.css?v=15c1467e8098">
-		<title>MSGMarket – New catalog list</title>
+		<link rel="stylesheet" href="./assets/css/main.css?v=15cd0de943b0">
+		<title>MSGMarket – Product page</title>
 	</head>
 
 	<body>
@@ -263,201 +263,370 @@
 					<nav class="new-breadcrumbs">
 						<ul class="new-breadcrumbs__list">
 							<li class="new-breadcrumbs__item"><a class="new-breadcrumbs__link" href="#">Главная</a></li>
-							<li class="new-breadcrumbs__item"><span class="new-breadcrumbs__current">Каталог</span></li>
+							<li class="new-breadcrumbs__item"><a class="new-breadcrumbs__link" href="#">Каталог</a></li>
+							<li class="new-breadcrumbs__item"><a class="new-breadcrumbs__link" href="#">Металлопрокат</a></li>
+							<li class="new-breadcrumbs__item"><a class="new-breadcrumbs__link" href="#">Профнастил</a></li>
+							<li class="new-breadcrumbs__item"><a class="new-breadcrumbs__link" href="#">Профнастил C10</a></li>
+							<li class="new-breadcrumbs__item"><a class="new-breadcrumbs__link" href="#">Гипсокартон</a></li>
 						</ul>
 					</nav>
-					<h2 class="section-head__title">Каталог</h2>
 				</div>
-				<div class="new-catalog-list">
-					<div class="new-catalog-list__grid">
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-01.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Металлопрокат</a></h4>
-								</div>
-								<ul class="new-catalog-list-item__links" data-catalog-links>
-									<li class="js-visible"><a href="#">Профнастил</a></li>
-									<li class="js-visible"><a href="#">Трубы</a></li>
-									<li class="js-visible"><a href="#">Арматура</a></li>
-									<li class="js-visible"><a href="#">Сетки металлические и ПВХ</a></li>
-									<li><a href="#">Профнастил</a></li>
-									<li><a href="#">Трубы</a></li>
-									<li><a href="#">Арматура</a></li>
-									<li><a href="#">Сетки металлические и ПВХ</a></li>
-									<li><a href="#">Профнастил</a></li>
-									<li><a href="#">Трубы</a></li>
-									<li><a href="#">Арматура</a></li>
-									<li><a href="#">Сетки металлические и ПВХ</a></li>
-									<li><a href="#">Профнастил</a></li>
-								</ul><button class="new-catalog-list-item__expand" data-expand-catalog-links>Ещё 9</button>
-							</div>
+				<div class="single-product">
+					<div class="single-product__col single-product__col--content">
+						<div class="single-product-gallery" data-spgallery>
+							<div class="single-product-gallery__thumbs" data-spgallery-thumbs><a class="single-product-gallery__thumb single-product-gallery__thumb--active" href="#" data-load-image="./assets/img/full-product-sample.jpg"><img src="./assets/img/full-product-sample.jpg" alt=""></a><a class="single-product-gallery__thumb" href="#" data-load-image="./assets/img/new-catalog-product-02.jpg"><img src="./assets/img/new-catalog-product-02.jpg" alt=""></a><a class="single-product-gallery__thumb" href="#" data-load-image="./assets/img/new-catalog-product-03.jpg"><img src="./assets/img/new-catalog-product-03.jpg" alt=""></a></div>
+							<div class="single-product-gallery__full-image" data-spgallery-full-image><img src="./assets/img/full-product-sample.jpg" alt=""></div>
 						</div>
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-02.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Стройматериалы</a></h4>
-								</div>
-								<ul class="new-catalog-list-item__links" data-catalog-links>
-									<li class="js-visible"><a href="#">Листовые материалы и комплектующие</a></li>
-									<li class="js-visible"><a href="#">Сухие строительные смеси</a></li>
-									<li class="js-visible"><a href="#">Кровля, водосточные и дренажные системы</a></li>
-									<li><a href="#">Листовые материалы и комплектующие</a></li>
-									<li><a href="#">Сухие строительные смеси</a></li>
-									<li><a href="#">Кровля, водосточные и дренажные системы</a></li>
-									<li><a href="#">Листовые материалы и комплектующие</a></li>
-									<li><a href="#">Сухие строительные смеси</a></li>
-									<li><a href="#">Кровля, водосточные и дренажные системы</a></li>
-									<li><a href="#">Листовые материалы и комплектующие</a></li>
-									<li><a href="#">Кровля, водосточные и дренажные системы</a></li>
-									<li><a href="#">Листовые материалы и комплектующие</a></li>
-									<li><a href="#">Сухие строительные смеси</a></li>
-									<li><a href="#">Кровля, водосточные и дренажные системы</a></li>
-									<li><a href="#">Листовые материалы и комплектующие</a></li>
-								</ul><button class="new-catalog-list-item__expand" data-expand-catalog-links>Ещё 12</button>
-							</div>
+						<div class="single-product__condition-warning">
+							<p>Внимание! Цвет, характеристика и комплектация товаров, указанные на сайте, могут отличаться от реальных.</p>
 						</div>
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-03.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Крепёж</a></h4>
+						<nav class="single-product-tabs">
+							<ul class="single-product-tabs__list">
+								<li class="single-product-tabs__item single-product-tabs__item--active"><a class="single-product-tabs__link" href="#product-specs">Характеристики</a></li>
+								<li class="single-product-tabs__item"><a class="single-product-tabs__link" href="#product-reviews">Отзывы</a></li>
+								<li class="single-product-tabs__item"><a class="single-product-tabs__link" href="#product-buy">С этим товаром покупают</a></li>
+							</ul>
+						</nav>
+						<div class="single-product-info-section" id="product-specs">
+							<h3 class="single-product-info-section__title">Характеристика</h3>
+							<div class="single-product-specs">
+								<div class="single-product-specs__row">
+									<div class="single-product-specs__title">
+										<p>Огнестойкий</p>
+									</div>
+									<div class="single-product-specs__dots"></div>
+									<div class="single-product-specs__value">
+										<p>Нет</p>
+									</div>
 								</div>
-								<ul class="new-catalog-list-item__links" data-catalog-links>
-									<li class="js-visible"><a href="#">Саморезы</a></li>
-									<li class="js-visible"><a href="#">Метрический крепеж</a></li>
-									<li class="js-visible"><a href="#">Дюбели</a></li>
-									<li class="js-visible"><a href="#">Гвозди, шурупы</a></li>
-									<li><a href="#">Саморезы</a></li>
-									<li><a href="#">Метрический крепеж</a></li>
-									<li><a href="#">Дюбели</a></li>
-									<li><a href="#">Гвозди, шурупы</a></li>
-									<li><a href="#">Саморезы</a></li>
-									<li><a href="#">Метрический крепеж</a></li>
-									<li><a href="#">Дюбели</a></li>
-									<li><a href="#">Гвозди, шурупы</a></li>
-									<li><a href="#">Саморезы</a></li>
-									<li><a href="#">Метрический крепеж</a></li>
-									<li><a href="#">Дюбели</a></li>
-									<li><a href="#">Гвозди, шурупы</a></li>
-									<li><a href="#">Саморезы</a></li>
-									<li><a href="#">Метрический крепеж</a></li>
-									<li><a href="#">Дюбели</a></li>
-									<li><a href="#">Гвозди, шурупы</a></li>
-								</ul><button class="new-catalog-list-item__expand" data-expand-catalog-links>Ещё 16</button>
-							</div>
-						</div>
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-04.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Лакокрасочные покрытия</a></h4>
+								<div class="single-product-specs__row">
+									<div class="single-product-specs__title">
+										<p>Страна производства</p>
+									</div>
+									<div class="single-product-specs__dots"></div>
+									<div class="single-product-specs__value">
+										<p>Россия</p>
+									</div>
 								</div>
-								<ul class="new-catalog-list-item__links" data-catalog-links>
-									<li class="js-visible"><a href="#">Грунт-эмаль</a></li>
-									<li class="js-visible"><a href="#">Грунтовки</a></li>
-									<li class="js-visible"><a href="#">Растворители</a></li>
-									<li class="js-visible"><a href="#">Эмали</a></li>
-									<li><a href="#">Грунт-эмаль</a></li>
-									<li><a href="#">Грунтовки</a></li>
-								</ul><button class="new-catalog-list-item__expand" data-expand-catalog-links>Ещё 2</button>
-							</div>
-						</div>
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-05.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Готовые решения</a></h4>
+								<div class="single-product-specs__row">
+									<div class="single-product-specs__title">
+										<p>Длина (см)</p>
+									</div>
+									<div class="single-product-specs__dots"></div>
+									<div class="single-product-specs__value">
+										<p>150</p>
+									</div>
 								</div>
-								<ul class="new-catalog-list-item__links" data-catalog-links>
-									<li class="js-visible"><a href="#">Забор</a></li>
-									<li class="js-visible"><a href="#">Кровля</a></li>
-									<li class="js-visible"><a href="#">Фундамент</a></li>
-									<li class="js-visible"><a href="#">Фасад</a></li>
-									<li class="js-visible"><a href="#">Фундамент</a></li>
-									<li class="js-visible"><a href="#">Фасад</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-06.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Инструменты</a></h4>
+								<div class="single-product-specs__row">
+									<div class="single-product-specs__title">
+										<p>Ширина (см)</p>
+									</div>
+									<div class="single-product-specs__dots"></div>
+									<div class="single-product-specs__value">
+										<p>60</p>
+									</div>
+								</div>
+								<div class="single-product-specs__row">
+									<div class="single-product-specs__title">
+										<p>Вес (кг)</p>
+									</div>
+									<div class="single-product-specs__dots"></div>
+									<div class="single-product-specs__value">
+										<p>8.5</p>
+									</div>
+								</div>
+								<div class="single-product-specs__row">
+									<div class="single-product-specs__title">
+										<p>Толщина (мм)</p>
+									</div>
+									<div class="single-product-specs__dots"></div>
+									<div class="single-product-specs__value">
+										<p>12.5</p>
+									</div>
+								</div>
+								<div class="single-product-specs__row">
+									<div class="single-product-specs__title">
+										<p>Площадь покрытия продуктом (м²)</p>
+									</div>
+									<div class="single-product-specs__dots"></div>
+									<div class="single-product-specs__value">
+										<p>0.9</p>
+									</div>
+								</div>
+								<div class="single-product-specs__row">
+									<div class="single-product-specs__title">
+										<p>Влагостойкий продукт (для влажных помещений)</p>
+									</div>
+									<div class="single-product-specs__dots"></div>
+									<div class="single-product-specs__value">
+										<p>Да</p>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-07.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Инженерная сантехника</a></h4>
-								</div>
-								<ul class="new-catalog-list-item__links" data-catalog-links>
-									<li class="js-visible"><a href="#">Воздухоотводчики</a></li>
-									<li class="js-visible"><a href="#">Трубы пвх и комплектующие</a></li>
-									<li class="js-visible"><a href="#">Грязевики и фильтры</a></li>
-									<li class="js-visible"><a href="#">Задвижки</a></li>
-								</ul><button class="new-catalog-list-item__expand" data-expand-catalog-links>Ещё 48</button>
-							</div>
-						</div>
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-08.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Решётчатые настилы</a></h4>
-								</div>
-								<ul class="new-catalog-list-item__links" data-catalog-links>
-									<li class="js-visible"><a href="#">Прессованные</a></li>
-									<li class="js-visible"><a href="#">Сварные</a></li>
-									<li class="js-visible"><a href="#">Крепеж для реш настилов</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-09.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Электротовары</a></h4>
-								</div>
-								<ul class="new-catalog-list-item__links" data-catalog-links>
-									<li class="js-visible"><a href="#">Автоматические выключатели</a></li>
-									<li class="js-visible"><a href="#">Блоки питания</a></li>
-									<li class="js-visible"><a href="#">Вилки</a></li>
-									<li class="js-visible"><a href="#">Выключатели</a></li>
-									<li><a href="#">Вилки</a></li>
-									<li><a href="#">Выключатели</a></li>
-								</ul><button class="new-catalog-list-item__expand" data-expand-catalog-links>Ещё 2</button>
-							</div>
-						</div>
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-10.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Всё для сада</a></h4>
-								</div>
-								<ul class="new-catalog-list-item__links" data-catalog-links>
-									<li class="js-visible"><a href="#">Всё для Дома и Дачи</a></li>
-									<li class="js-visible"><a href="#">Садовая техника, оснастка и принадлежности</a></li>
-									<li class="js-visible"><a href="#">Садовый инструмент, вазоны, теплицы, кашпо</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="new-catalog-list__col">
-							<div class="new-catalog-list__item new-catalog-list-item">
-								<div class="new-catalog-list-item__head">
-									<div class="new-catalog-list-item__icon"><img src="./assets/img/new-catalog-icon-11.jpg" alt=""></div>
-									<h4 class="new-catalog-list-item__title"><a href="#">Услуги</a></h4>
-								</div>
-								<ul class="new-catalog-list-item__links" data-catalog-links>
-									<li class="js-visible"><a href="#">Металлообработка</a></li>
-									<li class="js-visible"><a href="#">Гибка металла</a></li>
-									<li class="js-visible"><a href="#">Газы технические</a></li>
-								</ul>
-							</div>
+						<div class="single-product-info-section" id="product-reviews">
+							<h3 class="single-product-info-section__title">Отзывы</h3>
+							<form class="single-product-review-form">
+								<div class="single-product-rating-widget">
+									<p>Оцените товар</p>
+									<div class="single-product-rating-widget__stars"><input class="single-product-rating-widget__input" id="rating1" type="radio" name="rating" value="1"><label class="single-product-rating-widget__star" for="rating1"></label><input class="single-product-rating-widget__input" id="rating2" type="radio" name="rating" value="2"><label class="single-product-rating-widget__star" for="rating2"></label><input class="single-product-rating-widget__input" id="rating3" type="radio" name="rating" value="3"><label class="single-product-rating-widget__star" for="rating3"></label><input class="single-product-rating-widget__input" id="rating4" type="radio" name="rating" value="4"><label class="single-product-rating-widget__star" for="rating4"></label><input class="single-product-rating-widget__input" id="rating5" type="radio" name="rating" value="5"><label class="single-product-rating-widget__star" for="rating5"></label></div>
+								</div><textarea class="single-product-review-form__text" name="review-text" placeholder="Оставьте ваши впечатления о товаре" required></textarea>
+								<p><button class="msg-button" type="submit"><span>Оставить отзыв</span></button></p>
+							</form>
 						</div>
 					</div>
+					<aside class="single-product__col single-product__col--aside">
+						<div class="single-product__heading">
+							<p class="single-product__code">Код товара: 00000018504000003591</p>
+							<h2 class="single-product__title">Гипсокартон влагостойкий 12.5 мм Knauf 1500х600 0.9 м²</h2>
+							<div class="single-product-rstats">
+								<div class="single-product-rstats__stars">
+									<div class="single-product-rstats__star single-product-rstats__star--filled"></div>
+									<div class="single-product-rstats__star single-product-rstats__star--filled"></div>
+									<div class="single-product-rstats__star single-product-rstats__star--filled"></div>
+									<div class="single-product-rstats__star single-product-rstats__star--filled"></div>
+									<div class="single-product-rstats__star"></div>
+								</div>
+								<div class="single-product-rstats__reviews">
+									<p>13 отзывов</p>
+								</div>
+							</div>
+						</div>
+						<form action="./" method="post">
+							<div class="product-aside-block">
+								<div class="sp-select-size">
+									<h4 class="sp-select-size__title">Размер</h4>
+									<div class="sp-select-size__inputs"><input id="size01" type="radio" name="selectsize" value="8"><label for="size01">8 м</label><input id="size02" type="radio" name="selectsize" value="8.3"><label for="size02">8.3 м</label><input id="size03" type="radio" name="selectsize" value="12"><label for="size03">12 м</label><input id="size04" type="radio" name="selectsize" value="18"><label for="size04">18 м</label><input id="size05" type="radio" name="selectsize" value="22" checked><label for="size05">22 м</label></div>
+								</div>
+								<div class="sp-select-qty"><input class="common-input" type="text" name="product-qty"><select class="common-select" name="qty-type">
+										<option value="ton" selected>Тонны</option>
+										<option value="kg">Килограммы</option>
+									</select></div>
+								<div class="sp-available"><span class="sp-available__badge">В наличии – 4565 шт</span><small class="sp-available__small">Остаток (16 шт) можно заказать без оплаты</small></div>
+								<div class="sp-select-sell-type"><input id="selltype01" type="radio" name="selltype" value="1" checked><label for="selltype01">Розница</label><input id="selltype02" type="radio" name="selltype" value="2"><label for="selltype02">М. опт</label><input id="selltype03" type="radio" name="selltype" value="3"><label for="selltype03">Опт</label></div>
+								<div class="sp-total-prices">
+									<div class="sp-total-prices__row">
+										<div class="sp-total-prices__col">
+											<p>За тонну</p>
+										</div>
+										<div class="sp-total-prices__col">
+											<p>82 400 ₽</p>
+										</div>
+									</div>
+									<div class="sp-total-prices__row">
+										<div class="sp-total-prices__col">
+											<p>За метр</p>
+										</div>
+										<div class="sp-total-prices__col">
+											<p>21.7 ₽</p>
+										</div>
+									</div>
+									<div class="sp-total-prices__row sp-total-prices__row_last">
+										<div class="sp-total-prices__col">
+											<p>Сумма без доставки</p>
+										</div>
+										<div class="sp-total-prices__col">
+											<p>130 ₽</p>
+										</div>
+									</div>
+								</div>
+								<div class="buttons-group"><button class="msg-button msg-button--grey" type="button"><span>Купить в 1 клик</span></button><button class="msg-button" type="button"><span>В корзину</span></button></div>
+								<div class="product-aside-block__note">
+									<div class="icon"><svg width="24" height="24">
+											<use xlink:href="#icon-warning-cube"></use>
+										</svg></div>
+									<p>Не забудьте выбрать склад, от этого может зависеть цена доставки.</p>
+								</div>
+							</div>
+							<div class="product-aside-block">
+								<h4 class="product-aside-block__title">Склад отгрузки</h4>
+								<div class="sp-warehouses">
+									<div class="sp-warehouse-card"><input id="ware1" type="radio" name="warehouse" value="1" checked><label class="sp-warehouse-card__label" for="ware1">
+											<div class="sp-warehouse-card__title">
+												<div class="sp-warehouse-card__icon"><svg width="22" height="16">
+														<use xlink:href="#icon-factory"></use>
+													</svg></div>
+												<h4>База Красных Зорь</h4>
+											</div>
+											<p class="sp-warehouse-card__address">ул. Красных Зорь, 73</p>
+											<div class="product-card__qty">
+												<div class="product-card__progress-line"><span style="width: 80%; background-color: #22A930; border-color: #22A930"></span></div>
+												<p><strong>Наличие: 1000 штук, 2.4455 тонн</strong></p>
+												<p>В резерве: 400 штук, 1.4 тонн</p>
+												<p>Ожидается: 56 штук, 0.566 тонн</p>
+											</div>
+										</label></div>
+									<div class="sp-warehouse-card"><input id="ware2" type="radio" name="warehouse" value="2"><label class="sp-warehouse-card__label" for="ware2">
+											<div class="sp-warehouse-card__title">
+												<div class="sp-warehouse-card__icon"><svg width="22" height="16">
+														<use xlink:href="#icon-factory"></use>
+													</svg></div>
+												<h4>База Станкостроителей</h4>
+											</div>
+											<p class="sp-warehouse-card__address">Иваново, ул. Станкостроителей, д. 22</p>
+											<div class="product-card__qty">
+												<div class="product-card__progress-line"><span style="width: 80%; background-color: #22A930; border-color: #22A930"></span></div>
+												<p>Склад: 430 штук, 1.4455 тонн</p>
+											</div>
+										</label></div>
+								</div>
+								<h4 class="product-aside-block__title">Удалённый склад</h4>
+								<div class="sp-warehouses">
+									<div class="sp-warehouse-card"><input id="ware3" type="radio" name="warehouse" value="3"><label class="sp-warehouse-card__label" for="ware3">
+											<div class="sp-warehouse-card__title">
+												<div class="sp-warehouse-card__icon"><svg width="22" height="16">
+														<use xlink:href="#icon-factory"></use>
+													</svg></div>
+												<h4>База Лежневская</h4>
+											</div>
+											<p class="sp-warehouse-card__address">Иваново, ул. Лежневская, д. 143</p>
+											<div class="product-card__qty">
+												<div class="product-card__progress-line"><span style="width: 80%; background-color: #22A930; border-color: #22A930"></span></div>
+												<p>Склад: 430 штук, 1.4455 тонн</p>
+											</div>
+										</label></div>
+								</div>
+							</div>
+						</form>
+					</aside>
+				</div>
+				<div class="product-cards-carousel" id="product-buy" data-cards-carousel>
+					<h3 class="product-cards-carousel__title">С этим товаром покупают</h3>
+					<div class="product-cards-carousel__shaft" data-cards-carousel-shaft>
+						<div class="new-catalog-grid__col">
+							<div class="new-catalog-card">
+								<div class="new-catalog-card__top">
+									<div class="new-catalog-card__image"><img src="./assets/img/new-catalog-product-01.jpg" alt=""></div>
+									<div class="new-catalog-card__info"><a class="new-catalog-card__title" href="#">Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 80%; background-color: #22A930"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-card__bottom">
+									<div class="new-catalog-card__prices">
+										<p><strong>от 82 040</strong> ₽/тон</p>
+										<p><strong>от 20.14</strong> ₽/метр</p>
+									</div>
+									<div class="new-catalog-card__actions">
+										<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+										<div class="new-catalog-card__action"><button class="msg-button"><span>В корзину</span></button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="new-catalog-grid__col">
+							<div class="new-catalog-card">
+								<div class="new-catalog-card__top">
+									<div class="new-catalog-card__image"><img src="./assets/img/new-catalog-product-02.jpg" alt=""></div>
+									<div class="new-catalog-card__info"><a class="new-catalog-card__title" href="#">Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж </a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 80%; background-color: #22A930"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-card__bottom">
+									<div class="new-catalog-card__prices">
+										<p><strong>от 82 040</strong> ₽/тон</p>
+										<p><strong>от 20.14</strong> ₽/метр</p>
+									</div>
+									<div class="new-catalog-card__actions">
+										<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+										<div class="new-catalog-card__action"><button class="msg-button"><span>В корзину</span></button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="new-catalog-grid__col">
+							<div class="new-catalog-card">
+								<div class="new-catalog-card__top">
+									<div class="new-catalog-card__image"><img src="./assets/img/new-catalog-product-04.jpg" alt=""></div>
+									<div class="new-catalog-card__info"><a class="new-catalog-card__title" href="#">Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 80%; background-color: #22A930"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-card__bottom">
+									<div class="new-catalog-card__prices">
+										<p><strong>по запросу</strong></p>
+									</div>
+									<div class="new-catalog-card__actions">
+										<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="new-catalog-grid__col">
+							<div class="new-catalog-card">
+								<div class="new-catalog-card__top">
+									<div class="new-catalog-card__image"><img src="./assets/img/new-catalog-product-01.jpg" alt=""></div>
+									<div class="new-catalog-card__info"><a class="new-catalog-card__title" href="#">Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 80%; background-color: #22A930"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-card__bottom">
+									<div class="new-catalog-card__prices">
+										<p><strong>по запросу</strong></p>
+									</div>
+									<div class="new-catalog-card__actions">
+										<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="new-catalog-grid__col">
+							<div class="new-catalog-card">
+								<div class="new-catalog-card__top">
+									<div class="new-catalog-card__image"><img src="./assets/img/new-catalog-product-02.jpg" alt=""></div>
+									<div class="new-catalog-card__info"><a class="new-catalog-card__title" href="#">Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм</a>
+										<div class="new-catalog-card-amount">
+											<div class="new-catalog-card-amount__progress">
+												<div style="width: 80%; background-color: #22A930"></div>
+											</div>
+											<div class="new-catalog-card-amount__info">
+												<p>Остаток: 1000 штук, 2.4455 тонн</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-card__bottom">
+									<div class="new-catalog-card__prices">
+										<p><strong>по запросу</strong></p>
+									</div>
+									<div class="new-catalog-card__actions">
+										<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><button class="product-cards-carousel__arrow product-cards-carousel__arrow--prev" data-cards-carousel-prev><svg width="7" height="12">
+							<use xlink:href="#icon-paging-prev"></use>
+						</svg></button><button class="product-cards-carousel__arrow product-cards-carousel__arrow--next" data-cards-carousel-next><svg width="7" height="12">
+							<use xlink:href="#icon-paging-next"></use>
+						</svg></button>
 				</div>
 			</div>
 		</div>
@@ -590,7 +759,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="./assets/js/main.js?v=15c1467e8098"></script>
+		<script src="./assets/js/main.js?v=15cd0de943b0"></script>
 	</body>
 
 </html>

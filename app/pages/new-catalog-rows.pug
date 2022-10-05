@@ -7,8 +7,6 @@ block pageTitle
 
 block mainContent
 
-	//- +header
-
 	+header
 
 	.main-content
@@ -140,137 +138,258 @@ block mainContent
 										option(value="sortexpstart") Сначала дороже
 						.new-catalog-rows
 							.new-catalog-row
-								.new-catalog-row__col.new-catalog-row__col--image
-									.new-catalog-row__image
-										img(src="./assets/img/new-catalog-product-01.jpg", alt="")
-								.new-catalog-row__col.new-catalog-row__col--info
-									a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
-									.new-catalog-card-amount
-										.new-catalog-card-amount__progress
-											div(style="width: 60%; background-color: #FFB341")
-										.new-catalog-card-amount__info
-											p Остаток: 1000 штук, 2.4455 тонн
-								.new-catalog-row__col.new-catalog-row__col--buy
-									.new-catalog-card__prices
-										p #[strong от 82 040] ₽/тон
-										p #[strong от 20.14] ₽/метр
-									.new-catalog-card__actions
-										.new-catalog-card__action
-											button.msg-button.msg-button--grey #[span Купить в 1 клик]
-										.new-catalog-card__action
-											button.msg-button #[span В корзину]
+								.new-catalog-row__grid
+									button.new-catalog-row__expand(data-expand-catalog-row)
+									.new-catalog-row__col.new-catalog-row__col--image
+										.new-catalog-card__badges
+											.new-catalog-card__badge
+												img(src="./assets/img/badge-delivery.svg", alt="")
+										.new-catalog-row__image
+											img(src="./assets/img/new-catalog-product-01.jpg", alt="")
+									.new-catalog-row__col.new-catalog-row__col--info
+										a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 60%; background-color: #FFB341")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить в 1 клик]
+											.new-catalog-card__action
+												button.msg-button #[span В корзину]
+								.new-catalog-row__grid.new-catalog-row__grid--internal
+									.new-catalog-row__col.new-catalog-row__col--value
+										p.new-catalog-row__value 4 см
+									.new-catalog-row__col.new-catalog-row__col--info
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 30%; background-color: #DE1717")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+								.new-catalog-row__grid.new-catalog-row__grid--internal
+									.new-catalog-row__col.new-catalog-row__col--value
+										p.new-catalog-row__value 6 см
+									.new-catalog-row__col.new-catalog-row__col--info
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 30%; background-color: #DE1717")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+								.new-catalog-row__grid.new-catalog-row__grid--internal
+									.new-catalog-row__col.new-catalog-row__col--value
+										p.new-catalog-row__value 10 см
+									.new-catalog-row__col.new-catalog-row__col--info
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 30%; background-color: #DE1717")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+								.new-catalog-row__grid.new-catalog-row__grid--internal
+									.new-catalog-row__col.new-catalog-row__col--value
+										p.new-catalog-row__value 12 см
+									.new-catalog-row__col.new-catalog-row__col--info
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 30%; background-color: #DE1717")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+
 							.new-catalog-row
-								.new-catalog-row__col.new-catalog-row__col--image
-									.new-catalog-row__image
-										img(src="./assets/img/new-catalog-product-02.jpg", alt="")
-								.new-catalog-row__col.new-catalog-row__col--info
-									a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
-									.new-catalog-card-amount
-										.new-catalog-card-amount__progress
-											div(style="width: 80%; background-color: #20A02E")
-										.new-catalog-card-amount__info
-											p Остаток: 1000 штук, 2.4455 тонн
-								.new-catalog-row__col.new-catalog-row__col--buy
-									.new-catalog-card__prices
-										p #[strong от 82 040] ₽/тон
-										p #[strong от 20.14] ₽/метр
-									.new-catalog-card__actions
-										.new-catalog-card__action.new-catalog-card__action--single
-											button.msg-button.msg-button--grey #[span Запросить цену]
+								.new-catalog-row__grid
+									.new-catalog-row__col.new-catalog-row__col--image
+										.new-catalog-row__image
+											img(src="./assets/img/new-catalog-product-02.jpg", alt="")
+									.new-catalog-row__col.new-catalog-row__col--info
+										a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 80%; background-color: #20A02E")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action.new-catalog-card__action--single
+												button.msg-button.msg-button--grey #[span Запросить цену]
+
+
 							.new-catalog-row
-								.new-catalog-row__col.new-catalog-row__col--image
-									.new-catalog-row__image
-										img(src="./assets/img/new-catalog-product-03.jpg", alt="")
-								.new-catalog-row__col.new-catalog-row__col--info
-									a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
-									.new-catalog-card-amount
-										.new-catalog-card-amount__progress
-											div(style="width: 30%; background-color: #DE1717")
-										.new-catalog-card-amount__info
-											p Остаток: 1000 штук, 2.4455 тонн
-								.new-catalog-row__col.new-catalog-row__col--buy
-									.new-catalog-card__prices
-										p #[strong от 82 040] ₽/тон
-										p #[strong от 20.14] ₽/метр
-									.new-catalog-card__actions
-										.new-catalog-card__action.new-catalog-card__action--single
-											button.msg-button.msg-button--grey #[span Запросить цену]
+								.new-catalog-row__grid
+									button.new-catalog-row__expand(data-expand-catalog-row)
+									.new-catalog-row__col.new-catalog-row__col--image
+										.new-catalog-row__image
+											img(src="./assets/img/new-catalog-product-03.jpg", alt="")
+									.new-catalog-row__col.new-catalog-row__col--info
+										a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 30%; background-color: #DE1717")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action.new-catalog-card__action--single
+												button.msg-button.msg-button--grey #[span Запросить цену]
+								.new-catalog-row__grid.new-catalog-row__grid--internal
+									.new-catalog-row__col.new-catalog-row__col--value
+										p.new-catalog-row__value 4 см
+									.new-catalog-row__col.new-catalog-row__col--info
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 30%; background-color: #DE1717")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+								.new-catalog-row__grid.new-catalog-row__grid--internal
+									.new-catalog-row__col.new-catalog-row__col--value
+										p.new-catalog-row__value 6 см
+									.new-catalog-row__col.new-catalog-row__col--info
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 30%; background-color: #DE1717")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+								.new-catalog-row__grid.new-catalog-row__grid--internal
+									.new-catalog-row__col.new-catalog-row__col--value
+										p.new-catalog-row__value 10 см
+									.new-catalog-row__col.new-catalog-row__col--info
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 30%; background-color: #DE1717")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+								.new-catalog-row__grid.new-catalog-row__grid--internal
+									.new-catalog-row__col.new-catalog-row__col--value
+										p.new-catalog-row__value 12 см
+									.new-catalog-row__col.new-catalog-row__col--info
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 30%; background-color: #DE1717")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+
+
 							.new-catalog-row
-								.new-catalog-row__col.new-catalog-row__col--image
-									.new-catalog-row__image
-										img(src="./assets/img/new-catalog-product-01.jpg", alt="")
-								.new-catalog-row__col.new-catalog-row__col--info
-									a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
-									.new-catalog-card-amount
-										.new-catalog-card-amount__progress
-											div(style="width: 60%; background-color: #FFB341")
-										.new-catalog-card-amount__info
-											p Остаток: 1000 штук, 2.4455 тонн
-								.new-catalog-row__col.new-catalog-row__col--buy
-									.new-catalog-card__prices
-										p #[strong от 82 040] ₽/тон
-										p #[strong от 20.14] ₽/метр
-									.new-catalog-card__actions
-										.new-catalog-card__action
-											button.msg-button.msg-button--grey #[span Купить в 1 клик]
-										.new-catalog-card__action
-											button.msg-button #[span В корзину]
+								.new-catalog-row__grid
+									.new-catalog-row__col.new-catalog-row__col--image
+										.new-catalog-row__image
+											img(src="./assets/img/new-catalog-product-01.jpg", alt="")
+									.new-catalog-row__col.new-catalog-row__col--info
+										a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 60%; background-color: #FFB341")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить в 1 клик]
+											.new-catalog-card__action
+												button.msg-button #[span В корзину]
 							.new-catalog-row
-								.new-catalog-row__col.new-catalog-row__col--image
-									.new-catalog-row__image
-										img(src="./assets/img/new-catalog-product-02.jpg", alt="")
-								.new-catalog-row__col.new-catalog-row__col--info
-									a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
-									.new-catalog-card-amount
-										.new-catalog-card-amount__progress
-											div(style="width: 80%; background-color: #20A02E")
-										.new-catalog-card-amount__info
-											p Остаток: 1000 штук, 2.4455 тонн
-								.new-catalog-row__col.new-catalog-row__col--buy
-									.new-catalog-card__prices
-										p #[strong от 82 040] ₽/тон
-										p #[strong от 20.14] ₽/метр
-									.new-catalog-card__actions
-										.new-catalog-card__action.new-catalog-card__action--single
-											button.msg-button.msg-button--grey #[span Запросить цену]
+								.new-catalog-row__grid
+									.new-catalog-row__col.new-catalog-row__col--image
+										.new-catalog-row__image
+											img(src="./assets/img/new-catalog-product-02.jpg", alt="")
+									.new-catalog-row__col.new-catalog-row__col--info
+										a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 80%; background-color: #20A02E")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action.new-catalog-card__action--single
+												button.msg-button.msg-button--grey #[span Запросить цену]
 							.new-catalog-row
-								.new-catalog-row__col.new-catalog-row__col--image
-									.new-catalog-row__image
-										img(src="./assets/img/new-catalog-product-03.jpg", alt="")
-								.new-catalog-row__col.new-catalog-row__col--info
-									a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
-									.new-catalog-card-amount
-										.new-catalog-card-amount__progress
-											div(style="width: 30%; background-color: #DE1717")
-										.new-catalog-card-amount__info
-											p Остаток: 1000 штук, 2.4455 тонн
-								.new-catalog-row__col.new-catalog-row__col--buy
-									.new-catalog-card__prices
-										p #[strong от 82 040] ₽/тон
-										p #[strong от 20.14] ₽/метр
-									.new-catalog-card__actions
-										.new-catalog-card__action.new-catalog-card__action--single
-											button.msg-button.msg-button--grey #[span Запросить цену]
+								.new-catalog-row__grid
+									.new-catalog-row__col.new-catalog-row__col--image
+										.new-catalog-row__image
+											img(src="./assets/img/new-catalog-product-03.jpg", alt="")
+									.new-catalog-row__col.new-catalog-row__col--info
+										a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 30%; background-color: #DE1717")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action.new-catalog-card__action--single
+												button.msg-button.msg-button--grey #[span Запросить цену]
 							.new-catalog-row
-								.new-catalog-row__col.new-catalog-row__col--image
-									.new-catalog-row__image
-										img(src="./assets/img/new-catalog-product-01.jpg", alt="")
-								.new-catalog-row__col.new-catalog-row__col--info
-									a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
-									.new-catalog-card-amount
-										.new-catalog-card-amount__progress
-											div(style="width: 60%; background-color: #FFB341")
-										.new-catalog-card-amount__info
-											p Остаток: 1000 штук, 2.4455 тонн
-								.new-catalog-row__col.new-catalog-row__col--buy
-									.new-catalog-card__prices
-										p #[strong от 82 040] ₽/тон
-										p #[strong от 20.14] ₽/метр
-									.new-catalog-card__actions
-										.new-catalog-card__action
-											button.msg-button.msg-button--grey #[span Купить в 1 клик]
-										.new-catalog-card__action
-											button.msg-button #[span В корзину]
+								.new-catalog-row__grid
+									.new-catalog-row__col.new-catalog-row__col--image
+										.new-catalog-row__image
+											img(src="./assets/img/new-catalog-product-01.jpg", alt="")
+									.new-catalog-row__col.new-catalog-row__col--info
+										a.new-catalog-row__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+										.new-catalog-card-amount
+											.new-catalog-card-amount__progress
+												div(style="width: 60%; background-color: #FFB341")
+											.new-catalog-card-amount__info
+												p Остаток: 1000 штук, 2.4455 тонн
+									.new-catalog-row__col.new-catalog-row__col--buy
+										.new-catalog-card__prices
+											p #[strong от 82 040] ₽/тон
+											p #[strong от 20.14] ₽/метр
+										.new-catalog-card__actions
+											.new-catalog-card__action
+												button.msg-button.msg-button--grey #[span Купить в 1 клик]
+											.new-catalog-card__action
+												button.msg-button #[span В корзину]
 
 					nav.paging
 						ul.paging__list

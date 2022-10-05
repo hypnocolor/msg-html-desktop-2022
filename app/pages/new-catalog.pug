@@ -16,6 +16,8 @@ block mainContent
 			.new-catalog
 				.new-catalog__part.new-catalog__part--sidebar
 					form.new-catalog-filters(action="./" method="post")
+						.new-catalog-filters__floating-submit
+							button.msg-button(type="submit") #[span Применить]
 						.new-catalog-filters__section.new-catalog-filters-section
 							button.new-catalog-filters-section__toggle.js-active(data-toggle-filter-section) Цена ₽ (за т)
 							.new-catalog-filters-section__content(data-filter-section-content)
@@ -161,6 +163,9 @@ block mainContent
 									.new-catalog-card__top
 										.new-catalog-card__image
 											img(src="./assets/img/new-catalog-product-01.jpg", alt="")
+											.new-catalog-card__badges
+												.new-catalog-card__badge
+													img(src="./assets/img/badge-delivery.svg", alt="")
 										.new-catalog-card__info
 											a.new-catalog-card__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
 											.new-catalog-card-amount
@@ -182,6 +187,9 @@ block mainContent
 									.new-catalog-card__top
 										.new-catalog-card__image
 											img(src="./assets/img/new-catalog-product-02.jpg", alt="")
+											.new-catalog-card__badges
+												.new-catalog-card__badge
+													img(src="./assets/img/badge-delivery.svg", alt="")
 										.new-catalog-card__info
 											a.new-catalog-card__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж 
 											.new-catalog-card-amount

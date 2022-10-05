@@ -447,6 +447,25 @@
 		padding: 25px 0
 		right: 18px
 		margin: 0 auto
+	.new-catalog-list
+		background-color: #fff
+		position: absolute
+		left: 0
+		width: 100%
+		top: 100%
+		padding-top: 15px
+		transition: .3s transform, .3s opacity, .3s visibility
+		opacity: 0
+		visibility: hidden
+		transform: translate3d(0,5px,0)
+		&.js-active
+			opacity: 1
+			visibility: visible
+			transform: translate3d(0,0,0)
+		&__inner
+			position: relative
+			max-width: 1280px
+			margin: 0 auto
 
 .new-header-top
 	position: relative
