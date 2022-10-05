@@ -63,7 +63,7 @@ $(function () {
 		$('.search-results-fade').addClass('js-visible');
 	});
 	$(document).on('close', '.search-form__input', function (e) {
-		$('.search-results-fade').remove('js-visible');
+		$('.search-results-fade').removeClass('js-visible');
 	});
 
 	$(document).on('click', '[data-toggle-catalog-overlay]', function (e) {
