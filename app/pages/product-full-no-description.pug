@@ -101,24 +101,19 @@ block mainContent
 								.single-product-specs__value
 									p Да
 					.single-product-info-section#product-reviews
-						h3.single-product-info-section__title Отзывы
-						form.single-product-review-form
-							.single-product-rating-widget
-								p Оцените товар
-								.single-product-rating-widget__stars
-									input.single-product-rating-widget__input#rating1(type="radio" name="rating" value="1")
-									label.single-product-rating-widget__star(for="rating1")
-									input.single-product-rating-widget__input#rating2(type="radio" name="rating" value="2")
-									label.single-product-rating-widget__star(for="rating2")
-									input.single-product-rating-widget__input#rating3(type="radio" name="rating" value="3")
-									label.single-product-rating-widget__star(for="rating3")
-									input.single-product-rating-widget__input#rating4(type="radio" name="rating" value="4")
-									label.single-product-rating-widget__star(for="rating4")
-									input.single-product-rating-widget__input#rating5(type="radio" name="rating" value="5")
-									label.single-product-rating-widget__star(for="rating5")
-							textarea.single-product-review-form__text(name="review-text" placeholder="Оставьте ваши впечатления о товаре" required)
-							p
-								button.msg-button(type="submit") #[span Оставить отзыв]
+						h3.single-product-info-section__title Отзывов ещё нет
+						.single-product-reviews
+							.single-product-reviews-head
+								.single-product-reviews-head__main
+									strong.single-product-reviews-head__value 0
+									.single-product-reviews-head__stars
+										.single-product-reviews-head__star.single-product-reviews-head__star--filled
+										.single-product-reviews-head__star.single-product-reviews-head__star--filled
+										.single-product-reviews-head__star.single-product-reviews-head__star--filled
+										.single-product-reviews-head__star.single-product-reviews-head__star--filled
+										.single-product-reviews-head__star
+								small.single-product-reviews-head__amount Отзывов нет
+								a.msg-button(href="./product-full-review.html") #[span Оставить отзыв]
 
 				aside.single-product__col.single-product__col--aside
 					.single-product__heading
@@ -163,6 +158,7 @@ block mainContent
 								label(for="selltype02") М. опт
 								input#selltype03(type="radio" name="selltype" value="3")
 								label(for="selltype03") Опт
+							a.sp-small-wholesale-link(href="#") Как получить мелкооптовую цену?
 							.sp-total-prices
 								.sp-total-prices__row
 									.sp-total-prices__col
