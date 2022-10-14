@@ -1,0 +1,197 @@
+extends ../layout/main-layout.pug
+
+block additionalScripts
+
+block pageTitle
+	title MSGMarket – Product page
+
+block mainContent
+
+	+header
+
+	.main-content
+		.main-content__inner
+			.section-head
+				nav.new-breadcrumbs
+					ul.new-breadcrumbs__list
+						li.new-breadcrumbs__item
+							a.new-breadcrumbs__link(href="#") Главная
+						li.new-breadcrumbs__item
+							a.new-breadcrumbs__link(href="#") Каталог
+						li.new-breadcrumbs__item
+							a.new-breadcrumbs__link(href="#") Металлопрокат
+						li.new-breadcrumbs__item
+							a.new-breadcrumbs__link(href="#") Профнастил
+						li.new-breadcrumbs__item
+							a.new-breadcrumbs__link(href="#") Профнастил C10
+						li.new-breadcrumbs__item
+							a.new-breadcrumbs__link(href="#") Гипсокартон
+
+			.product-review
+				.product-review__col.product-review__col--form
+					.product-review__actions
+						a.product-review__action(href="./product-full.html") 
+							svg(width="7" height="12")
+								use(xlink:href="#icon-paging-prev")
+							span Назад
+					form.single-product-review-form
+						.single-product-review-form-section
+							p.single-product-review-form-section__title Общая оценка
+							.single-product-rating-widget
+								.single-product-rating-widget__stars
+									input.single-product-rating-widget__input#rating1(type="radio" name="rating" value="1")
+									label.single-product-rating-widget__star(for="rating1")
+									input.single-product-rating-widget__input#rating2(type="radio" name="rating" value="2")
+									label.single-product-rating-widget__star(for="rating2")
+									input.single-product-rating-widget__input#rating3(type="radio" name="rating" value="3")
+									label.single-product-rating-widget__star(for="rating3")
+									input.single-product-rating-widget__input#rating4(type="radio" name="rating" value="4")
+									label.single-product-rating-widget__star(for="rating4")
+									input.single-product-rating-widget__input#rating5(type="radio" name="rating" value="5")
+									label.single-product-rating-widget__star(for="rating5")
+						.single-product-review-form-section
+							p.single-product-review-form-section__title Общая оценка
+							.single-product-review-form-section__input
+								.new-catalog-filters-radio
+									input#exp1(type="radio" name="review-experience" value="1" required)
+									label(for="exp1") Менее месяца
+							.single-product-review-form-section__input
+								.new-catalog-filters-radio
+									input#exp2(type="radio" name="review-experience" value="2" required)
+									label(for="exp2") Несколько месяцев
+							.single-product-review-form-section__input
+								.new-catalog-filters-radio
+									input#exp3(type="radio" name="review-experience" value="3" required)
+									label(for="exp3") Более года
+						.single-product-review-form-section
+							p.single-product-review-form-section__title Ваша рекомендация
+							.single-product-review-form-section__input
+								.new-catalog-filters-radio
+									input#rec1(type="radio" name="review-rec" value="1" required)
+									label(for="rec1") Рекомендую к покупке
+							.single-product-review-form-section__input
+								.new-catalog-filters-radio
+									input#rec2(type="radio" name="review-rec" value="2" required)
+									label(for="rec2") Не рекомендую
+						.single-product-review-form-section
+							p.single-product-review-form-section__title Ваш комментарий
+							.single-product-review-form-section__input
+								textarea.single-product-review-form__text(name="review-pros" placeholder="Достоинства" required)
+							.single-product-review-form-section__input
+								textarea.single-product-review-form__text(name="review-cons" placeholder="Недостатки" required)
+							.single-product-review-form-section__input
+								textarea.single-product-review-form__text(name="review-opinion" placeholder="Общее впечатление о товаре" required)
+							.single-product-review-form-section__input
+								button.msg-button(type="submit") #[span Оставить отзыв]
+				.product-review__col.product-review__col--product
+					.product-review-card
+						.product-review-card__image
+							img(src="./assets/img/full-product-sample.jpg", alt="")
+						h4.product-review-card__title Гипсокартон влагостойкий 12.5 мм Knauf 1500х600 0.9 м²
+
+			.product-cards-carousel#product-buy(data-cards-carousel)
+				h3.product-cards-carousel__title С этим товаром покупают
+				.product-cards-carousel__shaft(data-cards-carousel-shaft)
+					.new-catalog-grid__col
+						.new-catalog-card
+							.new-catalog-card__top
+								.new-catalog-card__image
+									img(src="./assets/img/new-catalog-product-01.jpg", alt="")
+								.new-catalog-card__info
+									a.new-catalog-card__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж
+									.new-catalog-card-amount
+										.new-catalog-card-amount__progress
+											div(style="width: 80%; background-color: #22A930")
+										.new-catalog-card-amount__info
+											p Остаток: 1000 штук, 2.4455 тонн
+							.new-catalog-card__bottom
+								.new-catalog-card__prices
+									p #[strong от 82 040] ₽/тон
+									p #[strong от 20.14] ₽/метр
+								.new-catalog-card__actions
+									.new-catalog-card__action
+										button.msg-button.msg-button--grey #[span Купить в 1 клик]
+									.new-catalog-card__action
+										button.msg-button #[span В корзину]
+					.new-catalog-grid__col
+						.new-catalog-card
+							.new-catalog-card__top
+								.new-catalog-card__image
+									img(src="./assets/img/new-catalog-product-02.jpg", alt="")
+								.new-catalog-card__info
+									a.new-catalog-card__title(href="#") Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж 
+									.new-catalog-card-amount
+										.new-catalog-card-amount__progress
+											div(style="width: 80%; background-color: #22A930")
+										.new-catalog-card-amount__info
+											p Остаток: 1000 штук, 2.4455 тонн
+							.new-catalog-card__bottom
+								.new-catalog-card__prices
+									p #[strong от 82 040] ₽/тон
+									p #[strong от 20.14] ₽/метр
+								.new-catalog-card__actions
+									.new-catalog-card__action
+										button.msg-button.msg-button--grey #[span Купить в 1 клик]
+									.new-catalog-card__action
+										button.msg-button #[span В корзину]
+					.new-catalog-grid__col
+						.new-catalog-card
+							.new-catalog-card__top
+								.new-catalog-card__image
+									img(src="./assets/img/new-catalog-product-04.jpg", alt="")
+								.new-catalog-card__info
+									a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+									.new-catalog-card-amount
+										.new-catalog-card-amount__progress
+											div(style="width: 80%; background-color: #22A930")
+										.new-catalog-card-amount__info
+											p Остаток: 1000 штук, 2.4455 тонн
+							.new-catalog-card__bottom
+								.new-catalog-card__prices
+									p #[strong по запросу]
+								.new-catalog-card__actions
+									.new-catalog-card__action
+										button.msg-button.msg-button--grey #[span Купить в 1 клик]
+					.new-catalog-grid__col
+						.new-catalog-card
+							.new-catalog-card__top
+								.new-catalog-card__image
+									img(src="./assets/img/new-catalog-product-01.jpg", alt="")
+								.new-catalog-card__info
+									a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+									.new-catalog-card-amount
+										.new-catalog-card-amount__progress
+											div(style="width: 80%; background-color: #22A930")
+										.new-catalog-card-amount__info
+											p Остаток: 1000 штук, 2.4455 тонн
+							.new-catalog-card__bottom
+								.new-catalog-card__prices
+									p #[strong по запросу]
+								.new-catalog-card__actions
+									.new-catalog-card__action
+										button.msg-button.msg-button--grey #[span Купить в 1 клик]
+					.new-catalog-grid__col
+						.new-catalog-card
+							.new-catalog-card__top
+								.new-catalog-card__image
+									img(src="./assets/img/new-catalog-product-02.jpg", alt="")
+								.new-catalog-card__info
+									a.new-catalog-card__title(href="#") Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм
+									.new-catalog-card-amount
+										.new-catalog-card-amount__progress
+											div(style="width: 80%; background-color: #22A930")
+										.new-catalog-card-amount__info
+											p Остаток: 1000 штук, 2.4455 тонн
+							.new-catalog-card__bottom
+								.new-catalog-card__prices
+									p #[strong по запросу]
+								.new-catalog-card__actions
+									.new-catalog-card__action
+										button.msg-button.msg-button--grey #[span Купить в 1 клик]
+				button.product-cards-carousel__arrow.product-cards-carousel__arrow--prev(data-cards-carousel-prev)
+					svg(width="7" height="12")
+						use(xlink:href="#icon-paging-prev")
+				button.product-cards-carousel__arrow.product-cards-carousel__arrow--next(data-cards-carousel-next)
+					svg(width="7" height="12")
+						use(xlink:href="#icon-paging-next")
+	+footer

@@ -1,4 +1,4 @@
-mixin header()
+mixin header-empty-cart()
 	.search-results-fade
 	.new-header
 		.new-header__inner
@@ -39,11 +39,10 @@ mixin header()
 								span Найти
 				.new-header-bottom__part.new-header-bottom__part--cart
 					.new-header-cart
-						a.new-header-cart__sum(href="#") 337 703.45 ₽
+						a.new-header-cart__sum(href="#") 0 ₽
 						.new-header-cart__icon
 							svg(width="24" height="24")
 								use(xlink:href="#icon-shopping-cart")
-							small 12
 		.new-catalog-list(data-catalog-overlay)
 			.new-catalog-list__inner
 				.new-catalog-list__grid

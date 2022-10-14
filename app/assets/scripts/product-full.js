@@ -35,4 +35,6 @@ $(function () {
 			//I get fired when you enter a section and I pass the list item of the section
 		}
 	});
+
+	autosize($('.single-product-review-form__text'));
 })

@@ -167,6 +167,56 @@
 		&:hover::before
 			border-color: #002D78
 
+
+.new-catalog-filters-radio
+	position: relative
+	&:not(:last-child)
+		margin-bottom: 16px
+	input[type="radio"]
+		position: absolute
+		width: 1px
+		height: 1px
+		margin: -1px
+		border: 0
+		padding: 0
+		white-space: nowrap
+		clip-path: inset(100%)
+		clip: rect(0 0 0 0)
+		overflow: hidden
+		opacity: 0
+		&:checked + label::before
+			border-color: #002d78
+			border-width: 5px
+		&:disabled + label
+			pointer-events: none
+			&::before
+				background-color: #E9EAEB
+				border-color: #E9EAEB
+	label
+		display: block
+		font-size: 14px
+		color: $color-black
+		padding-left: 32px
+		user-select: none
+		cursor: pointer
+		min-height: 20px
+		.grey
+			color: #A4A9AD
+		&::before
+			content: ''
+			position: absolute
+			width: 20px
+			height: 20px
+			box-sizing: border-box
+			border: 2px #A4A9AD solid
+			border-radius: 50%
+			left: 0
+			top: -2px
+			background-repeat: no-repeat
+			background-position: 50% 50%
+		&:hover::before
+			border-color: #002D78
+
 .new-catalog-banner
 	position: relative
 	padding: 16px 0
@@ -336,14 +386,17 @@
 	&__prices
 		margin-bottom: 15px
 		line-height: 1.3
+		position: relative
 		p
 			margin: 0
-			font-size: 12px
+			font-size: 14px
 			color: #A4A9AD
 			strong
 				font-size: 16px
 				font-weight: 700
 				color: $color-black
+		.new-catalog-card-show-popup
+			height: 100%
 	&__actions
 		display: flex
 		margin: 0 -4px
@@ -367,79 +420,6 @@
 .new-catalog-card-amount
 	position: relative
 	padding-right: 32px
-	.new-catalog-card-show-popup
-		appearance: none
-		position: absolute
-		right: 0
-		top: 0
-		font-size: 0
-		border: none
-		font-size: 0
-		margin: 0
-		padding: 0
-		width: 26px
-		height: 26px
-		border-radius: 4px
-		background-color: #EDEEEF
-		cursor: pointer
-		outline: none
-		&:hover
-			opacity: 0.85
-		svg
-			display: inline-block
-			vertical-align: middle
-		&.js-active
-			svg
-				transform: rotate(180deg)
-	.card-price-popup
-		position: absolute
-		background-color: #fff
-		z-index: 10
-		box-shadow: 0px 2px 24px rgba(29, 29, 29, 0.16)
-		border-radius: 4px
-		overflow: hidden
-		width: 100%
-		top: 100%
-		margin-top: 7px
-		transition: .3s opacity, .3s visibility, .3s transform
-		opacity: 0
-		visibility: hidden
-		transform: translate3d(0,5px,0)
-		&.js-active
-			opacity: 1
-			visibility: visible
-			transform: translate3d(0,0,0)
-		&__item
-			display: flex
-			padding: 13px 16px
-			align-items: flex-start
-			justify-content: space-between
-			user-select: none
-			position: relative
-			&:not(:last-child)
-				&::after
-					content: ''
-					position: absolute
-					left: 16px
-					right: 16px
-					bottom: 0
-					border-top: 1px solid #EDEEEF
-			&:hover
-				background-color: #EDEEEF
-				cursor: pointer
-		&__col
-			&--value p
-				font-size: 14px
-				margin: 0
-			&--price
-				line-height: 1.5
-				p
-					font-size: 12px
-					margin: 0
-					color: #A4A9AD
-					strong
-						font-weight: 500
-						color: $color-black
 	&__progress
 		position: relative
 		height: 5px
@@ -467,6 +447,80 @@
 			margin: 0
 			font-size: 12px
 
+.new-catalog-card-show-popup
+	appearance: none
+	position: absolute
+	right: 0
+	top: 0
+	font-size: 0
+	border: none
+	font-size: 0
+	margin: 0
+	padding: 0
+	width: 26px
+	height: 26px
+	min-height: 26px
+	border-radius: 4px
+	background-color: #EDEEEF
+	cursor: pointer
+	outline: none
+	&:hover
+		opacity: 0.85
+	svg
+		display: inline-block
+		vertical-align: middle
+	&.js-active
+		svg
+			transform: rotate(180deg)
+.card-price-popup
+	position: absolute
+	background-color: #fff
+	z-index: 10
+	box-shadow: 0px 2px 24px rgba(29, 29, 29, 0.16)
+	border-radius: 4px
+	overflow: hidden
+	width: 100%
+	top: 100%
+	margin-top: 7px
+	transition: .3s opacity, .3s visibility, .3s transform
+	opacity: 0
+	visibility: hidden
+	transform: translate3d(0,5px,0)
+	&.js-active
+		opacity: 1
+		visibility: visible
+		transform: translate3d(0,0,0)
+	&__item
+		display: flex
+		padding: 13px 16px
+		align-items: flex-start
+		justify-content: space-between
+		user-select: none
+		position: relative
+		&:not(:last-child)
+			&::after
+				content: ''
+				position: absolute
+				left: 16px
+				right: 16px
+				bottom: 0
+				border-top: 1px solid #EDEEEF
+		&:hover
+			background-color: #EDEEEF
+			cursor: pointer
+	&__col
+		&--value p
+			font-size: 14px
+			margin: 0
+		&--price
+			line-height: 1.5
+			p
+				font-size: 14px
+				margin: 0
+				color: #A4A9AD
+				strong
+					font-weight: 500
+					color: $color-black
 
 .new-catalog-rows
 	position: relative

@@ -5,13 +5,10 @@ $(function () {
 
 	window.onscroll = function () {
 		var currentScrollPos = window.pageYOffset;
-
-		/* if we're scrolling up, or we haven't passed the header, show the header */
-		if (prevScrollpos > currentScrollPos || currentScrollPos < headerBottom) {
+		if (currentScrollPos < headerBottom) {
 			headerDiv.style.top = "0";
 		}
 		else {
-			/* otherwise we're scrolling down & have passed the header so hide it */
 			headerDiv.style.top = "-50px";
 		}
 

@@ -13,7 +13,7 @@
 		<link rel="shortcut icon" href="./assets/img/favicon/favicon.ico">
 		<meta name="msapplication-config" content="./assets/img/favicon/browserconfig.xml">
 		<meta name="theme-color" content="#ffffff">
-		<link rel="stylesheet" href="./assets/css/main.css?v=15cd24714128">
+		<link rel="stylesheet" href="./assets/css/main.css?v=167dad4a22c0">
 		<title>MSGMarket – New catalog</title>
 	</head>
 
@@ -30,7 +30,6 @@
 							<ul class="new-header-menu__list">
 								<li class="new-header-menu__item"><a href="#">О компании </a></li>
 								<li class="new-header-menu__item"><a href="#">Спецтехника</a></li>
-								<li class="new-header-menu__item"><a href="#">Поставщикам</a></li>
 								<li class="new-header-menu__item"><a href="#">Покупателям</a></li>
 								<li class="new-header-menu__item"><a href="#">Контакты</a></li>
 								<li class="new-header-menu__item"><a href="#">Блог </a></li>
@@ -42,7 +41,7 @@
 						<div class="new-header-top__phone"><a href="+74932930330">8 4932 930-330</a></div>
 						<div class="new-header-top__user"><a href="#"><svg width="24" height="24">
 									<use xlink:href="#icon-user"></use>
-								</svg></a></div>
+								</svg><span>Войти</span></a></div>
 					</div>
 				</div>
 				<div class="new-header-bottom">
@@ -347,7 +346,7 @@
 												</div>
 											</div>
 											<div class="new-catalog-card__info"><a class="new-catalog-card__title" href="#">Перфоратор SDS-plus Makita HR 2470, 780 Вт, 2.7 Дж</a>
-												<div class="new-catalog-card-amount">
+												<div class="new-catalog-card-amount" data-tip-text="На складе много">
 													<div class="new-catalog-card-amount__progress">
 														<div style="width: 80%; background-color: #22A930"></div>
 													</div>
@@ -384,46 +383,6 @@
 													</div>
 													<div class="new-catalog-card-amount__info">
 														<p>Остаток: 1000 штук, 2.4455 тонн</p>
-													</div><button class="new-catalog-card-show-popup" data-toggle-price-popup><svg width="12" height="7">
-															<use xlink:href="#icon-down-arrow-small"></use>
-														</svg></button>
-													<div class="card-price-popup" data-price-popup>
-														<div class="card-price-popup__item">
-															<div class="card-price-popup__col card-price-popup__col--value">
-																<p>4 см</p>
-															</div>
-															<div class="card-price-popup__col card-price-popup__col--price">
-																<p><strong>от 82 040</strong> ₽/тон</p>
-																<p><strong>от 20.14</strong> ₽/метр</p>
-															</div>
-														</div>
-														<div class="card-price-popup__item">
-															<div class="card-price-popup__col card-price-popup__col--value">
-																<p>6 см</p>
-															</div>
-															<div class="card-price-popup__col card-price-popup__col--price">
-																<p><strong>от 82 040</strong> ₽/тон</p>
-																<p><strong>от 20.14</strong> ₽/метр</p>
-															</div>
-														</div>
-														<div class="card-price-popup__item">
-															<div class="card-price-popup__col card-price-popup__col--value">
-																<p>10 см</p>
-															</div>
-															<div class="card-price-popup__col card-price-popup__col--price">
-																<p><strong>от 82 040</strong> ₽/тон</p>
-																<p><strong>от 20.14</strong> ₽/метр</p>
-															</div>
-														</div>
-														<div class="card-price-popup__item">
-															<div class="card-price-popup__col card-price-popup__col--value">
-																<p>12 см</p>
-															</div>
-															<div class="card-price-popup__col card-price-popup__col--price">
-																<p><strong>от 82 040</strong> ₽/тон</p>
-																<p><strong>от 20.14</strong> ₽/метр</p>
-															</div>
-														</div>
 													</div>
 												</div>
 											</div>
@@ -431,7 +390,47 @@
 										<div class="new-catalog-card__bottom">
 											<div class="new-catalog-card__prices">
 												<p><strong>от 82 040</strong> ₽/тон</p>
-												<p><strong>от 20.14</strong> ₽/метр</p>
+												<p><strong>от 20.14</strong> ₽/метр</p><button class="new-catalog-card-show-popup" data-toggle-price-popup><svg width="12" height="7">
+														<use xlink:href="#icon-down-arrow-small"></use>
+													</svg></button>
+												<div class="card-price-popup" data-price-popup>
+													<div class="card-price-popup__item">
+														<div class="card-price-popup__col card-price-popup__col--value">
+															<p>4 см</p>
+														</div>
+														<div class="card-price-popup__col card-price-popup__col--price">
+															<p><strong>от 82 040</strong> ₽/тон</p>
+															<p><strong>от 20.14</strong> ₽/метр</p>
+														</div>
+													</div>
+													<div class="card-price-popup__item">
+														<div class="card-price-popup__col card-price-popup__col--value">
+															<p>6 см</p>
+														</div>
+														<div class="card-price-popup__col card-price-popup__col--price">
+															<p><strong>от 82 040</strong> ₽/тон</p>
+															<p><strong>от 20.14</strong> ₽/метр</p>
+														</div>
+													</div>
+													<div class="card-price-popup__item">
+														<div class="card-price-popup__col card-price-popup__col--value">
+															<p>10 см</p>
+														</div>
+														<div class="card-price-popup__col card-price-popup__col--price">
+															<p><strong>от 82 040</strong> ₽/тон</p>
+															<p><strong>от 20.14</strong> ₽/метр</p>
+														</div>
+													</div>
+													<div class="card-price-popup__item">
+														<div class="card-price-popup__col card-price-popup__col--value">
+															<p>12 см</p>
+														</div>
+														<div class="card-price-popup__col card-price-popup__col--price">
+															<p><strong>от 82 040</strong> ₽/тон</p>
+															<p><strong>от 20.14</strong> ₽/метр</p>
+														</div>
+													</div>
+												</div>
 											</div>
 											<div class="new-catalog-card__actions">
 												<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
@@ -460,72 +459,7 @@
 												<p><strong>по запросу</strong></p>
 											</div>
 											<div class="new-catalog-card__actions">
-												<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="new-catalog-grid__col">
-									<div class="new-catalog-card">
-										<div class="new-catalog-card__top">
-											<div class="new-catalog-card__image"><img src="./assets/img/new-catalog-product-03.jpg" alt=""></div>
-											<div class="new-catalog-card__info"><a class="new-catalog-card__title" href="#">Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм</a>
-												<div class="new-catalog-card-amount">
-													<div class="new-catalog-card-amount__progress">
-														<div style="width: 80%; background-color: #22A930"></div>
-													</div>
-													<div class="new-catalog-card-amount__info">
-														<p>Остаток: 1000 штук, 2.4455 тонн</p>
-													</div><button class="new-catalog-card-show-popup" data-toggle-price-popup><svg width="12" height="7">
-															<use xlink:href="#icon-down-arrow-small"></use>
-														</svg></button>
-													<div class="card-price-popup" data-price-popup>
-														<div class="card-price-popup__item">
-															<div class="card-price-popup__col card-price-popup__col--value">
-																<p>4 см</p>
-															</div>
-															<div class="card-price-popup__col card-price-popup__col--price">
-																<p><strong>от 82 040</strong> ₽/тон</p>
-																<p><strong>от 20.14</strong> ₽/метр</p>
-															</div>
-														</div>
-														<div class="card-price-popup__item">
-															<div class="card-price-popup__col card-price-popup__col--value">
-																<p>6 см</p>
-															</div>
-															<div class="card-price-popup__col card-price-popup__col--price">
-																<p><strong>от 82 040</strong> ₽/тон</p>
-																<p><strong>от 20.14</strong> ₽/метр</p>
-															</div>
-														</div>
-														<div class="card-price-popup__item">
-															<div class="card-price-popup__col card-price-popup__col--value">
-																<p>10 см</p>
-															</div>
-															<div class="card-price-popup__col card-price-popup__col--price">
-																<p><strong>от 82 040</strong> ₽/тон</p>
-																<p><strong>от 20.14</strong> ₽/метр</p>
-															</div>
-														</div>
-														<div class="card-price-popup__item">
-															<div class="card-price-popup__col card-price-popup__col--value">
-																<p>12 см</p>
-															</div>
-															<div class="card-price-popup__col card-price-popup__col--price">
-																<p><strong>от 82 040</strong> ₽/тон</p>
-																<p><strong>от 20.14</strong> ₽/метр</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="new-catalog-card__bottom">
-											<div class="new-catalog-card__prices">
-												<p><strong>по запросу</strong></p>
-											</div>
-											<div class="new-catalog-card__actions">
-												<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+												<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Запросить цену</span></button></div>
 											</div>
 										</div>
 									</div>
@@ -547,10 +481,50 @@
 										</div>
 										<div class="new-catalog-card__bottom">
 											<div class="new-catalog-card__prices">
-												<p><strong>по запросу</strong></p>
+												<p><strong>по запросу</strong></p><button class="new-catalog-card-show-popup" data-toggle-price-popup><svg width="12" height="7">
+														<use xlink:href="#icon-down-arrow-small"></use>
+													</svg></button>
+												<div class="card-price-popup" data-price-popup>
+													<div class="card-price-popup__item">
+														<div class="card-price-popup__col card-price-popup__col--value">
+															<p>4 см</p>
+														</div>
+														<div class="card-price-popup__col card-price-popup__col--price">
+															<p><strong>от 82 040</strong> ₽/тон</p>
+															<p><strong>от 20.14</strong> ₽/метр</p>
+														</div>
+													</div>
+													<div class="card-price-popup__item">
+														<div class="card-price-popup__col card-price-popup__col--value">
+															<p>6 см</p>
+														</div>
+														<div class="card-price-popup__col card-price-popup__col--price">
+															<p><strong>от 82 040</strong> ₽/тон</p>
+															<p><strong>от 20.14</strong> ₽/метр</p>
+														</div>
+													</div>
+													<div class="card-price-popup__item">
+														<div class="card-price-popup__col card-price-popup__col--value">
+															<p>10 см</p>
+														</div>
+														<div class="card-price-popup__col card-price-popup__col--price">
+															<p><strong>от 82 040</strong> ₽/тон</p>
+															<p><strong>от 20.14</strong> ₽/метр</p>
+														</div>
+													</div>
+													<div class="card-price-popup__item">
+														<div class="card-price-popup__col card-price-popup__col--value">
+															<p>12 см</p>
+														</div>
+														<div class="card-price-popup__col card-price-popup__col--price">
+															<p><strong>от 82 040</strong> ₽/тон</p>
+															<p><strong>от 20.14</strong> ₽/метр</p>
+														</div>
+													</div>
+												</div>
 											</div>
 											<div class="new-catalog-card__actions">
-												<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+												<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Запросить цену</span></button></div>
 											</div>
 										</div>
 									</div>
@@ -575,7 +549,32 @@
 												<p><strong>по запросу</strong></p>
 											</div>
 											<div class="new-catalog-card__actions">
-												<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Купить в 1 клик</span></button></div>
+												<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Запросить цену</span></button></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="new-catalog-grid__col">
+									<div class="new-catalog-card">
+										<div class="new-catalog-card__top">
+											<div class="new-catalog-card__image"><img src="./assets/img/new-catalog-product-03.jpg" alt=""></div>
+											<div class="new-catalog-card__info"><a class="new-catalog-card__title" href="#">Циркулярная пила Stanley Fatmax FME301, 1650 Вт, 190 мм</a>
+												<div class="new-catalog-card-amount">
+													<div class="new-catalog-card-amount__progress">
+														<div style="width: 80%; background-color: #22A930"></div>
+													</div>
+													<div class="new-catalog-card-amount__info">
+														<p>Остаток: 1000 штук, 2.4455 тонн</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="new-catalog-card__bottom">
+											<div class="new-catalog-card__prices">
+												<p><strong>по запросу</strong></p>
+											</div>
+											<div class="new-catalog-card__actions">
+												<div class="new-catalog-card__action"><button class="msg-button msg-button--grey"><span>Запросить цену</span></button></div>
 											</div>
 										</div>
 									</div>
@@ -808,7 +807,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="./assets/js/main.js?v=15cd24714128"></script>
+		<script src="./assets/js/main.js?v=167dad4a22c0"></script>
 	</body>
 
 </html>

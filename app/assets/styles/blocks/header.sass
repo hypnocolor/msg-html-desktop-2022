@@ -443,7 +443,7 @@
 	transform: translate3d(0,0,0)
 	&__inner
 		position: relative
-		max-width: 1240px
+		width: 1240px
 		padding: 25px 0
 		right: 18px
 		margin: 0 auto
@@ -501,13 +501,24 @@
 		a, a:visited
 			transition: .3s opacity
 			text-decoration: none
+			font-size: 0
+			color: #FFF !important
+			display: inline-block
 			&:hover
 				opacity: 0.8
 				transition: 0s opacity
 			svg
 				fill: #FFF
-				display: block
+				display: inline-block
 				margin: 0
+				vertical-align: middle
+			span
+				font-size: 14px
+				font-weight: 700
+				color: #FFF
+				display: inline-block
+				margin-left: 8px
+				vertical-align: middle
 
 .new-header-menu
 	position: relative
@@ -615,6 +626,7 @@
 	border-radius: 4px
 	transition: .3s background
 	user-select: none
+	background: rgba(#fff, .13)
 	&:hover
 		background-color: rgba(#FFF, .18)
 		transition: 0s background

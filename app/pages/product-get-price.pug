@@ -29,15 +29,8 @@ block mainContent
 			.single-product
 				.single-product__col.single-product__col--content
 					.single-product-gallery(data-spgallery)
-						.single-product-gallery__thumbs(data-spgallery-thumbs)
-							a.single-product-gallery__thumb.single-product-gallery__thumb--active(href="#" data-load-image="./assets/img/full-product-sample.jpg")
-								img(src="./assets/img/full-product-sample.jpg", alt="")
-							a.single-product-gallery__thumb(href="#" data-load-image="./assets/img/new-catalog-product-02.jpg")
-								img(src="./assets/img/new-catalog-product-02.jpg", alt="")
-							a.single-product-gallery__thumb(href="#" data-load-image="./assets/img/new-catalog-product-03.jpg")
-								img(src="./assets/img/new-catalog-product-03.jpg", alt="")
 						.single-product-gallery__full-image(data-spgallery-full-image)
-							img(src="./assets/img/full-product-sample.jpg", alt="")
+							img(src="./assets/img/empty-product.jpg", alt="")
 					.single-product__condition-warning
 						p Внимание! Цвет, характеристика и комплектация товаров, указанные на сайте, могут отличаться от реальных.
 					nav.single-product-tabs
@@ -274,105 +267,37 @@ block mainContent
 							.sp-select-size
 								h4.sp-select-size__title Размер
 								.sp-select-size__inputs
-									input#size01(type="radio" name="selectsize" value="8")
-									label(for="size01") 8 м
-									input#size02(type="radio" name="selectsize" value="8.3")
-									label(for="size02") 8.3 м
-									input#size03(type="radio" name="selectsize" value="12")
-									label(for="size03") 12 м
-									input#size04(type="radio" name="selectsize" value="18")
-									label(for="size04") 18 м
-									input#size05(type="radio" name="selectsize" value="22" checked)
-									label(for="size05") 22 м
+									input#size01(type="radio" name="selectsize" value="8" disabled)
+									label(for="size01") н/д
 							.sp-select-qty
 								input.common-input(type="text" name="product-qty")
 								select.common-select(name="qty-type")
 									option(value="ton" selected) Тонны
 									option(value="kg") Килограммы
-							.sp-available
-								span.sp-available__badge В наличии – 4565 шт
-								small.sp-available__small Остаток (16 шт) можно заказать без оплаты
-							.sp-select-sell-type
-								input#selltype01(type="radio" name="selltype" value="1" checked)
-								label(for="selltype01") Розница
-								input#selltype02(type="radio" name="selltype" value="2")
-								label(for="selltype02") М. опт
-								input#selltype03(type="radio" name="selltype" value="3")
-								label(for="selltype03") Опт
-							a.sp-small-wholesale-link(href="#") Как получить мелкооптовую цену?
 							.sp-total-prices
 								.sp-total-prices__row
 									.sp-total-prices__col
 										p За тонну
 									.sp-total-prices__col
-										p 82 400 ₽
+										p по запросу
 								.sp-total-prices__row
 									.sp-total-prices__col
 										p За метр
 									.sp-total-prices__col
-										p 21.7 ₽
+										p по запросу
 								.sp-total-prices__row.sp-total-prices__row_last
 									.sp-total-prices__col
 										p Сумма без доставки
 									.sp-total-prices__col
-										p 130 ₽
-							.buttons-group
-								button.msg-button.msg-button--grey(type="button")
-									span Купить в 1 клик
+										p по запросу
+							.buttons-group.buttons-group--single-button
 								button.msg-button(type="button")
-									span В корзину
+									span Запросить цену
 							.product-aside-block__note 
 								div.icon
 									svg(width="24" height="24")
 										use(xlink:href="#icon-warning-cube")
-								p Не забудьте выбрать склад, от этого может зависеть цена доставки.
-
-						.product-aside-block
-							h4.product-aside-block__title Склад отгрузки
-							.sp-warehouses
-								.sp-warehouse-card
-									input#ware1(type="radio" name="warehouse" value="1" checked)
-									label.sp-warehouse-card__label(for="ware1")
-										.sp-warehouse-card__title
-											.sp-warehouse-card__icon
-												svg(width="22" height="16")
-													use(xlink:href="#icon-factory")
-											h4 База Красных Зорь
-										p.sp-warehouse-card__address ул. Красных Зорь, 73
-										.product-card__qty
-											.product-card__progress-line
-												span(style="width: 80%; background-color: #22A930; border-color: #22A930")
-											p #[strong Наличие: 1000 штук, 2.4455 тонн]
-											p В резерве: 400 штук, 1.4 тонн
-											p Ожидается: 56 штук, 0.566 тонн
-								.sp-warehouse-card
-									input#ware2(type="radio" name="warehouse" value="2")
-									label.sp-warehouse-card__label(for="ware2")
-										.sp-warehouse-card__title
-											.sp-warehouse-card__icon
-												svg(width="22" height="16")
-													use(xlink:href="#icon-factory")
-											h4 База Станкостроителей
-										p.sp-warehouse-card__address Иваново, ул. Станкостроителей, д. 22
-										.product-card__qty
-											.product-card__progress-line
-												span(style="width: 80%; background-color: #22A930; border-color: #22A930")
-											p Склад: 430 штук, 1.4455 тонн
-							h4.product-aside-block__title Удалённый склад
-							.sp-warehouses
-								.sp-warehouse-card
-									input#ware3(type="radio" name="warehouse" value="3")
-									label.sp-warehouse-card__label(for="ware3")
-										.sp-warehouse-card__title
-											.sp-warehouse-card__icon
-												svg(width="22" height="16")
-													use(xlink:href="#icon-factory")
-											h4 База Лежневская
-										p.sp-warehouse-card__address Иваново, ул. Лежневская, д. 143
-										.product-card__qty
-											.product-card__progress-line
-												span(style="width: 80%; background-color: #22A930; border-color: #22A930")
-											p Склад: 430 штук, 1.4455 тонн
+								p Внимание. Товар под заказ срок поставки будет сообщен менеджером.
 
 			.product-cards-carousel#product-buy(data-cards-carousel)
 				h3.product-cards-carousel__title С этим товаром покупают

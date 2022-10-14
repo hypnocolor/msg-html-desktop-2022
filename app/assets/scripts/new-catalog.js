@@ -50,18 +50,23 @@ $(function () {
 
 
 	$('.new-catalog-filters-price__input').label_better({
-		position: "top", // This will let you define the position where the label will appear when the user clicked on the input fields. Acceptable options are "top", "bottom", "left" and "right". Default value is "top".
-		animationTime: 100, // This will let you control the animation speed when the label appear. This option accepts value in milliseconds. The default value is 500.
-		// easing: "ease-in-out", // This option will let you define the CSS easing you would like to see animating the label. The option accepts all default CSS easing such as "linear", "ease" etc. Another extra option is you can use is "bounce". The default value is "ease-in-out".
-		offset: -5, // You can add more spacing between the input and the label. This option accepts value in pixels (without the unit). The default value is 20.
-		hidePlaceholderOnFocus: true // The default placeholder text will hide on focus
+		position: "top",
+		animationTime: 100,
+		offset: -5,
+		hidePlaceholderOnFocus: true
 	});
 
 	$('.new-catalog-filters').on('reset', function (e) {
 		$(document).find('.new-catalog-filters .lb_label').remove();
 	});
 
-	$(document).on('click', '.new-catalog-filters input[type="checkbox"]', function (e) {
+	$(document).on('change', '.new-catalog-filters input[type="checkbox"]', function (e) {
+		e.stopPropagation();
+		var floatingSubmitPos = $(this).offset().top - $('.new-catalog-filters').offset().top - 20;
+		$('.new-catalog-filters__floating-submit').css('top', floatingSubmitPos + 'px').addClass('js-visible');
+	});
+
+	$(document).on('keyup', '.new-catalog-filters-price__input', function (e) {
 		e.stopPropagation();
 		var floatingSubmitPos = $(this).offset().top - $('.new-catalog-filters').offset().top - 20;
 		$('.new-catalog-filters__floating-submit').css('top', floatingSubmitPos + 'px').addClass('js-visible');
@@ -77,5 +82,15 @@ $(function () {
 	$(document).on('click', '[data-expand-catalog-row]', function (e) {
 		e.stopPropagation();
 		$(this).parents('.new-catalog-row').toggleClass('js-expanded');
+	});
+
+	tippy('.new-catalog-card-amount', {
+		content: function (reference) {
+			var dataText = reference.getAttribute('data-tip-text');
+			var tipText = (dataText && dataText.length) ? dataText : 'Tip title';
+			return tipText;
+		},
+		placement: 'top-start',
+		arrow: '<svg width="16" height="6" xmlns="http://www.w3.org/2000/svg"><path d="M0 6s1.796-.013 4.67-3.615C5.851.9 6.93.006 8 0c1.07-.006 2.148.887 3.343 2.385C14.233 6.005 16 6 16 6H0z"></svg>',
 	});
 });
